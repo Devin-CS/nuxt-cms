@@ -1,0 +1,9 @@
+<template>
+<q-item
+  v-ripple
+  clickable>
+  <q-item-section>
+    <slot/>
+  </q-item-section>
+</q-item>
+</template>
