@@ -1,52 +1,74 @@
 <template>
-<q-layout view="hHh lpR lFf">
-  <q-header class="bg-primary text-white">
-    <q-toolbar>
-      <q-btn
-        dense
-        flat
-        round
-        icon="menu"
-        @click="toggleDrawer"/>
+<q-layout view="hHh lpR fFf">
+  <layout-header
+    :mega-menu="megaMenu"
+    @toggle-drawer="toggleDrawer"/>
 
-      <q-toolbar-title>
-        <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-        </q-avatar>
-        Title
-      </q-toolbar-title>
-    </q-toolbar>
-  </q-header>
-
-  <q-drawer
-    v-model="drawerOpen"
-    show-if-above
-    side="left"
-    bordered>
-    <!-- drawer content -->
-  </q-drawer>
+  <layout-drawer
+    :opened="drawerOpen"
+    :mega-menu="megaMenu"
+    @update="opened => drawerOpen = opened"/>
 
   <q-page-container>
     <router-view/>
   </q-page-container>
 
-  <q-footer class="bg-grey-8 text-white">
-    <q-toolbar>
-      <q-toolbar-title>
-        <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-        </q-avatar>
-        <div>Title</div>
-      </q-toolbar-title>
-    </q-toolbar>
-  </q-footer>
+  <layout-footer/>
 </q-layout>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import LayoutDrawer from '~/layouts/defaultLayout/LayoutDrawer.vue'
+import LayoutHeader from '~/layouts/defaultLayout/LayoutHeader.vue'
+import LayoutFooter from '~/layouts/defaultLayout/LayoutFooter.vue'
+
 const drawerOpen = ref(false)
 
 const toggleDrawer = () => {
   drawerOpen.value = !drawerOpen.value
 }
+
+const megaMenu: MegaMenu = [
+  {
+    label: 'Getting Started',
+    path: '/getting-started',
+    children: [
+      {
+        label: 'Sperm banking 101',
+        path: '/getting-started/sperm-banking-101',
+        description: 'Sperm banking basics, from its history to how it\'s used.\n'
+      },
+      {
+        label: 'Medical and genetic considerations',
+        path: '/getting-started/medical-genetic-considerations',
+        description: 'Explore donor-screening information, genetics, and essential clinical insights.'
+      },
+      {
+        label: 'Account onboarding and subscriptions',
+        path: '/getting-started/account-onboarding-subscriptions',
+        description: 'Set up your account, explore subscription options, and dive into donor details.'
+      }
+    ]
+  },
+  {
+    label: 'Services',
+    path: '/services',
+    children: []
+  },
+  {
+    label: 'Pricing',
+    path: '/pricing',
+    children: []
+  },
+  {
+    label: 'About',
+    path: '/about',
+    children: []
+  },
+  {
+    label: 'Learn',
+    path: '/learn',
+    children: []
+  }
+]
 </script>

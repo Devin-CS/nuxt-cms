@@ -10,6 +10,14 @@ export default defineNuxtConfig({
   },
 
   quasar: {
-    sassVariables: true
+    sassVariables: true,
+    components: {
+      defaults: {
+        QBtn: {
+          noWrap: true
+        }
+      }
+    }
   }
+
 })
