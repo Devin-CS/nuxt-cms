@@ -10,12 +10,12 @@
         width="300">
     </q-toolbar-title>
 
-    <mega-menu-btn
-      v-for="menu in megaMenu"
-      :key="menu.label"
+    <menu-btn
+      v-for="{ title, children = [] } in menu"
+      :key="title"
       class="gt-sm"
-      :label="menu.label"
-      :card-data="menu.children"/>
+      :label="title"
+      :card-data="children"/>
 
     <q-btn
       flat
@@ -47,6 +47,6 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ megaMenu: MegaMenu }>()
+defineProps<{ menu: Menu[] }>()
 defineEmits<{ toggleDrawer: [] }>()
 </script>

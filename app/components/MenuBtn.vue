@@ -24,13 +24,13 @@
       class="bg-accent q-mt-sm"
       style="height: 12px"/>
     <div class="row">
-      <mega-menu-card
-        v-for="card in cardData"
-        :key="card.label"
+      <menu-card
+        v-for="{ title, description } in cardData"
+        :key="title"
         class="bg-primary col-4"
-        :title="card.label">
-        {{ card.description }}
-      </mega-menu-card>
+        :title="title">
+        {{ description }}
+      </menu-card>
     </div>
   </q-menu>
 </q-btn>
@@ -41,7 +41,7 @@ import { debounce } from 'quasar'
 
 defineProps<{
   label: string
-  cardData: MegaMenuItem[]
+  cardData: Menu[]
 }>()
 
 const menu = ref(false)

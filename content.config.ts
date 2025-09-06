@@ -2,9 +2,13 @@ import { defineContentConfig, defineCollection } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-    content: defineCollection({
+    navigation: defineCollection({
       type: 'page',
-      source: '**/*.md'
+      source: 'navigation/**/*.md'
     })
+    // content: defineCollection({
+    //   type: 'page',
+    //   source: '**/*.md'
+    // })
   }
 })

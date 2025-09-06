@@ -2,9 +2,9 @@
 
 // Mega Menu types used in app layouts/components
 
-export interface MegaMenuItem {
-  label: string
+export interface Menu {
+  title: string
   path: string
   description?: string
-  children?: MegaMenuItem[]
+  children?: Menu[]
 }

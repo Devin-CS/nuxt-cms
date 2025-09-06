@@ -10,31 +10,31 @@
       <q-tab-panel name="home">
         <q-list>
           <q-item
-            v-for="menu in megaMenu"
-            :key="menu.label"
+            v-for="{ title, path, children = [] } in menu"
+            :key="title"
             v-ripple
-            :to="menu.path"
+            :to="path"
             clickable>
             <q-item-section>
-              {{ menu.label }}
+              {{ title }}
             </q-item-section>
             <q-item-section
-              v-if="menu.children.length"
+              v-if="children.length"
               avatar>
               <q-btn
                 flat
                 round
                 icon="chevron_right"
-                @click.stop.prevent="panel = menu.label"/>
+                @click.stop.prevent="panel = title"/>
             </q-item-section>
           </q-item>
         </q-list>
       </q-tab-panel>
 
       <q-tab-panel
-        v-for="childPanel in childPanels"
-        :key="childPanel.label"
-        :name="childPanel.label">
+        v-for="{ title, children } in childPanels"
+        :key="title"
+        :name="title">
         <q-list>
           <q-item>
             <q-item-section avatar>
@@ -45,18 +45,18 @@
                 @click="panel = 'home'"/>
             </q-item-section>
             <q-item-section>
-              {{ childPanel.label }}
+              {{ title }}
             </q-item-section>
           </q-item>
           <q-separator/>
           <q-item
-            v-for="menu in childPanel.children"
-            :key="menu.label"
+            v-for="{ title: childTitle, path } in children"
+            :key="childTitle"
             v-ripple
-            :to="menu.path"
+            :to="path"
             clickable>
             <q-item-section>
-              {{ menu.label }}
+              {{ childTitle }}
             </q-item-section>
           </q-item>
         </q-list>
@@ -67,11 +67,12 @@
 </template>
 
 <script setup lang="ts">
-const { megaMenu } = defineProps<{ opened: boolean, megaMenu: MegaMenu }>()
+const { menu } = defineProps<{ opened: boolean, menu: Menu[] }>()
 defineEmits<{ update: [opened: boolean] }>()
 
 const panel = ref('home')
-console.log('panel: ', panel.value)
 
-const childPanels = computed(() => megaMenu.filter(menu => menu.children.length))
+const childPanels = computed(
+  () => menu.filter(({ children = [] }) => children.length)
+)
 </script>
