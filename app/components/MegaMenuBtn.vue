@@ -23,9 +23,7 @@
     <div
       class="bg-accent q-mt-sm"
       style="height: 12px"/>
-    <div
-      class="row"
-      style="">
+    <div class="row">
       <mega-menu-card
         v-for="card in cardData"
         :key="card.label"
@@ -40,11 +38,10 @@
 
 <script setup lang="ts">
 import { debounce } from 'quasar'
-import MegaMenuCard from '~/components/MegaMenuCard.vue'
 
 defineProps<{
   label: string
-  cardData: { label: string, path: string, description: string }[]
+  cardData: MegaMenuItem[]
 }>()
 
 const menu = ref(false)

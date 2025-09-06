@@ -50,7 +50,3 @@
 defineProps<{ megaMenu: MegaMenu }>()
 defineEmits<{ toggleDrawer: [] }>()
 </script>
-
-<style scoped>
-
-</style>
