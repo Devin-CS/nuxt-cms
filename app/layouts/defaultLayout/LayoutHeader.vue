@@ -1,6 +1,7 @@
 <template>
 <q-header
   elevated
+  height-hint="62"
   class="bg-primary text-white">
   <q-toolbar>
     <q-toolbar-title>
@@ -21,11 +22,11 @@
     <q-btn
       flat
       round
-      icon="person"/>
+      icon="o_person"/>
     <q-btn
       flat
       round
-      icon="search"/>
+      icon="o_search"/>
     <q-btn
       label="Find a Donor"
       color="secondary"/>
@@ -35,7 +36,7 @@
       dense
       flat
       round
-      icon="menu"
+      icon="o_menu"
       @click="$emit('toggleDrawer')"/>
   </q-toolbar>
 

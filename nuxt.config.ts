@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
 
   quasar: {
+    iconSet: 'material-icons-outlined',
     sassVariables: true,
     components: {
       defaults: {

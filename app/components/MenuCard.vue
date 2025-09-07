@@ -1,13 +1,13 @@
 <template>
 <q-card flat>
-  <q-card-section class="text-h4 text-weight-bold">
+  <q-card-section class="text-h4 text-weight-bold q-pb-none">
     <arrow-btn
       dense
       :label="title"
       :to="path"
       flat/>
   </q-card-section>
-  <q-card-section class="q-px-md">
+  <q-card-section class="q-px-md q-pt-sm">
     <slot/>
   </q-card-section>
 </q-card>

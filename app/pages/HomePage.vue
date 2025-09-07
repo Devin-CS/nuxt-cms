@@ -1,7 +1,5 @@
 <template>
-<q-page/>
+<q-page>
+  <disclaimer-msg/>
+</q-page>
 </template>
-
-<script setup lang="ts">
-
-</script>
