@@ -31,4 +31,6 @@ const toggleDrawer = () => {
 const { data: menu } = await useAsyncData<Menu[]>('navigation', () => {
   return queryCollectionNavigation('content', ['description'])
 })
+
+console.log('menu: ', menu.value)
 </script>

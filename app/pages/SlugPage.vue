@@ -1,8 +1,8 @@
 <template>
 <q-page padding>
   <ContentRenderer
-    v-if="data"
-    :value="data"/>
+    v-if="page"
+    :value="page"/>
   <div v-else>
     Page not found
   </div>
@@ -13,15 +13,14 @@
 <script setup lang="ts">
 const { path } = defineProps<{ path: string }>()
 
-console.log('path: ', path)
-
-const { data } = await useAsyncData(
-  () => queryCollection('content').path(path).first()
+const { data: page } = await useAsyncData(path,
+  () => queryCollection('content').path(path).first(),
+  { watch: [() => path] }
 )
 
 useSeoMeta({
-  title: data.value?.title,
-  description: data.value?.description
+  title: page.value?.title,
+  description: page.value?.description
 })
 </script>
 
