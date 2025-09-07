@@ -25,10 +25,11 @@
       style="height: 12px"/>
     <div class="row">
       <menu-card
-        v-for="{ title, description } in cardData"
+        v-for="{ title, path, description } in cardData"
         :key="title"
         class="bg-primary col-4"
-        :title="title">
+        :title
+        :path>
         {{ description }}
       </menu-card>
     </div>

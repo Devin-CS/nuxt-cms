@@ -11,8 +11,9 @@
     </q-toolbar-title>
 
     <menu-btn
-      v-for="{ title, children = [] } in menu"
+      v-for="{ title, path, children = [] } in menu"
       :key="title"
+      :to="path"
       class="gt-sm"
       :label="title"
       :card-data="children"/>
@@ -47,6 +48,6 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ menu: Menu[] }>()
+const { menu = [] } = defineProps<{ menu?: Menu[] }>()
 defineEmits<{ toggleDrawer: [] }>()
 </script>

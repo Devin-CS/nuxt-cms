@@ -28,9 +28,7 @@ const toggleDrawer = () => {
   drawerOpen.value = !drawerOpen.value
 }
 
-const { data } = await useAsyncData<Menu[]>('navigation', () => {
-  return queryCollectionNavigation('navigation', ['description'])
+const { data: menu } = await useAsyncData<Menu[]>('navigation', () => {
+  return queryCollectionNavigation('content', ['description'])
 })
-
-const menu = computed(() => data.value?.[0]?.children ?? [])
 </script>

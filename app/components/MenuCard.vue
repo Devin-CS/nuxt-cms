@@ -4,6 +4,7 @@
     <arrow-btn
       dense
       :label="title"
+      :to="path"
       flat/>
   </q-card-section>
   <q-card-section class="q-px-md">
@@ -13,5 +14,5 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ title: string }>()
+defineProps<{ title: string, path: string }>()
 </script>

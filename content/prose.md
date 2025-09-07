@@ -1,3 +1,6 @@
+---
+navigation: false
+---
 
 # Prose Components
 

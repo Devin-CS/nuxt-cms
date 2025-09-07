@@ -67,7 +67,10 @@
 </template>
 
 <script setup lang="ts">
-const { menu } = defineProps<{ opened: boolean, menu: Menu[] }>()
+const { menu = [] } = defineProps<{
+  opened: boolean
+  menu?: Menu[]
+}>()
 defineEmits<{ update: [opened: boolean] }>()
 
 const panel = ref('home')
