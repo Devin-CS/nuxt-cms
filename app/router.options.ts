@@ -11,18 +11,6 @@ export default {
       component: () => import('~/layouts/DefaultLayout.vue'),
       children: [
         {
-          name: 'home',
-          path: '',
-          props: routeProps,
-          component: () => import('~/pages/HomePage.vue')
-        },
-        {
-          name: 'prose',
-          path: 'prose',
-          props: routeProps,
-          component: () => import('~/pages/ProsePage.vue')
-        },
-        {
           name: 'slug',
           path: ':slug(.*)*',
           props: routeProps,

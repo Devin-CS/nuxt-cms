@@ -10,7 +10,14 @@
     @update="opened => drawerOpen = opened"/>
 
   <q-page-container>
-    <disclaimer-msg/>
+    <template
+      v-for="{ meta } in disclaimers"
+      :key="meta.title">
+      <disclaimer-msg
+        v-if="meta.enabled"
+        :description="meta.description"/>
+    </template>
+
     <router-view/>
   </q-page-container>
 
@@ -33,5 +40,9 @@ const { data: menu } = await useAsyncData<Menu[]>('navigation', () => {
   return queryCollectionNavigation('pages', ['description'])
 })
 
-console.log('menu: ', menu.value)
+const { data: disclaimers } = await useAsyncData('disclaimers', () => {
+  return queryCollection('disclaimers').all()
+})
+
+console.log('disclaimers: ', disclaimers.value)
 </script>

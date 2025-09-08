@@ -1,7 +1,3 @@
----
-navigation: false
----
-
 # Prose Components
 
 <h2 class="text-primary">Links</h2>

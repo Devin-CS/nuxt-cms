@@ -5,12 +5,12 @@
       name="o_info"
       size="sm"/>
   </template>
-  We will be closed in observance of labor day.
+  {{ description }}
 </q-banner>
 </template>
 
 <script setup lang="ts">
-
+defineProps<{ description: string }>()
 </script>
 
 <style lang="scss">

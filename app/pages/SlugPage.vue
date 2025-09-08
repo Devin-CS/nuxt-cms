@@ -6,7 +6,6 @@
   <div v-else>
     Page not found
   </div>
-  {{ path }}
 </q-page>
 </template>
 
