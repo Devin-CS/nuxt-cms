@@ -1,5 +1,3 @@
 <template>
-<q-page>
-  <disclaimer-msg/>
-</q-page>
+<q-page/>
 </template>

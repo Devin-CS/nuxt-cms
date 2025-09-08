@@ -14,7 +14,7 @@
 const { path } = defineProps<{ path: string }>()
 
 const { data: page } = await useAsyncData(path,
-  () => queryCollection('content').path(path).first(),
+  () => queryCollection('pages').path(path).first(),
   { watch: [() => path] }
 )
 

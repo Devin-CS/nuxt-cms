@@ -10,6 +10,7 @@
     @update="opened => drawerOpen = opened"/>
 
   <q-page-container>
+    <disclaimer-msg/>
     <router-view/>
   </q-page-container>
 
@@ -29,7 +30,7 @@ const toggleDrawer = () => {
 }
 
 const { data: menu } = await useAsyncData<Menu[]>('navigation', () => {
-  return queryCollectionNavigation('content', ['description'])
+  return queryCollectionNavigation('pages', ['description'])
 })
 
 console.log('menu: ', menu.value)
