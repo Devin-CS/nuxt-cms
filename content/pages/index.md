@@ -2,4 +2,5 @@
 navigation: false
 ---
 
-# Home
+# Welcome to California Cryobank!
+

@@ -1,5 +1,5 @@
 <template>
-<q-page padding>
+<q-page>
   <ContentRenderer
     v-if="page"
     :value="page"/>
@@ -16,6 +16,8 @@ const { data: page } = await useAsyncData(path,
   () => queryCollection('pages').path(path).first(),
   { watch: [() => path] }
 )
+
+console.log('page: ', page.value)
 
 useSeoMeta({
   title: page.value?.title,

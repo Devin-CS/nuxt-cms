@@ -29,7 +29,7 @@
       icon="o_search"/>
     <q-btn
       label="Find a Donor"
-      color="secondary"/>
+      color="positive"/>
 
     <q-btn
       class="lt-md"

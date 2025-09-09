@@ -15,7 +15,7 @@ export default defineContentConfig({
         meta: z.object({
           title: z.string(),
           description: z.string(),
-          enabled: z.oboolean()
+          enabled: z.boolean()
         })
       }),
       type: 'data',

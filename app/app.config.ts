@@ -3,8 +3,9 @@ export default defineAppConfig({
   nuxtQuasar: {
     brand: {
       primary: '#18332F',
-      secondary: '#0093B2',
-      accent: '#BD4D24'
+      secondary: '#618B7E',
+      accent: '#BD4D24',
+      positive: '#0093B2'
     }
   }
 })

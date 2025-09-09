@@ -43,6 +43,4 @@ const { data: menu } = await useAsyncData<Menu[]>('navigation', () => {
 const { data: disclaimers } = await useAsyncData('disclaimers', () => {
   return queryCollection('disclaimers').all()
 })
-
-console.log('disclaimers: ', disclaimers.value)
 </script>
