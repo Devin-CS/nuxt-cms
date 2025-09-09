@@ -9,6 +9,15 @@ export default defineNuxtConfig({
     experimental: { nativeSqlite: true }
   },
 
+  hooks: {
+    'components:extend': (components) => {
+      const globals = components.filter(c => [
+        'QBtn', 'QCard'
+      ].includes(c.pascalName))
+      globals.forEach(c => c.global = true)
+    }
+  },
+
   quasar: {
     iconSet: 'material-icons-outlined',
     sassVariables: true,
