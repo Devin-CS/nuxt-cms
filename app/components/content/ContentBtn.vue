@@ -3,16 +3,14 @@
   :color
   :label
   :flat
-  :icon-right="iconRight"/>
+  :icon-right/>
 </template>
 
 <script setup lang="ts">
-const { arrow } = defineProps<{
+defineProps<{
   label: string
   flat?: boolean
-  arrow?: boolean
+  iconRight?: 'o_arrow_right_alt' | string
   color: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning' | 'dark'
 }>()
-
-const iconRight = computed(() => arrow ? 'o_arrow_right_alt' : undefined)
 </script>
