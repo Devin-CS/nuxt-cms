@@ -6,7 +6,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/quasar.variables.scss'],
 
   content: {
-    experimental: { nativeSqlite: true }
+    experimental: { nativeSqlite: true },
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
   },
 
   hooks: {
