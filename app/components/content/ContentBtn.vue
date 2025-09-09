@@ -1,5 +1,6 @@
 <template>
 <q-btn
+  :color
   :label
   :flat
   :icon-right="iconRight"/>
@@ -10,6 +11,7 @@ const { arrow } = defineProps<{
   label: string
   flat?: boolean
   arrow?: boolean
+  color: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning' | 'dark'
 }>()
 
 const iconRight = computed(() => arrow ? 'o_arrow_right_alt' : undefined)
