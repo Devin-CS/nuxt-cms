@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   hooks: {
     'components:extend': (components) => {
       const globals = components.filter(c => [
-        'QBtn', 'QCard'
+        'QBtn', 'q-btn'
       ].includes(c.pascalName))
       globals.forEach(c => c.global = true)
     }
