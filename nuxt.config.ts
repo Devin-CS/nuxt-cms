@@ -4,8 +4,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
 
   components: [
-    { path: 'app/components/content' },
-    { path: 'app/components/global', global: true }
+    { path: 'app/components/content/global', global: true }
   ],
 
   css: ['~/assets/css/quasar.variables.scss'],
