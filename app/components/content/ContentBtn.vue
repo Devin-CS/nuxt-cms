@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-const { arrow, color = 'primary' } = defineProps<{
-  label: string
+const { label = 'Button', arrow, color = 'primary' } = defineProps<{
+  label?: string
   flat?: boolean
   arrow?: boolean
   color?: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
