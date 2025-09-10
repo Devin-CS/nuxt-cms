@@ -1,6 +1,7 @@
 <template>
 <q-card
   flat
+  bordered
   square>
   <slot name="media"/>
 

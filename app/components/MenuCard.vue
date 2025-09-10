@@ -1,7 +1,7 @@
 <template>
 <q-card flat>
   <q-card-section class="text-h4 text-weight-bold q-pb-none">
-    <content-btn
+    <c-btn
       dense
       :label="title"
       :to="path"
