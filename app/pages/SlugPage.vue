@@ -1,5 +1,15 @@
 <template>
 <q-page>
+  <template v-if="page?.disclaimers">
+    <template
+      v-for="{ meta } in disclaimers"
+      :key="meta.title">
+      <disclaimer-msg
+        v-if="meta.enabled"
+        :description="meta.description"/>
+    </template>
+  </template>
+
   <ContentRenderer
     v-if="page"
     :value="page"/>
@@ -19,9 +29,13 @@ const { data: page } = await useAsyncData(path,
 
 console.log('page: ', page.value)
 
+const { data: disclaimers } = await useAsyncData('disclaimers', () => {
+  return queryCollection('disclaimers').all()
+})
+
 useSeoMeta({
-  title: page.value?.title,
-  description: page.value?.description
+  title: page.value?.seo.title,
+  description: page.value?.seo.description
 })
 </script>
 

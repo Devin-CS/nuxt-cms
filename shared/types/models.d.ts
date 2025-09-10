@@ -1,6 +1,13 @@
 // Shared model types for the application
 
-// Mega Menu types used in app layouts/components
+export type BrandColors
+  = 'primary'
+    | 'secondary'
+    | 'accent'
+    | 'positive'
+    | 'negative'
+    | 'info'
+    | 'warning'
 
 export interface Menu {
   title: string

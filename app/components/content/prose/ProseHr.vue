@@ -1,3 +1,0 @@
-<template>
-<q-separator/>
-</template>

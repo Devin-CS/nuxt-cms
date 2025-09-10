@@ -7,7 +7,10 @@ export default defineContentConfig({
       source: {
         include: 'pages/**/*.md',
         prefix: '/'
-      }
+      },
+      schema: z.object({
+        disclaimers: z.boolean()
+      })
     }),
 
     disclaimers: defineCollection({

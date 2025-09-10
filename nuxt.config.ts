@@ -3,10 +3,6 @@ export default defineNuxtConfig({
   extends: ['@cooperco/nuxt-layer-quasar'],
   modules: ['@nuxt/content'],
 
-  components: [
-    { path: 'app/components/content/global', global: true }
-  ],
-
   css: ['~/assets/css/quasar.variables.scss'],
 
   content: {
