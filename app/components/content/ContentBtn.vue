@@ -7,11 +7,11 @@
 </template>
 
 <script setup lang="ts">
-const { arrow } = defineProps<{
+const { arrow, color = 'primary' } = defineProps<{
   label: string
   flat?: boolean
   arrow?: boolean
-  color: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
+  color?: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
 }>()
 
 const iconRight = computed(() => arrow ? 'o_arrow_right_alt' : undefined)
