@@ -10,8 +10,8 @@
 const { arrow } = defineProps<{
   label: string
   flat?: boolean
-  arrow?: 'o_arrow_right_alt' | string
-  color: BrandColors
+  arrow?: boolean
+  color: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
 }>()
 
 const iconRight = computed(() => arrow ? 'o_arrow_right_alt' : undefined)
