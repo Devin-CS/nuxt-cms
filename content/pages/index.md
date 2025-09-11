@@ -8,7 +8,7 @@ disclaimers: true
 ::c-section
 ---
 background: primary
-gap: lg
+maxItemWidth: 300
 
 
 ---

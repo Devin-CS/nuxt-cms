@@ -53,7 +53,15 @@ const cssVars = computed(() => {
     '--c-section-min': toCssSize(props.minItemWidth) ?? '240px'
   }
   const max = toCssSize(props.maxItemWidth)
-  if (max) vars['--c-section-max'] = max
+  if (max) {
+    vars['--c-section-track-max'] = max
+    vars['--c-section-item-max'] = max
+  }
+  else {
+    // When no max is provided, allow tracks to grow to fill available space
+    vars['--c-section-track-max'] = '1fr'
+    // and leave item max unset so it falls back to 'none'
+  }
   return vars
 })
 
@@ -65,7 +73,7 @@ const bgClass = computed(() => props.background === 'transparent' ? 'bg-transpar
   width: 100%;
   display: grid;
   /* Auto-fit columns that never shrink below min width; items wrap naturally */
-  grid-template-columns: repeat(auto-fit, minmax(var(--c-section-min, 240px), var(--c-section-max, var(--c-section-min, 240px))));
+  grid-template-columns: repeat(auto-fit, minmax(var(--c-section-min, 240px), var(--c-section-track-max, 1fr)));
   gap: var(--c-section-gap, 16px);
   justify-content: center;
 
@@ -94,6 +102,6 @@ const bgClass = computed(() => props.background === 'transparent' ? 'bg-transpar
 /* Apply max width to all direct children (slotted) without extra wrappers */
 .c-section :deep(> *) {
   width: 100%;
-  max-width: var(--c-section-max, none);
+  max-width: var(--c-section-item-max, none);
 }
 </style>
