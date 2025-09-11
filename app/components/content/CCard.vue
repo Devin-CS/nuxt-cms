@@ -3,7 +3,7 @@
   flat
   bordered
   square
-  class="bg-primary text-white">
+  class="transparent">
   <slot
     name="media"
     mdc-unwrap="p"/>

@@ -1,7 +1,7 @@
 <template>
 <section
   class="c-section q-py-lg"
-  :class="bgClass"
+  :class="[bgClass, textClass]"
   :style="cssVars">
   <slot/>
 </section>
@@ -11,6 +11,8 @@
 const props = withDefaults(defineProps<{
   /** Background color using Quasar brand palette or transparent */
   background?: 'transparent' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
+  /** Text color to apply to content; cascades to children */
+  text?: 'white' | 'black' | 'dark' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
   /** Gap between items (px number or any CSS size). Default 16px */
   gap?: number | string
   /** Minimum width for each item (px number or any CSS size). Default 240px */
@@ -66,6 +68,8 @@ const cssVars = computed(() => {
 })
 
 const bgClass = computed(() => props.background === 'transparent' ? 'bg-transparent' : `bg-${props.background}`)
+
+const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
 </script>
 
 <style scoped lang="scss">

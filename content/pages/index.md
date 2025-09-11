@@ -3,11 +3,11 @@ navigation: false
 disclaimers: true
 ---
 
-
-
 ::c-section
 ---
 background: primary
+text: white
+class: text-center
 ---
 # California Cryobank: Partner with the #1 sperm bank in the world
 ::
@@ -15,8 +15,9 @@ background: primary
 ::c-section
 ---
 background: primary
-maxItemWidth: 350
-
+text: white
+maxItemWidth: 300
+gap: xl
 ---
   :::c-card
   ---
