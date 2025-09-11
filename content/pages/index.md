@@ -3,22 +3,11 @@ navigation: false
 disclaimers: true
 ---
 
-::c-section
----
-background: primary
-text: white
-class: text-center
----
+::c-section{.text-center background="primary" text="white"}
 # California Cryobank: Partner with the #1 sperm bank in the world
 ::
 
-::c-section
----
-background: primary
-text: white
-maxItemWidth: 300
-gap: xl
----
+::c-section{:maxItemWidth='300' background="primary" gap="xl" text="white"}
   :::c-card
   ---
   title: Donor Sperm
