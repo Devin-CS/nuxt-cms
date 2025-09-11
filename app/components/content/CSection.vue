@@ -13,15 +13,15 @@ const props = withDefaults(defineProps<{
   background?: 'transparent' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
   /** Text color to apply to content; cascades to children */
   text?: 'white' | 'black' | 'dark' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
-  /** Gap between items (px number or any CSS size). Default 16px */
-  gap?: number | string
+  /** Gap between items (token only: xs | sm | md | lg | xl). Default md (16px) */
+  gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   /** Minimum width for each item (px number or any CSS size). Default 240px */
   minItemWidth?: number | string
   /** Maximum width for each item (px number or any CSS size). Omit for no max (items take as much space as possible) */
   maxItemWidth?: number | string
 }>(), {
   background: 'transparent',
-  gap: 16,
+  gap: 'md',
   minItemWidth: 240
 })
 
@@ -30,7 +30,7 @@ const toCssSize = (v?: number | string) => {
   return typeof v === 'number' ? `${v}px` : v
 }
 
-const GAP_TOKEN_MAP: Record<string, string> = {
+const GAP_TOKEN_MAP: Record<'xs' | 'sm' | 'md' | 'lg' | 'xl', string> = {
   xs: '4px',
   sm: '8px',
   md: '16px',
@@ -38,15 +38,9 @@ const GAP_TOKEN_MAP: Record<string, string> = {
   xl: '48px'
 }
 
-const toGapSize = (g?: number | string) => {
-  if (g === undefined || g === null) return '16px'
-  if (typeof g === 'number') return `${g}px`
-  const key = String(g).trim().toLowerCase()
-  const mapped = GAP_TOKEN_MAP[key]
-  if (mapped) return mapped
-  // if plain number-like string, treat as px
-  if (/^\d+(\.\d+)?$/.test(key)) return `${key}px`
-  return key
+const toGapSize = (g?: 'xs' | 'sm' | 'md' | 'lg' | 'xl') => {
+  const key = g ?? 'md'
+  return GAP_TOKEN_MAP[key]
 }
 
 const cssVars = computed(() => {
