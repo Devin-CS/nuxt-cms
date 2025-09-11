@@ -2,7 +2,8 @@
 <q-card
   flat
   bordered
-  square>
+  square
+  class="bg-primary text-white">
   <slot
     name="media"
     mdc-unwrap="p"/>
