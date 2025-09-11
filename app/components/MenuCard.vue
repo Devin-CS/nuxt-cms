@@ -5,6 +5,8 @@
       dense
       :label="title"
       :to="path"
+      color="white"
+      arrow
       flat/>
   </q-card-section>
   <q-card-section class="q-px-md q-pt-sm">
