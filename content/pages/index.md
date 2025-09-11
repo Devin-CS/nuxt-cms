@@ -8,8 +8,7 @@ disclaimers: true
 ::c-section
 ---
 background: primary
-maxItemWidth: 300
-
+maxItemWidth: 350
 
 ---
   :::c-card

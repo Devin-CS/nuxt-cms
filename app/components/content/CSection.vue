@@ -104,4 +104,14 @@ const bgClass = computed(() => props.background === 'transparent' ? 'bg-transpar
   width: 100%;
   max-width: var(--c-section-item-max, none);
 }
+
+/* XS phones: make items full width regardless of maxItemWidth */
+@media (max-width: 599.98px) {
+  .c-section {
+    grid-template-columns: 1fr;
+  }
+  .c-section :deep(> *) {
+    max-width: none;
+  }
+}
 </style>
