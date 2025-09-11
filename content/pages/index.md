@@ -7,7 +7,7 @@ disclaimers: true
 # California Cryobank: Partner with the #1 sperm bank in the world
 ::
 
-::c-section{background="primary" gap="xl" max-item-width="300px" text="white"}
+::c-section{background="primary" gap="xl" text="white"}
   :::c-card
   ---
   title: Donor Sperm
