@@ -1,22 +1,19 @@
+import { field, group } from '@nuxt/content/preview'
+
 export default defineNuxtSchema({
   appConfig: {
-    disclaimers: {
-      $schema: {
-        title: 'Disclaimers',
-        description: 'Zero or more disclaimers that can be toggled on/off.',
-        type: 'array',
-        items: {
-          type: 'object',
-          title: 'Disclaimer',
-          properties: {
-            enabled: { type: 'boolean', title: 'Enabled', default: true },
-            text: { type: 'string', title: 'Message' }
-          },
-          required: ['text']
-        },
-        default: []
-      },
-      default: []
-    }
+    parent: group({
+      title: 'Disclaimer',
+      description: 'UI configuration',
+      fields: {
+        enabled: field({
+          type: 'boolean',
+          title: 'Enabled',
+          description: 'Primary color of your UI.',
+          default: 'false',
+          required: ['sky', 'mint', 'rose', 'amber']
+        })
+      }
+    })
   }
 })
