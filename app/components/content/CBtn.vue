@@ -1,18 +1,3 @@
 <template>
-<q-btn
-  :color
-  :label
-  :flat
-  :icon-right="iconRight"/>
+<q-btn/>
 </template>
-
-<script setup lang="ts">
-const { label = 'Button', arrow, color = 'primary' } = defineProps<{
-  label?: string
-  flat?: boolean
-  arrow?: boolean
-  color?: 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning' | 'white'
-}>()
-
-const iconRight = computed(() => arrow ? 'o_arrow_right_alt' : undefined)
-</script>
