@@ -8,7 +8,7 @@
       <img
         alt="Logo"
         src="@/assets/logo.svg"
-        width="300">
+        :width="$q.screen.xs ? 246 : 300">
     </q-toolbar-title>
 
     <menu-btn
@@ -24,10 +24,12 @@
       round
       icon="o_person"/>
     <q-btn
+      class="gt-xs"
       flat
       round
       icon="o_search"/>
     <q-btn
+      class="gt-xs"
       label="Find a Donor"
       color="positive"/>
 
@@ -49,6 +51,9 @@
 </template>
 
 <script setup lang="ts">
+import { useQuasar } from 'quasar'
+
 const { menu = [] } = defineProps<{ menu?: Menu[] }>()
 defineEmits<{ toggleDrawer: [] }>()
+const $q = useQuasar()
 </script>
