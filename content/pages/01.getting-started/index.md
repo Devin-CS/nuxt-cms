@@ -4,3 +4,5 @@ navigation: false
 ---
 
 # Getting Started
+
+::c-btn
