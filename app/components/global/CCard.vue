@@ -1,7 +1,6 @@
 <template>
 <q-card
   flat
-  bordered
   square
   class="transparent">
   <slot
