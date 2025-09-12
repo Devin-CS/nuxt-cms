@@ -2,9 +2,11 @@
 <q-page>
   <template v-if="page?.disclaimers">
     <template
-      v-for="(d, i) in disclaimers"
-      :key="i">
-      <disclaimer-msg :description="d.text"/>
+      v-for="{ meta } in disclaimers"
+      :key="meta.title">
+      <disclaimer-msg
+        v-if="meta.enabled"
+        :description="meta.description"/>
     </template>
   </template>
 
@@ -25,14 +27,10 @@ const { data: page } = await useAsyncData(path,
   { watch: [() => path] }
 )
 
-type Disclaimer = { enabled: boolean, text: string }
-interface AppConf { disclaimers?: { one?: Disclaimer, two?: Disclaimer, three?: Disclaimer } }
+console.log('page: ', page.value)
 
-const app = useAppConfig() as unknown as AppConf
-const disclaimers = computed<Disclaimer[]>(() => {
-  const d = app.disclaimers ?? {}
-  const arr = [d.one, d.two, d.three].filter((x): x is Disclaimer => !!(x && x.enabled && x.text && String(x.text).trim().length))
-  return arr
+const { data: disclaimers } = await useAsyncData('disclaimers', () => {
+  return queryCollection('disclaimers').all()
 })
 
 useSeoMeta({
