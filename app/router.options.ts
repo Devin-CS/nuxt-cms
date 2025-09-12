@@ -17,12 +17,6 @@ export default {
           component: () => import('~/pages/SlugPage.vue')
         },
         {
-          name: 'prose',
-          path: 'prose',
-          props: routeProps,
-          component: () => import('~/pages/ProsePage.vue')
-        },
-        {
           name: 'slug',
           path: ':slug(.*)*',
           props: routeProps,

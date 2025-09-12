@@ -29,7 +29,7 @@ const toggleDrawer = () => {
 }
 
 const { data: menu } = await useAsyncData<Menu[]>('navigation', () => {
-  return queryCollectionNavigation('pages', ['description'])
+  return queryCollectionNavigation('pages', ['description', 'header'])
 })
 </script>
 

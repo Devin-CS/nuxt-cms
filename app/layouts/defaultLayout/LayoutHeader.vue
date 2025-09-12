@@ -54,6 +54,7 @@
 import { useQuasar } from 'quasar'
 
 const { menu = [] } = defineProps<{ menu?: Menu[] }>()
+console.log('menu: ', menu)
 defineEmits<{ toggleDrawer: [] }>()
 const $q = useQuasar()
 </script>

@@ -24,14 +24,16 @@
       class="bg-accent q-mt-sm"
       style="height: 12px"/>
     <div class="row">
-      <menu-card
-        v-for="{ title, path, description } in cardData"
-        :key="title"
-        class="bg-primary col-4"
-        :title
-        :path>
-        {{ description }}
-      </menu-card>
+      <template v-for="{ title, path, description, header } in cardData">
+        <menu-card
+          v-if="header"
+          :key="title"
+          class="bg-primary col-4"
+          :title
+          :path>
+          {{ description }}
+        </menu-card>
+      </template>
     </div>
   </q-menu>
 </q-btn>

@@ -9,7 +9,8 @@ export default defineContentConfig({
         prefix: '/'
       },
       schema: z.object({
-        disclaimers: z.boolean()
+        disclaimers: z.boolean(),
+        header: z.string()
       })
     }),
 

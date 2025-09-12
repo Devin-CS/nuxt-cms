@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-navigation: false
+description: Learn about the sperm donation process and what to know when looking for a donor.
 ---
 
 # Getting Started
