@@ -51,7 +51,7 @@ disclaimers: true
   :::
 ::
 
-::c-section{background="primary" gap="xl" max-item-width="300px" text="white"}
+::c-section{background="white" gap="xl" max-item-width="300px" text="black"}
   :::c-media-card
   ---
   description: Choosing California Cryobank was the easy part in our journey. They
