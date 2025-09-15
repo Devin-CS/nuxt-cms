@@ -7,11 +7,6 @@ disclaimers: true
 # California Cryobank: Partner with the #1 sperm bank in the world
 ::
 
-::c-section{align="center" background="primary" text="white"}
-  ::c-cta{title="Helping you make dreams come true" description="From the big decisions to the detailed logistics, California Cryobank offers reproductive services to help build the family you’ve been dreaming of."}
-  ::
-::
-
 ::c-section{background="primary" gap="xl" max-item-width="300px" text="white"}
   :::c-media-card
   ---
@@ -56,7 +51,7 @@ disclaimers: true
   :::
 ::
 
-::c-section{background="white" gap="xl" max-item-width="300px" text="black"}
+::c-section{background="primary" gap="xl" max-item-width="300px" text="white"}
   :::c-media-card
   ---
   description: Choosing California Cryobank was the easy part in our journey. They
