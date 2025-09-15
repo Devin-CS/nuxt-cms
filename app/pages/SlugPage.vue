@@ -27,8 +27,6 @@ const { data: page } = await useAsyncData(path,
   { watch: [() => path] }
 )
 
-console.log('page: ', page.value)
-
 const { data: disclaimers } = await useAsyncData('disclaimers', () => {
   return queryCollection('disclaimers').all()
 })
