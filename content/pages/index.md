@@ -8,8 +8,16 @@ disclaimers: true
 ::
 
 ::c-section{align="center" background="primary" text="white"}
- :::c-cta{title="Helping you make dreams come true" description="From the big decisions to the detailed logistics, California Cryobank offers reproductive services to help build the family you’ve been dreaming of."}
- :::
+  :::c-cta
+  ---
+  description: From the big decisions to the detailed logistics, California
+    Cryobank offers reproductive services to help build the family you’ve been
+    dreaming of.
+  title: Helping you make dreams come true
+  ---
+    ::::c-btn{arrow color="secondary" label="View all services"}
+    ::::
+  :::
 ::
 
 ::c-section{background="primary" gap="xl" max-item-width="300px" text="white"}
