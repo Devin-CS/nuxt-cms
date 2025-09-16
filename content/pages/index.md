@@ -10,6 +10,7 @@ disclaimers: true
 ::c-content-section
 ---
 background: primary
+text: white
 description: From the big decisions to the detailed logistics, California
   Cryobank offers reproductive services to help build the family you’ve been
   dreaming of.
