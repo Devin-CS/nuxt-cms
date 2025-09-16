@@ -17,7 +17,7 @@ description: From the big decisions to the detailed logistics, California
 title: Helping you make dreams come true
 ---
 #buttons
-  :::c-btn{arrow label="View all services"}
+  :::c-btn{arrow label="View all services" color="secondary"}
   :::
 ::
 

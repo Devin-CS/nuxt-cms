@@ -1,13 +1,17 @@
 <template>
-<section :class="[bgClass, textClass]">
-  <q-card>
+<section
+  :class="[bgClass, textClass]">
+  <q-card
+    class="transparent q-mx-auto"
+    style="max-width: 900px"
+    flat>
     <q-card-section>
-      <h2 class="text-h2">
+      <h2 class="text-h2 text-center q-mb-sm">
         {{ title }}
       </h2>
       <p
         v-if="description"
-        class="text-subtitle2">
+        class="text-subtitle1 text-center">
         {{ description }}
       </p>
     </q-card-section>
@@ -22,7 +26,7 @@
 
 <script setup lang="ts">
 const {
-  background = 'transparent',
+  background,
   text
 } = defineProps<{
   /** CTA title text */
@@ -35,7 +39,7 @@ const {
   text?: 'white' | 'black' | 'dark' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
 }>()
 
-const bgClass = computed(() => background === 'transparent' ? 'bg-transparent' : `bg-${background}`)
+const bgClass = computed(() => background ? `bg-${background}` : undefined)
 
 const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>
