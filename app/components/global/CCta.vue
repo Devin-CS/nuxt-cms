@@ -13,7 +13,9 @@
   </q-card-section>
 
   <!-- Button slot (for CBtn or any action) -->
-  <q-card-actions class="q-pt-sm">
+  <q-card-actions
+    class="q-pt-sm"
+    align="center">
     <slot/>
   </q-card-actions>
 </q-card>
