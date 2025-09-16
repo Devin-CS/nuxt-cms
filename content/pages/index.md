@@ -66,34 +66,49 @@ title: Helping you make dreams come true
   :::
 ::
 
-::c-section{background="primary" gap="xl" max-item-width="300px" text="white"}
-  :::c-media-card
-  ---
-  description: Choosing California Cryobank was the easy part in our journey. They
-    are one of the best internationally recognized and reputable sperm banks and
-    they came highly recommended from friends, family, and our clinic.
-  title: Sydney and Brit's story
-  ---
-  ![donor-sperm.png](/images/sydney-brits-story.webp)
+::c-content-section
+---
+background: white
+description: We’re honored to have helped tens of thousands of people build the
+  families they deserve. Discover their stories of successes and happiness — we
+  hope you find them as inspiring as we do.
+text: primary
+title: Celebrating each journey
+---
+#buttons
+  :::c-btn{arrow color="secondary" label="Read more"}
   :::
 
-  :::c-media-card
-  ---
-  description: The care we received from California Cryobank was nothing short of
-    extraordinary. The staff walked alongside us with compassion and
-    understanding, providing quick responses and expert guidance at every step.
-  title: Hannah and Eric's story
-  ---
-  ![shipping.png](/images/hanna-erics-story.webp)
-  :::
-
-  :::c-media-card
-  ---
-  description: When I found California Cryobank, it just felt right, and through
-    my process, they continued to prove me right. It was important to me to find a
-    sperm bank partner who cared just as much about me as they did their donors.
-  title: Karen's story
-  ---
-  ![future-family-building.png](/images/karens-story.webp)
+#content
+  :::c-section{gap="xl" max-item-width="300px"}
+    ::::c-media-card
+    ---
+    description: Choosing California Cryobank was the easy part in our journey. They
+      are one of the best internationally recognized and reputable sperm banks and
+      they came highly recommended from friends, family, and our clinic.
+    title: Sydney and Brit's story
+    ---
+    ![donor-sperm.png](/images/sydney-brits-story.webp)
+    ::::
+  
+    ::::c-media-card
+    ---
+    description: The care we received from California Cryobank was nothing short of
+      extraordinary. The staff walked alongside us with compassion and
+      understanding, providing quick responses and expert guidance at every step.
+    title: Hannah and Eric's story
+    ---
+    ![donor-sperm.png](/images/hanna-erics-story.webp)
+    ::::
+  
+    ::::c-media-card
+    ---
+    description: When I found California Cryobank, it just felt right, and through
+      my process, they continued to prove me right. It was important to me to find a
+      sperm bank partner who cared just as much about me as they did their donors.
+    title: Karen's story
+    ---
+    ![donor-sperm.png](/images/karens-story.webp)
+    ::::
   :::
 ::
