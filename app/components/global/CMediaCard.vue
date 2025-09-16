@@ -5,7 +5,7 @@
   class="rounded-borders overflow-hidden">
   <!-- Image slot (default) -->
   <q-card-section class="q-pa-none">
-    <slot/>
+    <slot mdc-unwrap="p"/>
   </q-card-section>
 
   <!-- Title -->
@@ -14,7 +14,8 @@
   </q-card-section>
 
   <!-- Description -->
-  <q-card-section class="q-pt-sm text-body2 text-secondary">
+  <q-card-section
+    class="q-pt-sm text-body2 text-secondary">
     {{ props.description }}
   </q-card-section>
 </q-card>
