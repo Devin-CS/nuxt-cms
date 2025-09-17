@@ -7,7 +7,7 @@ disclaimers: true
 # California Cryobank: Partner with the #1 sperm bank in the world
 ::
 
-::c-content-section
+::c-section
 ---
 background: primary
 description: From the big decisions to the detailed logistics, California
@@ -66,7 +66,7 @@ title: Helping you make dreams come true
   :::
 ::
 
-::c-content-section
+::c-section
 ---
 background: white
 description: We’re honored to have helped tens of thousands of people build the
@@ -113,7 +113,7 @@ title: Celebrating each journey
   :::
 ::
 
-::c-content-section
+::c-section
 ---
 description: We know you have just what it takes to be a parent. We’re here to
   guide you every step of the way.
@@ -122,7 +122,7 @@ title: Let’s get started
 #buttons
 ::
 
-::c-content-section
+::c-section
 ---
 description: We understand that creating a family is more than a moment — it’s a
   journey. From the moment you become a part of the California Cryobank family
