@@ -3,7 +3,7 @@ navigation: false
 disclaimers: true
 ---
 
-::c-section{align="center" background="primary" text="white"}
+::c-section-content{align="center" background="primary" text="white"}
 # California Cryobank: Partner with the #1 sperm bank in the world
 ::
 
@@ -21,7 +21,7 @@ title: Helping you make dreams come true
   :::
 
 #content
-  :::c-section{gap="xl" max-item-width="300px"}
+  :::c-section-content{gap="xl" max-item-width="300px"}
     ::::c-media-card
     ---
     description: Whether you know exactly what you are looking for, or you’ll know
@@ -80,7 +80,7 @@ title: Celebrating each journey
   :::
 
 #content
-  :::c-section{gap="xl" max-item-width="300px"}
+  :::c-section-content{gap="xl" max-item-width="300px"}
     ::::c-media-card
     ---
     description: Choosing California Cryobank was the easy part in our journey. They
