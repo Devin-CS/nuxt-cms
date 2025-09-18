@@ -3,6 +3,8 @@
   :label
   :rounded="false"
   flat
+  size="lg"
+  padding="md"
   class="text-weight-bold"
   :class="{ 'q-tab--active': menu }"
   @mouseenter="overBtn = true"

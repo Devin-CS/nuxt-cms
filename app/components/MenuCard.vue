@@ -4,6 +4,8 @@
     <c-btn
       arrow
       dense
+      square
+      padding="none sm"
       :label="title"
       :to="path"
       flat/>

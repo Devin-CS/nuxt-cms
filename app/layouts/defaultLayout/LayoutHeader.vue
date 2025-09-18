@@ -22,11 +22,15 @@
     <q-btn
       flat
       round
+      size="md"
+      padding="sm"
       icon="o_person"/>
     <q-btn
       class="gt-xs"
       flat
       round
+      size="md"
+      padding="sm"
       icon="o_search"/>
     <q-btn
       class="gt-xs"

@@ -12,21 +12,17 @@ export default defineNuxtConfig({
     }
   },
 
-  // hooks: {
-  //   'components:extend': (components) => {
-  //     const globals = components.filter(c => ['ContentBtn'].includes(c.pascalName))
-  //
-  //     globals.forEach(c => c.global = true)
-  //   }
-  // },
-
   quasar: {
     iconSet: 'material-icons-outlined',
     sassVariables: true,
     components: {
       defaults: {
         QBtn: {
-          noWrap: true
+          noWrap: true,
+          noCaps: true,
+          size: 'lg',
+          rounded: true,
+          padding: 'sm xl'
         }
       }
     }
