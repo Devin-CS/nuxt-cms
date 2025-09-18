@@ -4,7 +4,7 @@
   :rounded="false"
   flat
   size="lg"
-  padding="md"
+  padding="sm"
   class="text-weight-bold"
   :class="{ 'q-tab--active': menu }"
   @mouseenter="overBtn = true"
@@ -14,16 +14,16 @@
 
   <q-menu
     v-model="menu"
-    :offset="[0, -19]"
+    :offset="[0, -12]"
     square
-    class="bg-primary text-white"
+    class="bg-primary text-white shadow-24"
     no-parent-event
     target=".q-header"
     fit
     @mouseenter="overMenu = true"
     @mouseleave="overMenu = false">
     <div
-      class="bg-accent q-mt-sm"
+      class="bg-accent"
       style="height: 12px"/>
     <div class="row">
       <template v-for="{ title, path, description, header } in cardData">

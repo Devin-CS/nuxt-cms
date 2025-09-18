@@ -15,7 +15,7 @@
       v-for="{ title, path, children = [] } in menu"
       :key="title"
       :to="path"
-      class="gt-sm"
+      class="gt-sm self-center"
       :label="title"
       :card-data="children"/>
 
@@ -34,6 +34,7 @@
       icon="o_search"/>
     <q-btn
       class="gt-xs"
+      size="md"
       label="Find a Donor"
       color="positive"/>
 
