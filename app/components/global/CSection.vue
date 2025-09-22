@@ -33,13 +33,16 @@ const {
   title: string
   /** CTA description text */
   description?: string
-  /** Background color using brand palette or transparent */
-  background?: | 'white' | 'black' | 'dark' | 'transparent' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
+  /** Background color using custom brand palette or transparent */
+  background?: 'transparent' | BrandColor
   /** Text color to apply to content; cascades to children */
-  text?: 'white' | 'black' | 'dark' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
+  text?: BrandColor
 }>()
 
-const bgClass = computed(() => background ? `bg-${background}` : undefined)
+const bgClass = computed(() => {
+  if (!background) return undefined
+  return background === 'transparent' ? 'bg-transparent' : `bg-${background}`
+})
 
 const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>

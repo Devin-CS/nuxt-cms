@@ -9,10 +9,10 @@
 
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  /** Background color using Quasar brand palette or transparent */
-  background?: | 'white' | 'black' | 'dark' | 'transparent' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
+  /** Background color using custom brand palette or transparent */
+  background?: 'transparent' | BrandColor
   /** Text color to apply to content; cascades to children */
-  text?: 'white' | 'black' | 'dark' | 'primary' | 'secondary' | 'accent' | 'positive' | 'negative' | 'info' | 'warning'
+  text?: BrandColor
   /** Gap between items (token only: xs | sm | md | lg | xl). Default md (16px) */
   gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   /** Minimum width for each item (px number or any CSS size). Default 240px */
