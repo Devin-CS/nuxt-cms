@@ -25,6 +25,7 @@
 </template>
 
 <script setup lang="ts">
+// Note: Inline unions are used so Nuxt Studio renders select lists for these props.
 const {
   background,
   text
@@ -34,9 +35,16 @@ const {
   /** CTA description text */
   description?: string
   /** Background color using custom brand palette or transparent */
-  background?: 'transparent' | BrandColor
+  background?:
+    | 'transparent'
+    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
+    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
+    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
   /** Text color to apply to content; cascades to children */
-  text?: BrandColor
+  text?:
+    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
+    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
+    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
 }>()
 
 const bgClass = computed(() => {

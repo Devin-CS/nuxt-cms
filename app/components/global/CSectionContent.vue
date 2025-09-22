@@ -8,11 +8,19 @@
 </template>
 
 <script setup lang="ts">
+// Note: Inline unions are used so Nuxt Studio renders select lists for these props.
 const props = withDefaults(defineProps<{
   /** Background color using custom brand palette or transparent */
-  background?: 'transparent' | BrandColor
+  background?:
+    | 'transparent'
+    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
+    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
+    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
   /** Text color to apply to content; cascades to children */
-  text?: BrandColor
+  text?:
+    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
+    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
+    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
   /** Gap between items (token only: xs | sm | md | lg | xl). Default md (16px) */
   gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   /** Minimum width for each item (px number or any CSS size). Default 240px */
