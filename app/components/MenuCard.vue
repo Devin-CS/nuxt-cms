@@ -2,6 +2,7 @@
 <q-card flat>
   <q-card-section class="text-h4 text-weight-bold q-pb-none">
     <c-btn
+      color="shell"
       arrow
       dense
       square

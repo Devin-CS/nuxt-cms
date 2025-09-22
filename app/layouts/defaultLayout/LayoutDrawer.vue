@@ -1,6 +1,6 @@
 <template>
 <q-drawer
-  class="bg-primary"
+  class="bg-pine"
   :model-value="opened"
   side="left"
   overlay
@@ -19,14 +19,14 @@
 
     <q-tab-panels
       v-model="panel"
-      class="bg-primary text-white">
+      class="bg-pine text-shell">
       <q-tab-panel name="home">
         <q-list>
           <q-item
             v-for="{ title, children = [] } in menu"
             :key="title"
             v-ripple
-            active-class="text-white"
+            active-class="text-shell"
             clickable
             @click.stop.prevent="panel = title">
             <q-item-section>
@@ -66,7 +66,7 @@
           </q-item>
 
           <q-separator
-            color="white"
+            color="shell"
             inset
             spaced="lg"/>
 
@@ -75,7 +75,7 @@
             v-for="child in children"
             :key="child.title"
             v-ripple
-            active-class="text-white"
+            active-class="text-shell"
             :to="child.path"
             clickable>
             <q-item-section>
@@ -94,7 +94,7 @@
     </q-tab-panels>
 
     <q-separator
-      color="white"
+      color="shell"
       inset
       spaced="lg"/>
 
@@ -102,14 +102,14 @@
       <q-btn
         class="full-width"
         label="Find a Donor"
-        color="positive"/>
+        color="juniper"/>
       <q-input
         v-model="searchText"
         placeholder="Search for donor by number"
         class="q-mt-md"
         square
         dense
-        bg-color="white"
+        bg-color="shell"
         filled>
         <template #append>
           <q-btn

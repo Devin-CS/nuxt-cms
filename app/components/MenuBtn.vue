@@ -16,7 +16,7 @@
     v-model="menu"
     :offset="[0, -12]"
     square
-    class="bg-primary text-white shadow-24"
+    class="bg-pine text-shell shadow-24"
     no-parent-event
     target=".q-header"
     fit
@@ -30,7 +30,7 @@
         <menu-card
           v-if="header"
           :key="title"
-          class="bg-primary col-4"
+          class="bg-pine col-4"
           :title
           :path>
           {{ description }}

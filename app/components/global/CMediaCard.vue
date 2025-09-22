@@ -9,13 +9,13 @@
   </q-card-section>
 
   <!-- Title -->
-  <q-card-section class="q-pt-md q-pb-none text-h6 text-weight-medium text-primary">
+  <q-card-section class="q-pt-md q-pb-none text-h6 text-weight-medium text-pine">
     {{ props.title }}
   </q-card-section>
 
   <!-- Description -->
   <q-card-section
-    class="q-pt-sm text-body2 text-secondary">
+    class="q-pt-sm text-body2 text-pine">
     {{ props.description }}
   </q-card-section>
 </q-card>

@@ -2,7 +2,7 @@
 <q-header
   elevated
   height-hint="62"
-  class="bg-primary text-white">
+  class="bg-pine text-shell">
   <q-toolbar>
     <q-toolbar-title>
       <img
@@ -36,7 +36,7 @@
       class="gt-xs"
       size="md"
       label="Find a Donor"
-      color="positive"/>
+      color="aqua"/>
 
     <q-btn
       class="lt-md"

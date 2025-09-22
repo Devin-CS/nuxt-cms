@@ -3,10 +3,10 @@ export default defineAppConfig({
   nuxtQuasar: {
     brand: {
       // Default brand keys (kept as-is)
-      primary: '#18332F', // Pine
-      secondary: '#618B7E', // Juniper
-      accent: '#BD4D24',
-      positive: '#0093B2',
+      // primary: '#18332F', // pine
+      // secondary: '#618B7E', // juniper
+      // accent: '#BD4D24',
+      // positive: '#0093B2', // aqua
 
       // Extended brand palette from design spec
       pine: '#18332F',
