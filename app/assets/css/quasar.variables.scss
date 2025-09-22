@@ -39,3 +39,50 @@
   font-weight: 600;
   letter-spacing: 0.01em;
 }
+
+/* Custom brand utilities (work even if Quasar doesn't emit bg-/text- classes).
+   Uses Quasar CSS variables when available, with hex fallbacks. */
+.bg-pine    { background-color: var(--q-color-pine, #18332F) !important; }
+.text-pine  { color:            var(--q-color-pine, #18332F) !important; }
+
+.bg-elm     { background-color: var(--q-color-elm, #5D7975) !important; }
+.text-elm   { color:            var(--q-color-elm, #5D7975) !important; }
+
+.bg-eucalyptus   { background-color: var(--q-color-eucalyptus, #9DB0AC) !important; }
+.text-eucalyptus { color:            var(--q-color-eucalyptus, #9DB0AC) !important; }
+
+.bg-willow  { background-color: var(--q-color-willow, #BCC9C5) !important; }
+.text-willow{ color:            var(--q-color-willow, #BCC9C5) !important; }
+
+.bg-birch   { background-color: var(--q-color-birch, #E9EBE8) !important; }
+.text-birch { color:            var(--q-color-birch, #E9EBE8) !important; }
+
+.bg-juniper { background-color: var(--q-color-juniper, #618B7E) !important; }
+.text-juniper{ color:           var(--q-color-juniper, #618B7E) !important; }
+
+.bg-aqua    { background-color: var(--q-color-aqua, #0093B2) !important; }
+.text-aqua  { color:            var(--q-color-aqua, #0093B2) !important; }
+
+.bg-violet  { background-color: var(--q-color-violet, #772583) !important; }
+.text-violet{ color:            var(--q-color-violet, #772583) !important; }
+
+.bg-poppy   { background-color: var(--q-color-poppy, #DC4405) !important; }
+.text-poppy { color:            var(--q-color-poppy, #DC4405) !important; }
+
+.bg-shadow  { background-color: var(--q-color-shadow, #373A36) !important; }
+.text-shadow{ color:            var(--q-color-shadow, #373A36) !important; }
+
+.bg-fern    { background-color: var(--q-color-fern, #9AB9AD) !important; }
+.text-fern  { color:            var(--q-color-fern, #9AB9AD) !important; }
+
+.bg-sky     { background-color: var(--q-color-sky, #8BD3E6) !important; }
+.text-sky   { color:            var(--q-color-sky, #8BD3E6) !important; }
+
+.bg-aster   { background-color: var(--q-color-aster, #A77BCA) !important; }
+.text-aster { color:            var(--q-color-aster, #A77BCA) !important; }
+
+.bg-saffron { background-color: var(--q-color-saffron, #E87222) !important; }
+.text-saffron{ color:           var(--q-color-saffron, #E87222) !important; }
+
+.bg-shell   { background-color: var(--q-color-shell, #FCF6EF) !important; }
+.text-shell { color:            var(--q-color-shell, #FCF6EF) !important; }
