@@ -22,12 +22,7 @@ export default defineNuxtSchema({
           type: 'string',
           title: 'Style',
           description: 'Visual style of the alert banner',
-          options: [
-            { value: 'info', label: 'Info' },
-            { value: 'warning', label: 'Warning' },
-            { value: 'positive', label: 'Positive' },
-            { value: 'negative', label: 'Negative' }
-          ]
+          required: ['info', 'warning', 'positive', 'negative']
         }),
         message: field({
           type: 'string',
