@@ -6,7 +6,6 @@ export default defineNuxtSchema({
       title: 'Site Alert',
       description:
         'Configure a single, sitewide alert banner. Editors can toggle visibility, choose a style, and set the message.',
-      // icon: 'i-ph-warning-circle',
       fields: {
         enabled: field({
           type: 'boolean',

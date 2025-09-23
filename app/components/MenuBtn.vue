@@ -23,7 +23,7 @@
     @mouseenter="overMenu = true"
     @mouseleave="overMenu = false">
     <div
-      class="bg-accent"
+      class="bg-poppy"
       style="height: 12px"/>
     <div class="row">
       <template v-for="{ title, path, description, header } in cardData">
