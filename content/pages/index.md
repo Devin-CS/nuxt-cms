@@ -72,7 +72,6 @@ background: shell
 description: We’re honored to have helped tens of thousands of people build the
   families they deserve. Discover their stories of successes and happiness — we
   hope you find them as inspiring as we do.
-text: pine
 title: Celebrating each journey
 ---
 #buttons

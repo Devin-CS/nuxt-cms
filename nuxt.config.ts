@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   extends: ['@cooperco/nuxt-layer-quasar'],
   modules: ['@nuxt/content'],
 
-  css: ['~/assets/css/quasar.variables.scss'],
+  css: [
+    '~/assets/css/quasar.variables.scss',
+    '~/assets/css/app.scss'
+  ],
 
   content: {
     experimental: { nativeSqlite: true },

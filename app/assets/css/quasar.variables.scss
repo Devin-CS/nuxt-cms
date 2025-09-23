@@ -40,6 +40,9 @@
   letter-spacing: 0.01em;
 }
 
+/* Instead of black */
+$text-color: #18332F;
+
 /* Custom brand utilities (work even if Quasar doesn't emit bg-/text- classes).
    Uses Quasar CSS variables when available, with hex fallbacks. */
 .bg-pine    { background-color: var(--q-color-pine, #18332F) !important; }
