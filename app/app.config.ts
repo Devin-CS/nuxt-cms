@@ -31,6 +31,6 @@ export default defineAppConfig({
     id: 'default',
     variant: 'info',
     message: 'We will be closed in observance of Labor Day. ',
-    dismissible: ''
+    dismissible: true
   }
 })
