@@ -25,5 +25,12 @@ export default defineAppConfig({
       saffron: '#E87222',
       shell: '#FCF6EF'
     }
+  },
+  alert: {
+    enabled: true,
+    id: 'default',
+    variant: 'info',
+    message: 'This is a sitewide alert. Configure it in Nuxt Studio → Data → alert.',
+    dismissible: true
   }
 })

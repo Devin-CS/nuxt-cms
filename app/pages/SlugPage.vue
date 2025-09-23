@@ -1,15 +1,6 @@
 <template>
 <q-page>
-  <template v-if="page?.disclaimers">
-    <template
-      v-for="{ meta } in disclaimers"
-      :key="meta.title">
-      <disclaimer-msg
-        v-if="meta.enabled"
-        :description="meta.description"/>
-    </template>
-  </template>
-
+  <SiteAlert/>
   <ContentRenderer
     v-if="page"
     :value="page"/>
@@ -20,16 +11,14 @@
 </template>
 
 <script setup lang="ts">
+import SiteAlert from '~/components/SiteAlert.vue'
+
 const { path } = defineProps<{ path: string }>()
 
 const { data: page } = await useAsyncData(path,
   () => queryCollection('pages').path(path).first(),
   { watch: [() => path] }
 )
-
-const { data: disclaimers } = await useAsyncData('disclaimers', () => {
-  return queryCollection('disclaimers').all()
-})
 
 useSeoMeta({
   title: page.value?.seo.title,
