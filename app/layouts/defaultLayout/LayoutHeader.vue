@@ -49,8 +49,7 @@
 
   <q-toolbar
     inset
-    class="bg-accent"
-    color="accent"
+    class="bg-poppy"
     style="min-height: 12px; height: 12px"/>
 </q-header>
 </template>

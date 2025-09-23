@@ -1,8 +1,7 @@
 <template>
 <q-card
   flat
-  bordered
-  class="rounded-borders overflow-hidden">
+  class="overflow-hidden bg-shell">
   <!-- Image slot (default) -->
   <q-card-section class="q-pa-none">
     <slot mdc-unwrap="p"/>

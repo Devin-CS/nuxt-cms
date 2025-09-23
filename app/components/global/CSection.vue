@@ -37,14 +37,14 @@ const {
   /** Background color using custom brand palette or transparent */
   background?:
     | 'transparent'
-    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
-    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
-    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
+    | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
+    | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
+    | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
   /** Text color to apply to content; cascades to children */
   text?:
-    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
-    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
-    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
+    | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
+    | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
+    | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
 }>()
 
 const bgClass = computed(() => {
