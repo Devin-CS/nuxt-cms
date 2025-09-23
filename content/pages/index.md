@@ -114,6 +114,7 @@ title: Celebrating each journey
 
 ::c-section
 ---
+background: birch
 description: We know you have just what it takes to be a parent. We’re here to
   guide you every step of the way.
 title: Let’s get started
@@ -123,6 +124,7 @@ title: Let’s get started
 
 ::c-section
 ---
+background: birch
 description: We understand that creating a family is more than a moment — it’s a
   journey. From the moment you become a part of the California Cryobank family
   and beyond, we offer services that include donor sperm for future use, and
