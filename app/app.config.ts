@@ -30,7 +30,7 @@ export default defineAppConfig({
     enabled: true,
     id: 'default',
     variant: 'info',
-    message: 'This is a sitewide alert. Configure it in Nuxt Studio → Data → alert.',
-    dismissible: ''
+    message: 'We will be closed in observance of Labor Day.',
+    dismissible: false
   }
 })
