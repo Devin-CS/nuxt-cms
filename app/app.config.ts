@@ -31,6 +31,6 @@ export default defineAppConfig({
     id: 'default',
     variant: 'info',
     message: 'This is a sitewide alert. Configure it in Nuxt Studio → Data → alert.',
-    dismissible: true
+    dismissible: ''
   }
 })
