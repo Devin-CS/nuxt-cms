@@ -4,7 +4,7 @@
     v-if="visible && config.enabled && config.message"
     :class="bannerClass"
     inline-actions
-    class="center-banner-avatar">
+    class="center-banner-avatar bg-shell">
     <template #avatar>
       <q-icon
         :name="iconName"
@@ -71,7 +71,7 @@ const dismiss = () => {
 }
 
 const bannerClass = computed(() => {
-  const classes = ['bg-shell', 'text-shadow']
+  const classes = []
   if (config.value.variant === 'warning' || config.value.variant === 'negative') {
     classes.push('text-poppy')
   }
