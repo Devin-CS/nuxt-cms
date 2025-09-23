@@ -1,6 +1,5 @@
 ---
 navigation: false
-disclaimers: true
 ---
 
 ::c-section-content{align="center" background="pine" text="birch"}
