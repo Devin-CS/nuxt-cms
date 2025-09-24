@@ -17,6 +17,10 @@
     class="q-pt-sm text-body2">
     {{ description }}
   </q-card-section>
+
+  <q-card-actions :align="actionsCenterValue">
+    <slot name="actions"/>
+  </q-card-actions>
 </q-card>
 </template>
 
@@ -61,4 +65,5 @@ const {
 const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
 const textClass = computed(() => text ? `text-${text}` : undefined)
 const centerClass = computed(() => center ? 'text-center' : undefined)
+const actionsCenterValue = computed(() => center ? 'center' : undefined)
 </script>
