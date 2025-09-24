@@ -74,46 +74,50 @@ title: Helping you make dreams come true
   :::c-section-content{gap="xl" max-item-width="300px"}
     ::::c-media-card
     ---
+    background: shell
     description: Whether you know exactly what you are looking for, or you’ll know
       him when you find him, the right donor for you is right here. Choose from
       hundreds of highly qualified and thoroughly screened donors in our portfolio.
+    text: pine
     title: Donor Sperm
-    text: shell
     ---
     ![donor-sperm.png](/images/donor-sperm.png)
     ::::
   
     ::::c-media-card
     ---
+    background: shell
     description: California Cryobank ships vials right to your home (U.S. only) or
       your clinic — worldwide! We offer two-day economy or priority overnight
       shipping. We can help find the best option for you.
+    text: pine
     title: Shipping
-    text: shell
     ---
     ![donor-sperm.png](/images/shipping.png)
     ::::
   
     ::::c-media-card
     ---
+    background: shell
     description: Enjoy peace of mind by purchasing multiple vials of your selected
       donor for future siblings and storing them in our state-of-the-art facility.
       Check out our Family Today & Family Tomorrow program which offers free storage
       if you’ve purchased four or more vials with us.
+    text: pine
     title: Future family building
-    text: shell
     ---
     ![donor-sperm.png](/images/future-family-building.png)
     ::::
   
     ::::c-media-card
     ---
+    background: shell
     description: We’re here for your family through every chapter of life. After you
       have your baby, you'll continue to have access to our support team, genetics
       teams, and family resources, plus the option to participate in California
       Cryobank's Sibling Registry.
+    text: pine
     title: Continued support
-    text: shell
     ---
     ![donor-sperm.png](/images/continued-support.png)
     ::::
