@@ -8,7 +8,7 @@
   </q-card-section>
 
   <!-- Title -->
-  <q-card-section class="q-pt-md q-pb-none text-h6 text-weight-medium">
+  <q-card-section class="q-pt-md q-pb-none text-h5 text-weight-medium">
     {{ title }}
   </q-card-section>
 

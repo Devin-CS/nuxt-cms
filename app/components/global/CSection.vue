@@ -6,9 +6,9 @@
     style="max-width: 900px"
     flat>
     <q-card-section>
-      <h2 class="text-h2 text-center q-mb-sm">
+      <h1 class="text-h2 text-center q-mb-sm">
         {{ props.title }}
-      </h2>
+      </h1>
       <p
         v-if="props.description"
         class="text-subtitle1 text-center">
