@@ -8,7 +8,12 @@
 
 <script setup lang="ts">
 // Note: Inline unions are used so Nuxt Studio renders select lists for this prop.
-const props = withDefaults(defineProps<{
+const {
+  label = 'Button',
+  flat = false,
+  color = 'juniper',
+  arrow = false
+} = defineProps<{
   /** Button label shown on the button. Default: "Button" */
   label?: string
   /** Flat style (no background). Default: false */
@@ -20,12 +25,7 @@ const props = withDefaults(defineProps<{
     | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
   /** Toggle to show a right arrow icon. Default: false */
   arrow?: boolean
-}>(), {
-  label: 'Button',
-  flat: false,
-  color: 'juniper',
-  arrow: false
-})
+}>()
 
-const iconRight = computed(() => props.arrow ? 'o_arrow_right_alt' : undefined)
+const iconRight = computed(() => arrow ? 'o_arrow_right_alt' : undefined)
 </script>
