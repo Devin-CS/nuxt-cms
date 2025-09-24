@@ -1,6 +1,6 @@
 <template>
 <q-icon
-  :size="qSize"
+  :size="sizeValue"
   :color="color">
   <slot mdc-unwrap="p"/>
 </q-icon>
@@ -14,9 +14,10 @@
  * project's brand palette. Accepts any QIcon props via attrs (e.g., name, left, right).
  */
 
-defineOptions({ name: 'CIcon' })
-
-const props = withDefaults(defineProps<{
+const {
+  size = 24,
+  color = 'pine'
+} = defineProps<{
   /** Icon size; number is px, string accepts any CSS size (e.g., '20px', '1.5rem') */
   size?: number | string
   /** Text color using custom brand palette */
@@ -24,10 +25,7 @@ const props = withDefaults(defineProps<{
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
     | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
-}>(), {
-  size: 24,
-  color: 'pine'
-})
+}>()
 
-const qSize = computed(() => toCssSize(props.size) || '24px')
+const sizeValue = computed(() => toCssSize(size) || '24px')
 </script>

@@ -26,8 +26,12 @@
 
 <script setup lang="ts">
 /**
- * Note: Inline unions are used so Nuxt Studio renders select lists for these props.
- * Using a props object keeps reactivity and consistency with other components.
+ * CSection
+ *
+ * A simple section wrapper with optional title, description, and button area.
+ * Content is provided via the default slot or named "content" slot.
+ *
+ * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
 const props = withDefaults(defineProps<{
   /** CTA title text */

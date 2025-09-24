@@ -8,8 +8,24 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
-  /** Background color using custom brand palette or transparent */
+/**
+ * CSectionContent
+ *
+ * A responsive section layout that arranges slotted content in a grid of
+ * cards or other items. The grid automatically adjusts the number of columns
+ * based on available width, with configurable minimum and maximum item widths.
+ *
+ * Optimized for Nuxt Studio editors: use props for background and text colors
+ * to avoid confusion.
+ */
+
+const {
+  background = 'transparent',
+  text,
+  gap = 'md',
+  minItemWidth = 240,
+  maxItemWidth
+} = defineProps<{
   background?:
     | 'transparent'
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
@@ -26,18 +42,14 @@ const props = withDefaults(defineProps<{
   minItemWidth?: number | string
   /** Maximum width for each item (px number or any CSS size). Omit for no max (items take as much space as possible) */
   maxItemWidth?: number | string
-}>(), {
-  background: 'transparent',
-  gap: 'md',
-  minItemWidth: 240
-})
+}>()
 
 const cssVars = computed(() => {
   const vars: Record<string, string> = {
-    '--c-section-gap': toGapSize(props.gap),
-    '--c-section-min': toCssSize(props.minItemWidth) ?? '240px'
+    '--c-section-gap': toGapSize(gap),
+    '--c-section-min': toCssSize(minItemWidth) ?? '240px'
   }
-  const max = toCssSize(props.maxItemWidth)
+  const max = toCssSize(maxItemWidth)
   if (max) {
     vars['--c-section-track-max'] = max
     vars['--c-section-item-max'] = max
@@ -50,10 +62,8 @@ const cssVars = computed(() => {
   return vars
 })
 
-const bgClass = computed(
-  () => (!props.background || props.background === 'transparent' ? 'transparent' : `bg-${props.background}`)
-)
-const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
+const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
+const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>
 
 <style scoped lang="scss">

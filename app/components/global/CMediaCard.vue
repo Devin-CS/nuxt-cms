@@ -9,13 +9,13 @@
 
   <!-- Title -->
   <q-card-section class="q-pt-md q-pb-none text-h6 text-weight-medium">
-    {{ props.title }}
+    {{ title }}
   </q-card-section>
 
   <!-- Description -->
   <q-card-section
     class="q-pt-sm text-body2">
-    {{ props.description }}
+    {{ description }}
   </q-card-section>
 </q-card>
 </template>
@@ -32,10 +32,12 @@
  * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
 
-defineOptions({ name: 'CMediaCard' })
-
-// Inline unions help Nuxt Studio render friendly select lists for these props.
-const props = withDefaults(defineProps<{
+const {
+  title = '',
+  description = '',
+  background = 'transparent',
+  text = 'pine'
+} = defineProps<{
   /** Card title text */
   title?: string
   /** Description paragraph */
@@ -51,13 +53,8 @@ const props = withDefaults(defineProps<{
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
     | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
-}>(), {
-  title: '',
-  description: '',
-  background: 'transparent',
-  text: 'pine'
-})
+}>()
 
-const bgClass = computed(() => (!props.background || props.background === 'transparent' ? 'transparent' : `bg-${props.background}`))
-const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
+const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
+const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>

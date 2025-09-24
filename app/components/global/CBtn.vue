@@ -7,7 +7,15 @@
 </template>
 
 <script setup lang="ts">
-// Note: Inline unions are used so Nuxt Studio renders select lists for this prop.
+/**
+ * CBtn
+ *
+ * A simple button wrapper around Quasar's QBtn to standardize colors and
+ * optionally add a right arrow icon.
+ *
+ * Optimized for Nuxt Studio editors: use props for label to avoid confusion.
+ */
+
 const {
   label = 'Button',
   flat = false,
