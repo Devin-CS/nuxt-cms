@@ -9,7 +9,7 @@ text: shell
 title: "California Cryobank: Partner with the #1 sperm bank in the world"
 ---
 #buttons
-  :::c-section-content
+  :::c-section-content{maxItemWidth="345"}
     ::::c-media-card
     ---
     center: true
@@ -22,6 +22,10 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     ---
       :::::c-icon{color="eucalyptus" size="75px"}
       ![extensive-experience.svg](/svg/extensive-experience.svg)
+      :::::
+    
+    #actions
+      :::::c-btn{arrow flat label="Learn more"}
       :::::
     ::::
   
@@ -41,6 +45,10 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
       :::::c-icon{color="eucalyptus" size="75px"}
       ![extensive-experience.svg](/svg/diverse-donor-selection.svg)
       :::::
+    
+    #actions
+      :::::c-btn{arrow flat label="Browse donors"}
+      :::::
     ::::
   
     ::::c-media-card
@@ -55,6 +63,10 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     ---
       :::::c-icon{color="eucalyptus" size="75px"}
       ![our-team.svg](/svg/our-team.svg)
+      :::::
+    
+    #actions
+      :::::c-btn{arrow flat label="Contact us"}
       :::::
     ::::
   :::
