@@ -192,7 +192,9 @@ description: We know you have just what it takes to be a parent. We’re here to
   guide you every step of the way.
 title: Let’s get started
 ---
-#buttons
+#content
+  :::c-tabs
+  :::
 ::
 
 ::c-section

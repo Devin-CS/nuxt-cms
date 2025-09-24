@@ -1,6 +1,7 @@
 <template>
 <q-page>
   <site-alert/>
+
   <content-renderer
     v-if="page"
     :value="page"/>
