@@ -2,8 +2,19 @@
 navigation: false
 ---
 
-::c-section-content{align="center" background="pine" text="birch"}
-# California Cryobank: Partner with the #1 sperm bank in the world
+::c-section
+---
+background: pine
+text: shell
+title: "California Cryobank: Partner with the #1 sperm bank in the world"
+---
+#buttons
+  :::c-section-content
+    ::::c-media-card
+      :::::c-media-avatar
+      :::::
+    ::::
+  :::
 ::
 
 ::c-section
