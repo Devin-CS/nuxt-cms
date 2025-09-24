@@ -32,7 +32,6 @@ const props = withDefaults(defineProps<{
   minItemWidth: 240
 })
 
-
 const cssVars = computed(() => {
   const vars: Record<string, string> = {
     '--c-section-gap': toGapSize(props.gap),
@@ -51,8 +50,9 @@ const cssVars = computed(() => {
   return vars
 })
 
-const bgClass = computed(() => props.background === 'transparent' ? 'bg-transparent' : `bg-${props.background}`)
-
+const bgClass = computed(
+  () => (!props.background || props.background === 'transparent' ? 'transparent' : `bg-${props.background}`)
+)
 const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
 </script>
 

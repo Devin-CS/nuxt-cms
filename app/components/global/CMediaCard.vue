@@ -54,10 +54,10 @@ const props = withDefaults(defineProps<{
 }>(), {
   title: '',
   description: '',
-  background: 'shell',
+  background: 'transparent',
   text: 'pine'
 })
 
-const bgClass = computed(() => props.background === 'transparent' ? 'transparent' : `bg-${props.background}`)
+const bgClass = computed(() => (!props.background || props.background === 'transparent' ? 'transparent' : `bg-${props.background}`))
 const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
 </script>

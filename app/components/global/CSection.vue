@@ -7,12 +7,12 @@
     flat>
     <q-card-section>
       <h2 class="text-h2 text-center q-mb-sm">
-        {{ title }}
+        {{ props.title }}
       </h2>
       <p
-        v-if="description"
+        v-if="props.description"
         class="text-subtitle1 text-center">
-        {{ description }}
+        {{ props.description }}
       </p>
     </q-card-section>
     <q-card-actions align="center">
@@ -25,11 +25,11 @@
 </template>
 
 <script setup lang="ts">
-// Note: Inline unions are used so Nuxt Studio renders select lists for these props.
-const {
-  background,
-  text
-} = defineProps<{
+/**
+ * Note: Inline unions are used so Nuxt Studio renders select lists for these props.
+ * Using a props object keeps reactivity and consistency with other components.
+ */
+const props = withDefaults(defineProps<{
   /** CTA title text */
   title: string
   /** CTA description text */
@@ -45,14 +45,12 @@ const {
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
     | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
-}>()
-
-const bgClass = computed(() => {
-  if (!background) return undefined
-  return background === 'transparent' ? 'bg-transparent' : `bg-${background}`
+}>(), {
+  background: 'transparent'
 })
 
-const textClass = computed(() => text ? `text-${text}` : undefined)
+const bgClass = computed(() => (!props.background || props.background === 'transparent' ? 'transparent' : `bg-${props.background}`))
+const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
 </script>
 
 <style scoped lang="scss">

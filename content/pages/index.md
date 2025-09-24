@@ -78,6 +78,7 @@ title: Helping you make dreams come true
       him when you find him, the right donor for you is right here. Choose from
       hundreds of highly qualified and thoroughly screened donors in our portfolio.
     title: Donor Sperm
+    text: shell
     ---
     ![donor-sperm.png](/images/donor-sperm.png)
     ::::
@@ -88,6 +89,7 @@ title: Helping you make dreams come true
       your clinic — worldwide! We offer two-day economy or priority overnight
       shipping. We can help find the best option for you.
     title: Shipping
+    text: shell
     ---
     ![donor-sperm.png](/images/shipping.png)
     ::::
@@ -99,6 +101,7 @@ title: Helping you make dreams come true
       Check out our Family Today & Family Tomorrow program which offers free storage
       if you’ve purchased four or more vials with us.
     title: Future family building
+    text: shell
     ---
     ![donor-sperm.png](/images/future-family-building.png)
     ::::
@@ -110,6 +113,7 @@ title: Helping you make dreams come true
       teams, and family resources, plus the option to participate in California
       Cryobank's Sibling Registry.
     title: Continued support
+    text: shell
     ---
     ![donor-sperm.png](/images/continued-support.png)
     ::::
