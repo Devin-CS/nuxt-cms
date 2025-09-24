@@ -19,7 +19,7 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     text: shell
     title: Extensive experience
     ---
-      :::::c-media-avatar{background="pine" fontSize="75" text="shell"}
+      :::::c-media-avatar{background="pine" font-size="75" text="shell"}
       ![sperm-circle.svg](/svg/extensive-experience.svg)
       :::::
     ::::
@@ -36,7 +36,7 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     text: shell
     title: Diverse donor selection
     ---
-      :::::c-media-avatar{background="pine" fontSize="75" text="shell"}
+      :::::c-media-avatar{background="pine" font-size="75" text="shell"}
       ![sperm-circle.svg](/svg/diverse-donor-selection.svg)
       :::::
     ::::
@@ -50,7 +50,7 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     text: shell
     title: Our team
     ---
-      :::::c-media-avatar{background="pine" fontSize="75" text="shell"}
+      :::::c-media-avatar{background="pine" font-size="75" text="shell"}
       ![sperm-circle.svg](/svg/our-team.svg)
       :::::
     ::::
