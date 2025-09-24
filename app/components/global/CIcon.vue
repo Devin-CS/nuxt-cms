@@ -2,7 +2,7 @@
 <q-icon
   :size="qSize"
   :color="color">
-  <slot/>
+  <slot mdc-unwrap="p"/>
 </q-icon>
 </template>
 
