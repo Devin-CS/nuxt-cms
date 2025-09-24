@@ -13,6 +13,7 @@ const props = withDefaults(defineProps<{
   alt?: string
   width?: string | number
   height?: string | number
+  testProp?: string
 }>(), {
   src: '',
   alt: ''
