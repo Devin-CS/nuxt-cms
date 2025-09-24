@@ -1,10 +1,10 @@
 <template>
 <q-avatar
-  :size="size"
-  :color="color"
-  :text-color="textColor"
+  :size="sizeValue"
   :rounded="isRounded"
-  :square="isSquare">
+  :square="isSquare"
+  :class="[bgClass, textClass]"
+  :style="inlineStyle">
   <!-- Default slot for the image/content. In Nuxt Studio, drag a media item here. -->
   <slot mdc-unwrap="p"/>
 </q-avatar>
@@ -25,29 +25,52 @@ defineOptions({ name: 'CMediaAvatar' })
 
 // Inline unions help Nuxt Studio render friendly select lists for these props.
 const props = withDefaults(defineProps<{
-  /** Avatar size preset */
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  /** Background color limited to brand palette */
-  color?:
-    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
-    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
-    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
-  /** Text color limited to brand palette */
-  textColor?:
-    | 'pine' | 'elm' | 'eucalyptus' | 'willow' | 'birch'
-    | 'juniper' | 'aqua' | 'violet' | 'poppy' | 'shadow'
-    | 'fern' | 'sky' | 'aster' | 'saffron' | 'shell'
+  /** Avatar size preset or pixel size (number or CSS size) */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number | string
+  /** Background color using custom brand palette or transparent */
+  background?:
+    | 'transparent'
+    | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
+    | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
+    | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
+  /** Text color to apply to content */
+  text?:
+    | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
+    | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
+    | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
+  /** Font size (pixels or CSS size) applied to avatar content */
+  fontSize?: number | string
   /** Avatar shape */
   shape?: 'circle' | 'rounded' | 'square'
 }>(), {
   size: 'md',
-  color: 'shell',
-  textColor: 'pine',
+  background: 'shell',
+  text: 'pine',
   shape: 'circle'
 })
 
 const isRounded = computed(() => props.shape === 'rounded')
 const isSquare = computed(() => props.shape === 'square')
+
+// Helpers to convert numbers or numeric strings into px values
+const toPx = (v?: number | string) => {
+  if (v === undefined || v === null) return undefined
+  if (typeof v === 'number') return `${v}px`
+  const str = String(v).trim()
+  return /^\d+(\.\d+)?$/.test(str) ? `${str}px` : str
+}
+
+const sizeValue = computed(() => toPx(props.size) ?? 'md')
+
+const inlineStyle = computed(() => {
+  const s: Record<string, string> = {}
+  const fs = toPx(props.fontSize)
+  if (fs) s.fontSize = fs
+  return s
+})
+
+const bgClass = computed(() => props.background === 'transparent' ? 'bg-transparent' : `bg-${props.background}`)
+const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
 </script>
 
 <style scoped lang="scss">
