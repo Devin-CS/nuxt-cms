@@ -2,7 +2,7 @@
 navigation: false
 ---
 
-::q-icon
+::c-icon
 ![donor-sperm.png](/svg/our-team.svg)
 ::
 
