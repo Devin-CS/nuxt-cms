@@ -9,7 +9,7 @@ text: shell
 title: "California Cryobank: Partner with the #1 sperm bank in the world"
 ---
 #content
-  :::c-section-content{max-item-width = "345"}
+  :::c-section-content{max-item-width="345"}
     ::::c-media-card
     ---
     center: true
