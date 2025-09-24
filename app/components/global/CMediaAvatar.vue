@@ -1,10 +1,11 @@
 <template>
 <q-avatar
   :size="sizeValue"
+  :font-size="fontSizeValue"
+  :color="colorValue"
+  :text-color="text"
   :rounded="isRounded"
-  :square="isSquare"
-  :class="[bgClass, textClass]"
-  :style="inlineStyle">
+  :square="isSquare">
   <!-- Default slot for the image/content. In Nuxt Studio, drag a media item here. -->
   <slot mdc-unwrap="p"/>
 </q-avatar>
@@ -62,15 +63,8 @@ const toPx = (v?: number | string) => {
 
 const sizeValue = computed(() => toPx(props.size) ?? 'md')
 
-const inlineStyle = computed(() => {
-  const s: Record<string, string> = {}
-  const fs = toPx(props.fontSize)
-  if (fs) s.fontSize = fs
-  return s
-})
-
-const bgClass = computed(() => props.background === 'transparent' ? 'bg-transparent' : `bg-${props.background}`)
-const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
+const fontSizeValue = computed(() => toPx(props.fontSize))
+const colorValue = computed(() => props.background === 'transparent' ? 'transparent' : props.background)
 </script>
 
 <style scoped lang="scss">
