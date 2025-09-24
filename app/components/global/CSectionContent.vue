@@ -8,7 +8,6 @@
 </template>
 
 <script setup lang="ts">
-// Note: Inline unions are used so Nuxt Studio renders select lists for these props.
 const props = withDefaults(defineProps<{
   /** Background color using custom brand palette or transparent */
   background?:
@@ -33,23 +32,6 @@ const props = withDefaults(defineProps<{
   minItemWidth: 240
 })
 
-const toCssSize = (v?: number | string) => {
-  if (v === undefined || v === null) return undefined
-  return typeof v === 'number' ? `${v}px` : v
-}
-
-const GAP_TOKEN_MAP: Record<'xs' | 'sm' | 'md' | 'lg' | 'xl', string> = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '48px'
-}
-
-const toGapSize = (g?: 'xs' | 'sm' | 'md' | 'lg' | 'xl') => {
-  const key = g ?? 'md'
-  return GAP_TOKEN_MAP[key]
-}
 
 const cssVars = computed(() => {
   const vars: Record<string, string> = {

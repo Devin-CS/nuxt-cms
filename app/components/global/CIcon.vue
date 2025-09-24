@@ -29,10 +29,5 @@ const props = withDefaults(defineProps<{
   color: 'pine'
 })
 
-const toCssSize = (v?: number | string) => {
-  if (v === undefined || v === null) return undefined
-  return typeof v === 'number' ? `${v}px` : v
-}
-
 const qSize = computed(() => toCssSize(props.size) || '24px')
 </script>
