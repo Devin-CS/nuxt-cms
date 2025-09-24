@@ -1,6 +1,5 @@
 <template>
-<section
-  :class="[bgClass, textClass]">
+<section :class="[bgClass, textClass]">
   <q-card
     class="transparent q-mx-auto"
     style="max-width: 900px"

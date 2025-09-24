@@ -8,8 +8,8 @@ background: pine
 text: shell
 title: "California Cryobank: Partner with the #1 sperm bank in the world"
 ---
-#buttons
-  :::c-section-content{max-item-width="345"}
+#content
+  :::c-section-content
     ::::c-media-card
     ---
     center: true

@@ -1,5 +1,6 @@
 <template>
 <section
+  style="border: solid 1px red"
   class="c-section q-py-lg"
   :class="[bgClass, textClass]"
   :style="cssVars">
