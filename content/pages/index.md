@@ -2,8 +2,6 @@
 navigation: false
 ---
 
-![our-team](/svg/our-team.svg)
-
 ::c-section
 ---
 background: pine
