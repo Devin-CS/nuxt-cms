@@ -1,7 +1,7 @@
 <template>
 <q-card
   flat
-  :class="['overflow-hidden', bgClass, textClass]">
+  :class="[bgClass, textClass, centerClass]">
   <!-- Image slot (default) -->
   <q-card-section class="q-pa-none">
     <slot mdc-unwrap="p"/>
@@ -35,6 +35,7 @@
 const {
   title = '',
   description = '',
+  center = false,
   background = 'transparent',
   text = 'pine'
 } = defineProps<{
@@ -42,6 +43,8 @@ const {
   title?: string
   /** Description paragraph */
   description?: string
+  /** Centers all content */
+  center?: boolean
   /** Background color using custom brand palette or transparent */
   background?:
     | 'transparent'
@@ -57,4 +60,5 @@ const {
 
 const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
 const textClass = computed(() => text ? `text-${text}` : undefined)
+const centerClass = computed(() => center ? 'text-center' : undefined)
 </script>
