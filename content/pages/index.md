@@ -22,7 +22,11 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     ::::
   
     ::::c-media-card
-    ---
+    ---Now I need you to create an Icon component.
+
+- It should be named CIcon and placed in the components/global folder.
+- It should take two props, size and color.
+- Reference other components in the global folder for code style
     background: pine
     description: Because of our high standards and donation requirements, less than
       1% of applicants will make it into our donor portfolio due to our high
