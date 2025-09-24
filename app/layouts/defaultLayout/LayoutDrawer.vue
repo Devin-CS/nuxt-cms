@@ -38,6 +38,8 @@
               <q-btn
                 flat
                 round
+                size="md"
+                padding="sm"
                 icon="o_chevron_right"/>
             </q-item-section>
           </q-item>
@@ -58,6 +60,8 @@
               <q-btn
                 flat
                 round
+                padding="sm"
+                size="md"
                 icon="o_chevron_left"/>
             </q-item-section>
             <q-item-section>
@@ -116,6 +120,8 @@
             round
             dense
             flat
+            padding="sm"
+            size="md"
             icon="o_search"/>
         </template>
       </q-input>

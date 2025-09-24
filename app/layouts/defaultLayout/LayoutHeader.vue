@@ -40,6 +40,8 @@
 
     <q-btn
       class="lt-md"
+      size="md"
+      padding="sm"
       dense
       flat
       round
