@@ -2,10 +2,6 @@
 navigation: false
 ---
 
-::c-icon
-![donor-sperm.png](/svg/our-team.svg)
-::
-
 ::c-section
 ---
 background: pine
@@ -23,6 +19,26 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     text: shell
     title: Extensive experience
     ---
+      :::::c-icon{color="shell" size="75px"}
+      ![extensive-experience.svg](/svg/extensive-experience.svg)
+      :::::
+    ::::
+  
+    ::::c-media-card
+    ---
+    background: pine
+    description: Because of our high standards and donation requirements, less than
+      1% of applicants will make it into our donor portfolio due to our high
+      standards and program requirements, based on screening requirements and those
+      who don't move forward in the program. That means you’ll have access to one of
+      the largest, most rigorously screened, diverse selection of donors in the
+      world.
+    text: shell
+    title: Diverse donor selection
+    ---
+      :::::c-icon{color="shell" size="75px"}
+      ![extensive-experience.svg](/svg/diverse-donor-selection.svg)
+      :::::
     ::::
   
     ::::c-media-card
@@ -34,6 +50,9 @@ title: "California Cryobank: Partner with the #1 sperm bank in the world"
     text: shell
     title: Our team
     ---
+      :::::c-icon{color="shell" size="75px"}
+      ![our-team.svg](/svg/our-team.svg)
+      :::::
     ::::
   :::
 ::
