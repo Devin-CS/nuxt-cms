@@ -193,8 +193,6 @@ description: We know you have just what it takes to be a parent. We’re here to
 title: Let’s get started
 ---
 #content
-  :::x-tab-content
-  :::
 ::
 
 ::c-section
