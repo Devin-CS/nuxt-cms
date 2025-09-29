@@ -193,7 +193,17 @@ description: We know you have just what it takes to be a parent. We’re here to
 title: Let’s get started
 ---
 #content
-  :::c-tabs-section{:tabs='["Create Account","Donor Search"]'}
+  :::c-tabs-section
+  ---
+  tabs:
+    - Create account
+    - Donor search
+  ---
+  #tab-1
+  Create account tab content
+  
+  #tab-2
+  Donor search tab content
   :::
 ::
 
