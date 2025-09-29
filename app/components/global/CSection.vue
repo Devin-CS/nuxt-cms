@@ -19,7 +19,11 @@
     </q-card-actions>
   </q-card>
 
-  <slot name="content"/>
+  <div
+    style="max-width: 1272px"
+    class="q-mx-auto">
+    <slot name="content"/>
+  </div>
 </section>
 </template>
 
