@@ -1,15 +1,18 @@
 <template>
 <q-card
-  flat
   :class="[bgClass, textClass, centerClass]">
   <!-- Image slot (default) -->
   <q-card-section class="q-pa-none">
-    <slot mdc-unwrap="p"/>
+    <slot
+      v-if="$slots.default"
+      mdc-unwrap="p"/>
   </q-card-section>
 
   <!-- Title -->
-  <q-card-section class="q-pt-md q-pb-none text-h5 text-weight-medium">
-    {{ title }}
+  <q-card-section class="q-pt-md q-pb-none text-weight-medium">
+    <h2 class="text-h3 q-my-xs">
+      {{ title }}
+    </h2>
   </q-card-section>
 
   <!-- Description -->
@@ -19,7 +22,9 @@
   </q-card-section>
 
   <q-card-actions :align="actionsCenterValue">
-    <slot name="actions"/>
+    <slot
+      v-if="$slots.actions"
+      name="actions"/>
   </q-card-actions>
 </q-card>
 </template>

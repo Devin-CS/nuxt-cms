@@ -1,16 +1,14 @@
 <template>
 <q-tabs
-  v-model="selectedTab"
-  active-bg-color="aqua"
-  active-color="shell"
-  align="justify"
-  no-caps>
+  v-model="selectedTab">
   <q-tab
     v-for="(label, i) in tabs"
     :key="i"
     :name="i"
     :label="label"/>
 </q-tabs>
+
+<q-separator/>
 
 <q-tab-panels
   v-model="selectedTab"
@@ -19,7 +17,10 @@
     v-for="(_, i) in tabs"
     :key="i"
     :name="i">
-    <slot :name="`tab-${i + 1}`"/>
+    <slot
+      v-if="$slots[`tab-${i + 1}`]"
+      :name="`tab-${i + 1}`"
+      mdc-unwrap="p"/>
   </q-tab-panel>
 </q-tab-panels>
 </template>

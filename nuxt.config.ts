@@ -26,6 +26,18 @@ export default defineNuxtConfig({
           size: 'lg',
           rounded: true,
           padding: 'sm xl'
+        },
+        QCard: {
+          flat: true
+        },
+        QSeparator: {
+          color: 'pine'
+        },
+        QTabs: {
+          activeBgColor: 'aqua',
+          activeColor: 'shell',
+          align: 'justify',
+          noCaps: true
         }
       }
     }

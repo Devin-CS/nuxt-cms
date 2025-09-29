@@ -3,7 +3,7 @@
   class="c-section q-py-lg"
   :class="[bgClass, textClass]"
   :style="cssVars">
-  <slot/>
+  <slot v-if="$slots.default"/>
 </section>
 </template>
 

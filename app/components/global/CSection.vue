@@ -15,14 +15,18 @@
       </p>
     </q-card-section>
     <q-card-actions align="center">
-      <slot name="buttons"/>
+      <slot
+        v-if="$slots.buttons"
+        name="buttons"/>
     </q-card-actions>
   </q-card>
 
   <div
     style="max-width: 1272px"
     class="q-mx-auto">
-    <slot name="content"/>
+    <slot
+      v-if="$slots.content"
+      name="content"/>
   </div>
 </section>
 </template>
