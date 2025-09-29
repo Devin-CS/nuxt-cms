@@ -1,6 +1,5 @@
 <template>
-<q-card
-  :class="[bgClass, textClass, centerClass]">
+<q-card :class="[bgClass, textClass, centerClass]">
   <!-- Image slot (default) -->
   <q-card-section class="q-pa-none">
     <slot
