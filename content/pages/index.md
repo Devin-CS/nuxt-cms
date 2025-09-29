@@ -198,12 +198,16 @@ title: Let’s get started
   tabs:
     - Create account
     - Donor search
+    - Planning for the future
   ---
   #tab-1
   Create account tab content
   
   #tab-2
   Donor search tab content
+  
+  #tab-3
+  Planning for the future tab content
   :::
 ::
 
