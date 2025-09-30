@@ -28,16 +28,13 @@
  * CMediaCard
  *
  * A simple media card with three areas:
- * 1) Image (default slot) — ideal for Markdown images (ProseImg / QImg)
- * 2) Title — provided via `title` prop
- * 3) Description — provided via `description` prop
+ * 1) Image (media slot) — ideal for Markdown images (ProseImg / QImg)
+ * 2) Content (content slot) — ideal for title and description text
  *
  * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
 
 const {
-  title = '',
-  description = '',
   center = false,
   background = 'transparent',
   text = 'pine'

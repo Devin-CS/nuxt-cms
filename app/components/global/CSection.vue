@@ -7,17 +7,7 @@
     <q-card-section class="text-center">
       <slot
         v-if="$slots.header"
-        name="header">
-        <!--        <h1 -->
-        <!--        class="text-h2 text-center q-mb-sm"> -->
-        <!--        {{ props.title }} -->
-        <!--        </h1> -->
-        <!--        <p -->
-        <!--          v-if="props.description" -->
-        <!--          class="text-subtitle1 text-center"> -->
-        <!--          {{ props.description }} -->
-        <!--        </p> -->
-      </slot>
+        name="header"/>
     </q-card-section>
     <q-card-actions align="center">
       <slot
@@ -46,10 +36,6 @@
  * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
 const props = withDefaults(defineProps<{
-  /** CTA title text */
-  title: string
-  /** CTA description text */
-  description?: string
   /** Background color using custom brand palette or transparent */
   background?:
     | 'transparent'
