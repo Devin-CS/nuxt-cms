@@ -7,11 +7,11 @@ navigation: false
 background: pine
 text: shell
 ---
-#header
+#title
 # California Cryobank: Partner with the #1 sperm bank in the world
 
 #content
-  :::c-section-content{max-item-width="345"}
+  :::c-section-grid{max="345"}
     ::::c-media-card
     ---
     center: true
@@ -29,7 +29,7 @@ text: shell
       :::::
     
     #actions
-      :::::c-btn{arrow flat label="Learn more"}
+      :::::c-button{arrow flat label="Learn more"}
       :::::
     ::::
   
@@ -54,7 +54,7 @@ text: shell
       :::::
     
     #actions
-      :::::c-btn{arrow flat label="Browse donors"}
+      :::::c-button{arrow flat label="Browse donors"}
       :::::
     ::::
   
@@ -75,7 +75,7 @@ text: shell
     Our team of dedicated client services professionals and reproductive genetic specialists are here to support you with compassion and care every step of the way.
     
     #actions
-      :::::c-btn{arrow flat label="Contact us"}
+      :::::c-button{arrow flat label="Contact us"}
       :::::
     ::::
   :::
@@ -86,17 +86,17 @@ text: shell
 background: pine
 text: birch
 ---
-#header
+#title
 # Helping you make dreams come true
 
 From the big decisions to the detailed logistics, California Cryobank offers reproductive services to help build the family you’ve been dreaming of.
 
-#buttons
-  :::c-btn{arrow color="juniper" label="View all services"}
+#actions
+  :::c-button{arrow color="juniper" label="View all services"}
   :::
 
 #content
-  :::c-section-content{gap="xl" max-item-width="300px"}
+  :::c-section-grid{gap="xl" max="300px"}
     ::::c-media-card
     ---
     background: shell
@@ -161,17 +161,17 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
 ---
 background: shell
 ---
-#header
+#title
 # Celebrating each journey
 
 We’re honored to have helped tens of thousands of people build the families they deserve. Discover their stories of successes and happiness — we hope you find them as inspiring as we do.
 
-#buttons
-  :::c-btn{arrow color="juniper" label="Read more"}
+#actions
+  :::c-button{arrow color="juniper" label="Read more"}
   :::
 
 #content
-  :::c-section-content{gap="xl" max-item-width="300px"}
+  :::c-section-grid{gap="xl" max="300px"}
     ::::c-media-card
     #media
     ![Sydney Brits Story](/images/sydney-brits-story.webp)
@@ -208,13 +208,13 @@ We’re honored to have helped tens of thousands of people build the families th
 ---
 background: birch
 ---
-#header
+#title
 # Let’s get started
 
 We know you have just what it takes to be a parent. We’re here to guide you every step of the way.
 
 #content
-  :::c-tabs-section
+  :::c-tabbed-section
   ---
   tabs:
     - Create account
@@ -241,7 +241,7 @@ description: We understand that creating a family is more than a moment — it�
   support for after your child is born.
 title: More options mean greater possibilities
 ---
-#buttons
-  :::c-btn{arrow color="juniper" label="View all services"}
+#actions
+  :::c-button{arrow color="juniper" label="View all services"}
   :::
 ::

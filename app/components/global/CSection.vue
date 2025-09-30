@@ -6,13 +6,13 @@
     flat>
     <q-card-section class="text-center">
       <slot
-        v-if="$slots.header"
-        name="header"/>
+        v-if="$slots.title"
+        name="title"/>
     </q-card-section>
     <q-card-actions align="center">
       <slot
-        v-if="$slots.buttons"
-        name="buttons"/>
+        v-if="$slots.actions"
+        name="actions"/>
     </q-card-actions>
   </q-card>
 

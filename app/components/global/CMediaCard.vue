@@ -39,10 +39,6 @@ const {
   background = 'transparent',
   text = 'pine'
 } = defineProps<{
-  /** Card title text */
-  title?: string
-  /** Description paragraph */
-  description?: string
   /** Centers all content */
   center?: boolean
   /** Background color using custom brand palette or transparent */

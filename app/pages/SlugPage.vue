@@ -2,21 +2,6 @@
 <q-page>
   <site-alert/>
 
-  <q-card
-    class="my-card"
-    flat
-    bordered>
-    <q-card-section horizontal>
-      <q-img
-        class="col-6"
-        src="images/register-for-free-account.webp"/>
-
-      <q-card-section>
-        Card text
-      </q-card-section>
-    </q-card-section>
-  </q-card>
-
   <content-renderer
     v-if="page"
     :value="page"/>
