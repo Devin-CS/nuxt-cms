@@ -4,15 +4,20 @@
     class="transparent q-mx-auto"
     style="max-width: 900px"
     flat>
-    <q-card-section>
-      <h1 class="text-h2 text-center q-mb-sm">
-        {{ props.title }}
-      </h1>
-      <p
-        v-if="props.description"
-        class="text-subtitle1 text-center">
-        {{ props.description }}
-      </p>
+    <q-card-section class="text-center">
+      <slot
+        v-if="$slots.header"
+        name="header">
+        <!--        <h1 -->
+        <!--        class="text-h2 text-center q-mb-sm"> -->
+        <!--        {{ props.title }} -->
+        <!--        </h1> -->
+        <!--        <p -->
+        <!--          v-if="props.description" -->
+        <!--          class="text-subtitle1 text-center"> -->
+        <!--          {{ props.description }} -->
+        <!--        </p> -->
+      </slot>
     </q-card-section>
     <q-card-actions align="center">
       <slot
