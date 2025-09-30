@@ -113,11 +113,7 @@ title: Helping you make dreams come true
     ::::c-media-card
     ---
     background: shell
-    description: California Cryobank ships vials right to your home (U.S. only) or
-      your clinic — worldwide! We offer two-day economy or priority overnight
-      shipping. We can help find the best option for you.
     text: pine
-    title: Shipping
     ---
     #media
     ![Shipping](/images/shipping.png)
@@ -193,12 +189,6 @@ title: Celebrating each journey
     ::::
   
     ::::c-media-card
-    ---
-    description: When I found California Cryobank, it just felt right, and through
-      my process, they continued to prove me right. It was important to me to find a
-      sperm bank partner who cared just as much about me as they did their donors.
-    title: Karen's story
-    ---
     #media
     ![Karen's Story](/images/karens-story.webp)
     
