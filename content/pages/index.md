@@ -224,10 +224,10 @@ We know you have just what it takes to be a parent. We’re here to guide you ev
   #tab-1
     ::::c-media-content-split
     #media
-    ![register-for-free-account.webp](/images/register-for-free-account.webp)
+    ![Register for a free account](/images/register-for-free-account.webp)
     
     #content
-    # Register for a free account
+    ## Register for a free account
     ::::
   
   #tab-2

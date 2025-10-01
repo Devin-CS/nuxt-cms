@@ -1,13 +1,14 @@
 <template>
 <q-card
-  class="my-card"
-  flat
-  bordered>
+  class="transparent"
+  flat>
   <q-card-section horizontal>
-    <slot
-      v-if="$slots.media"
-      name="media"
-      class="col-6"/>
+    <div class="col-6">
+      <slot
+        v-if="$slots.media"
+        name="media"
+        mdc-unwrap="p"/>
+    </div>
 
     <q-card-section>
       <slot
@@ -17,3 +18,6 @@
   </q-card-section>
 </q-card>
 </template>
+
+<script setup lang="ts">
+</script>
