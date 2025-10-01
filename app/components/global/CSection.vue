@@ -4,24 +4,25 @@
     class="transparent q-mx-auto"
     style="max-width: 900px"
     flat>
-    <q-card-section class="text-center">
-      <slot
-        v-if="$slots.title"
-        name="title"/>
+    <q-card-section
+      v-if="$slots.title"
+      class="text-center">
+      <slot name="title"/>
     </q-card-section>
-    <q-card-actions align="center">
-      <slot
-        v-if="$slots.actions"
-        name="actions"/>
+
+    <q-card-actions
+      v-if="$slots.actions"
+      class="q-mb-xl"
+      align="center">
+      <slot name="actions"/>
     </q-card-actions>
   </q-card>
 
   <div
+    v-if="$slots.content"
     style="max-width: 1272px"
     class="q-mx-auto">
-    <slot
-      v-if="$slots.content"
-      name="content"/>
+    <slot name="content"/>
   </div>
 </section>
 </template>

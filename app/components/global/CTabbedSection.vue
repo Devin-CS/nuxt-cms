@@ -1,6 +1,5 @@
 <template>
-<q-tabs
-  v-model="selectedTab">
+<q-tabs v-model="selectedTab">
   <q-tab
     v-for="(label, i) in tabs"
     :key="i"
