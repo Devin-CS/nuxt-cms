@@ -1,5 +1,6 @@
 <template>
-<q-tabs v-model="selectedTab">
+<q-tabs
+  v-model="selectedTab">
   <q-tab
     v-for="(label, i) in tabs"
     :key="i"
@@ -9,7 +10,9 @@
 
 <q-separator/>
 
-<q-tab-panels v-model="selectedTab" class="transparent">
+<q-tab-panels
+  v-model="selectedTab"
+  class="transparent">
   <q-tab-panel
     v-for="(_, i) in tabs"
     :key="i"
