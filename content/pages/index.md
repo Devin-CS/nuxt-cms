@@ -228,6 +228,18 @@ We know you have just what it takes to be a parent. We’re here to guide you ev
     
     #content
     ## Register for a free account
+    
+    First things first. Get your search started with a free California Cryobank account. You will be able to easily:
+    
+    - View donor childhood photos
+    - Save your favorite donors
+    - Customize and save your searches
+    - Download donor profiles and genetic test information
+    - Read donor personal essays
+    - Build a personalized profile to streamline your search
+    
+      :::::c-button{arrow label="Create Account"}
+      :::::
     ::::
   
   #tab-2
