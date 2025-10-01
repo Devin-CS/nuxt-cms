@@ -237,13 +237,50 @@ We know you have just what it takes to be a parent. We’re here to guide you ev
     - Download donor profiles and genetic test information
     - Read donor personal essays
     - Build a personalized profile to streamline your search
+    
+    #actions
+      :::::c-button{arrow label="Create Account"}
+      :::::
     ::::
   
   #tab-2
-  Donor search tab content
+    ::::c-media-content-split
+    #media
+    ![find-right-donor.webp](/images/find-right-donor.webp)
+    
+    #content
+    ## Find the right donor
+    
+    Whether you’re looking for a donor who’s athletic, has specific features that resemble yours or a loved one’s, or who’s an intellectual, our comprehensive screening process helps to ensure we can provide not only a diverse portfolio, but one that features only the highest quality of donors as well.
+    
+    And to make the process as easy as possible, we’ve included filters to help you search donors by height, eye color, educational level, and more.
+    
+    #actions
+      :::::c-button{arrow label="Search donors"}
+      :::::
+    ::::
   
   #tab-3
-  Planning for the future tab content
+    ::::c-media-content-split
+    #media
+    ![looking-ahead.webp](/images/looking-ahead.webp)
+    
+    #content
+    ## Looking ahead
+    
+    Our dedicated team will be there to help guide you through the planning and decisions to be made during this life-changing experience by offering the following benefits:
+    
+    - A step-by-step insemination guide
+    - Vial purchasing online or by phone
+    - Domestic and international shipping
+    - Secure vial storage
+    - Support from our reproductive genetic specialists
+    - And more
+    
+    #actions
+      :::::c-button{arrow label="Learn more"}
+      :::::
+    ::::
   :::
 ::
 
@@ -258,5 +295,24 @@ title: More options mean greater possibilities
 ---
 #actions
   :::c-button{arrow color="juniper" label="View all services"}
+  :::
+
+#title
+## **More options mean greater possibilities**
+
+We understand that creating a family is more than a moment — it’s a journey. From the moment you become a part of the California Cryobank family and beyond, we offer services that include donor sperm for future use, and support for after your child is born.
+
+#content
+  :::c-tabbed-section
+  ---
+  tabs:
+    - Genetic services
+    - Post conception
+  ---
+  #tab-1
+  Tab 1 content
+  
+  #tab-2
+  Tab 2 content
   :::
 ::
