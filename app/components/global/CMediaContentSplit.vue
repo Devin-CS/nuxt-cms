@@ -14,6 +14,9 @@
       <slot
         v-if="$slots.content"
         name="content"/>
+      <slot
+        v-if="$slots.actions"
+        name="actions"/>
     </q-card-section>
   </q-card-section>
 </q-card>
