@@ -2,7 +2,7 @@
 <section
   :class="[bgClass, textClass]"
   :style="cssVars"
-  class="c-section q-py-lg">
+  class="c-section-grid q-py-lg">
   <slot v-if="$slots.default"/>
 </section>
 </template>
@@ -42,17 +42,17 @@ const {
 
 const cssVars = computed(() => {
   const vars: Record<string, string> = {
-    '--c-section-gap': toGapSize(gap),
-    '--c-section-min': toCssSize(min) ?? '240px'
+    '--c-section-grid-gap': toGapSize(gap),
+    '--c-section-grid-min': toCssSize(min) ?? '240px'
   }
   const maxSize = toCssSize(max)
   if (maxSize) {
-    vars['--c-section-track-max'] = maxSize
-    vars['--c-section-item-max'] = maxSize
+    vars['--c-section-grid-track-max'] = maxSize
+    vars['--c-section-grid-item-max'] = maxSize
   }
   else {
     // When no max is provided, allow tracks to grow to fill available space
-    vars['--c-section-track-max'] = '1fr'
+    vars['--c-section-grid-track-max'] = '1fr'
     // and leave item max unset so it falls back to 'none'
   }
   return vars
@@ -63,63 +63,30 @@ const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>
 
 <style lang="scss" scoped>
-.c-section {
+.c-section-grid {
   width: 100%;
   display: grid;
   /* Auto-fit columns that never shrink below min width; items wrap naturally */
-  grid-template-columns: repeat(auto-fit, minmax(var(--c-section-min, 240px), var(--c-section-track-max, 1fr)));
-  gap: var(--c-section-gap, 16px);
+  grid-template-columns: repeat(auto-fit, minmax(var(--c-section-grid-min, 240px), var(--c-section-grid-track-max, 1fr)));
+  gap: var(--c-section-grid-gap, 16px);
   justify-content: center;
-
-  /* Left/right padding only (content gutters). Keep a minimum on phones */
-  //padding-left: 16px;
-  //padding-right: 16px;
 
   /* Center items in their grid cell when a max width is set */
   justify-items: center;
 }
 
-/* Responsive gutters aligned with typical Quasar breakpoints */
-@media (min-width: 600px) { /* sm */
-  .c-section {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media (min-width: 1024px) { /* md */
-  .c-section {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media (min-width: 1440px) { /* lg */
-  .c-section {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-}
-
-@media (min-width: 1920px) { /* xl */
-  .c-section {
-    padding-left: 64px;
-    padding-right: 64px;
-  }
-}
-
 /* Apply max width to all direct children (slotted) without extra wrappers */
-.c-section :deep(> *) {
+.c-section-grid :deep(> *) {
   width: 100%;
-  max-width: var(--c-section-item-max, none);
+  max-width: var(--c-section-grid-item-max, none);
 }
 
 /* XS phones: make items full width regardless of max */
 @media (max-width: 599.98px) {
-  .c-section {
+  .c-section-grid {
     grid-template-columns: 1fr;
   }
-  .c-section :deep(> *) {
+  .c-section-grid :deep(> *) {
     max-width: none;
   }
 }

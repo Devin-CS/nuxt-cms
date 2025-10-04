@@ -3,10 +3,10 @@
   <!-- Image slot -->
   <q-card-section
     v-if="$slots.media"
-    class="q-pa-none">
+    class="no-padding">
     <slot
-      name="media"
-      mdc-unwrap="p"/>
+      mdc-unwrap="p"
+      name="media"/>
   </q-card-section>
 
   <!-- Content slot -->
@@ -24,7 +24,7 @@
 </q-card>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 /**
  * CMediaCard
  *

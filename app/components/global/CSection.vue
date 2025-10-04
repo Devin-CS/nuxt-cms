@@ -1,5 +1,7 @@
 <template>
-<section :class="[bgClass, textClass]">
+<section
+  :class="[bgClass, textClass]"
+  class="c-section q-px-md">
   <q-card
     class="transparent q-mx-auto"
     flat
@@ -53,3 +55,34 @@ const { background = 'transparent', text } = defineProps<{
 const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
 const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>
+
+<style lang="scss" scoped>
+/* Responsive padding aligned with typical Quasar breakpoints */
+@media (min-width: 600px) { /* sm */
+  .c-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) { /* md */
+  .c-section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1440px) { /* lg */
+  .c-section {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (min-width: 1920px) { /* xl */
+  .c-section {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+</style>
