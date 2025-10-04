@@ -10,14 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "^3.6.3",
-    "nuxt": "^4.0.3",
-    "vue": "^3.5.21",
+    "@nuxt/content": "^3.7.1",
+    "nuxt": "^4.1.2",
+    "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@cooperco/nuxt-layer-base": "^1.0.2",
     "@cooperco/nuxt-layer-quasar": "^1.0.4",
-    "sass": "^1.90.0"
+    "sass": "^1.93.2"
   }
 }
