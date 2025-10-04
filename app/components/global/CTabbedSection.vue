@@ -3,8 +3,8 @@
   <q-tab
     v-for="(label, i) in tabs"
     :key="i"
-    :name="i"
-    :label="label"/>
+    :label="label"
+    :name="i"/>
 </q-tabs>
 
 <q-separator/>
@@ -15,7 +15,8 @@
   <q-tab-panel
     v-for="(_, i) in tabs"
     :key="i"
-    :name="i">
+    :name="i"
+    class="q-px-none">
     <slot
       v-if="$slots[`tab-${i + 1}`]"
       :name="`tab-${i + 1}`"
@@ -24,7 +25,7 @@
 </q-tab-panels>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 /**
  * CTabbedSection
  *

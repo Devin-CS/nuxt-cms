@@ -2,8 +2,8 @@
 <section :class="[bgClass, textClass]">
   <q-card
     class="transparent q-mx-auto"
-    style="max-width: 900px"
-    flat>
+    flat
+    style="max-width: 900px">
     <q-card-section
       v-if="$slots.title"
       class="text-center">
@@ -12,22 +12,22 @@
 
     <q-card-actions
       v-if="$slots.actions"
-      class="q-mb-xl"
-      align="center">
+      align="center"
+      class="q-mb-xl">
       <slot name="actions"/>
     </q-card-actions>
   </q-card>
 
   <div
     v-if="$slots.content"
-    style="max-width: 1272px"
-    class="q-mx-auto">
+    class="q-mx-auto"
+    style="max-width: 1272px">
     <slot name="content"/>
   </div>
 </section>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 /**
  * CSection
  *
@@ -36,7 +36,7 @@
  *
  * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
-const props = withDefaults(defineProps<{
+const { background = 'transparent', text } = defineProps<{
   /** Background color using custom brand palette or transparent */
   background?:
     | 'transparent'
@@ -48,14 +48,8 @@ const props = withDefaults(defineProps<{
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
     | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
-}>(), {
-  background: 'transparent'
-})
+}>()
 
-const bgClass = computed(() => (!props.background || props.background === 'transparent' ? 'transparent' : `bg-${props.background}`))
-const textClass = computed(() => props.text ? `text-${props.text}` : undefined)
+const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
+const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>
-
-<style scoped lang="scss">
-
-</style>

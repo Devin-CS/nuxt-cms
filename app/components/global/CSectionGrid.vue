@@ -1,13 +1,13 @@
 <template>
 <section
-  class="c-section q-py-lg"
   :class="[bgClass, textClass]"
-  :style="cssVars">
+  :style="cssVars"
+  class="c-section q-py-lg">
   <slot v-if="$slots.default"/>
 </section>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 /**
  * CSectionGrid
  *
@@ -62,7 +62,7 @@ const bgClass = computed(() => (!background || background === 'transparent' ? 't
 const textClass = computed(() => text ? `text-${text}` : undefined)
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .c-section {
   width: 100%;
   display: grid;
@@ -72,8 +72,8 @@ const textClass = computed(() => text ? `text-${text}` : undefined)
   justify-content: center;
 
   /* Left/right padding only (content gutters). Keep a minimum on phones */
-  padding-left: 16px;
-  padding-right: 16px;
+  //padding-left: 16px;
+  //padding-right: 16px;
 
   /* Center items in their grid cell when a max width is set */
   justify-items: center;
@@ -81,16 +81,31 @@ const textClass = computed(() => text ? `text-${text}` : undefined)
 
 /* Responsive gutters aligned with typical Quasar breakpoints */
 @media (min-width: 600px) { /* sm */
-  .c-section { padding-left: 24px; padding-right: 24px; }
+  .c-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
+
 @media (min-width: 1024px) { /* md */
-  .c-section { padding-left: 32px; padding-right: 32px; }
+  .c-section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
+
 @media (min-width: 1440px) { /* lg */
-  .c-section { padding-left: 48px; padding-right: 48px; }
+  .c-section {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
 }
+
 @media (min-width: 1920px) { /* xl */
-  .c-section { padding-left: 64px; padding-right: 64px; }
+  .c-section {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }
 
 /* Apply max width to all direct children (slotted) without extra wrappers */

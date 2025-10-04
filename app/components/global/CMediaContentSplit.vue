@@ -7,8 +7,8 @@
       v-if="$slots.media"
       class="col-6">
       <slot
-        name="media"
-        mdc-unwrap="p"/>
+        mdc-unwrap="p"
+        name="media"/>
     </div>
 
     <q-card-section v-if="$slots.content || $slots.actions">
@@ -18,6 +18,3 @@
   </q-card-section>
 </q-card>
 </template>
-
-<script setup lang="ts">
-</script>
