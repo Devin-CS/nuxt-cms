@@ -23,8 +23,7 @@
 
     <div
       v-if="$slots.content"
-      class="q-mx-auto"
-      style="max-width: 1272px">
+      class="q-mx-auto">
       <slot name="content"/>
     </div>
   </div>

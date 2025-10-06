@@ -67,7 +67,7 @@ const textClass = computed(() => text ? `text-${text}` : undefined)
   width: 100%;
   display: grid;
   /* Auto-fit columns that never shrink below min width; items wrap naturally */
-  grid-template-columns: repeat(auto-fit, minmax(var(--c-section-grid-min, 240px), var(--c-section-grid-track-max, 1fr)));
+  grid-template-columns: repeat(auto-fit, minmax(var(--c-section-grid-min, 200px), var(--c-section-grid-track-max, 1fr)));
   gap: var(--c-section-grid-gap, 16px);
   justify-content: center;
 
