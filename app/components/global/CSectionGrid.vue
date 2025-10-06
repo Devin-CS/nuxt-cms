@@ -46,14 +46,11 @@ const cssVars = computed(() => {
     '--c-section-grid-min': toCssSize(min) ?? '200px'
   }
   const maxSize = toCssSize(max)
+  // Always use 1fr for track maximum to allow flexible space distribution
+  vars['--c-section-grid-track-max'] = '1fr'
+  // Apply max constraint to items only, not to grid tracks
   if (maxSize) {
-    vars['--c-section-grid-track-max'] = maxSize
     vars['--c-section-grid-item-max'] = maxSize
-  }
-  else {
-    // When no max is provided, allow tracks to grow to fill available space
-    vars['--c-section-grid-track-max'] = '1fr'
-    // and leave item max unset so it falls back to 'none'
   }
   return vars
 })
