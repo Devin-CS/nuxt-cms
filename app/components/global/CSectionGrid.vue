@@ -19,7 +19,7 @@ const {
   background = 'transparent',
   text,
   gap = 'md',
-  min = 240,
+  min = 200,
   max
 } = defineProps<{
   background?:
@@ -34,7 +34,7 @@ const {
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
   /** Gap between items (token only: xs | sm | md | lg | xl). Default md (16px) */
   gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  /** Minimum width for each item (px number or any CSS size). Default 240px */
+  /** Minimum width for each item (px number or any CSS size). Default 200px */
   min?: number | string
   /** Maximum width for each item (px number or any CSS size). Omit for no max (items take as much space as possible) */
   max?: number | string
@@ -43,7 +43,7 @@ const {
 const cssVars = computed(() => {
   const vars: Record<string, string> = {
     '--c-section-grid-gap': toGapSize(gap),
-    '--c-section-grid-min': toCssSize(min) ?? '240px'
+    '--c-section-grid-min': toCssSize(min) ?? '200px'
   }
   const maxSize = toCssSize(max)
   if (maxSize) {
