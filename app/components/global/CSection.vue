@@ -2,7 +2,7 @@
 <section
   :class="[bgClass, textClass]"
   class="c-section">
-  <div class="c-section__wrapper">
+  <div class="c-section__wrapper q-px-md">
     <q-card
       class="transparent q-mx-auto"
       flat

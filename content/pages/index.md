@@ -99,8 +99,7 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
   :::c-section-grid{gap="xl" max="300px"}
     ::::c-media-card
     ---
-    background: shell
-    text: pine
+text: shell
     ---
     #media
     ![Donor Sperm](/images/donor-sperm.png)
@@ -115,8 +114,7 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
   
     ::::c-media-card
     ---
-    background: shell
-    text: pine
+    text: shell
     ---
     #media
     ![Shipping](/images/shipping.png)
@@ -129,8 +127,7 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
   
     ::::c-media-card
     ---
-    background: shell
-    text: pine
+    text: shell
     ---
     #media
     ![Future Family Building](/images/future-family-building.png)
@@ -143,8 +140,7 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
   
     ::::c-media-card
     ---
-    background: shell
-    text: pine
+    text: shell
     ---
     #media
     ![Continued Support](/images/continued-support.png)
