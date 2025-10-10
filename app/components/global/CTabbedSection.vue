@@ -37,18 +37,13 @@
     v-for="(label, i) in tabs"
     :key="i"
     :label="label"
-    :expand-icon="'o_keyboard_arrow_down'"
-    switch-toggle-side
-    dense
-    :model-value="selectedTab === label"
-    class="bg-aqua q-mb-sm"
-    @update:model-value="val => { if (val) selectedTab = label }">
-    <div class="q-pt-sm">
-      <slot
-        v-if="$slots[`tab-${i + 1}`]"
-        :name="`tab-${i + 1}`"
-        mdc-unwrap="p"/>
-    </div>
+    :group="expansionGroup"
+    :default-opened="selectedTab === label"
+    @show="selectedTab = label">
+    <slot
+      v-if="$slots[`tab-${i + 1}`]"
+      :name="`tab-${i + 1}`"
+      mdc-unwrap="p"/>
   </q-expansion-item>
 </q-list>
 
@@ -105,10 +100,13 @@ const initialTab = computed(() => (tabs.length > 0 ? (tabs[0] ?? null) : null))
 console.log('tabs: ', tabs)
 const selectedTab = ref(initialTab.value)
 
-// Screen/computed helpers for template conditions
 const $q = useQuasar()
 const isMobile = computed(() => $q.screen.lt.md)
 const isDesktopOrTablet = computed(() => $q.screen.gt.sm)
+
+// Use Quasar's accordion mode by grouping expansion items so only one is open at a time
+const instance = getCurrentInstance()
+const expansionGroup = `ctabbed-${instance ? instance.uid : '0'}`
 
 const showSelect = computed(() => isMobile.value && mobile === 'select')
 const showExpansion = computed(() => isMobile.value && mobile === 'expansion')
