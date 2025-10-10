@@ -216,6 +216,7 @@ We know you have just what it takes to be a parent. We’re here to guide you ev
     - Create account
     - Donor search
     - Planning for the future
+  mobile: select
   ---
   #tab-1
     ::::c-media-content-split
@@ -304,6 +305,7 @@ We understand that creating a family is more than a moment — it’s a journey.
   tabs:
     - Genetic services
     - Post conception
+  mobile: expansion
   ---
   #tab-1
     ::::c-media-card
