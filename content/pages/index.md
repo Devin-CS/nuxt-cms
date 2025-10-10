@@ -99,7 +99,7 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
   :::c-section-grid{gap="xl" max="300px"}
     ::::c-media-card
     ---
-text: shell
+    text: shell
     ---
     #media
     ![Donor Sperm](/images/donor-sperm.png)
