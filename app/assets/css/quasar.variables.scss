@@ -53,50 +53,66 @@
 /* Instead of black */
 $text-color: #18332F;
 
+$pine: #18332F;
+$elm: #5D7975;
+$eucalyptus: #9DB0AC;
+$willow: #BCC9C5;
+$birch: #E9EBE8;
+$juniper: #618B7E;
+$aqua: #0093B2;
+$violet: #772583;
+$poppy: #DC4405;
+$shadow: #373A36;
+$fern: #9AB9AD;
+$sky: #8BD3E6;
+$aster: #A77BCA;
+$saffron: #E87222;
+$shell: #FCF6EF;
+
 /* Custom brand utilities (work even if Quasar doesn't emit bg-/text- classes).
-   Uses Quasar CSS variables when available, with hex fallbacks. */
-.bg-pine    { background-color: var(--q-color-pine, #18332F) !important; }
-.text-pine  { color:            var(--q-color-pine, #18332F) !important; }
+   Use Sass variables for all colors (consistent with $pine); no CSS var dependency. */
+.bg-pine    { background-color: $pine; }
+.text-pine  { color:            $pine; }
 
-.bg-elm     { background-color: var(--q-color-elm, #5D7975) !important; }
-.text-elm   { color:            var(--q-color-elm, #5D7975) !important; }
+.bg-elm     { background-color: $elm; }
+.text-elm   { color:            $elm; }
 
-.bg-eucalyptus   { background-color: var(--q-color-eucalyptus, #9DB0AC) !important; }
-.text-eucalyptus { color:            var(--q-color-eucalyptus, #9DB0AC) !important; }
+.bg-eucalyptus   { background-color: $eucalyptus; }
+.text-eucalyptus { color:            $eucalyptus; }
 
-.bg-willow  { background-color: var(--q-color-willow, #BCC9C5) !important; }
-.text-willow{ color:            var(--q-color-willow, #BCC9C5) !important; }
+.bg-willow  { background-color: $willow; }
+.text-willow{ color:            $willow; }
 
-.bg-birch   { background-color: var(--q-color-birch, #E9EBE8) !important; }
-.text-birch { color:            var(--q-color-birch, #E9EBE8) !important; }
+.bg-birch   { background-color: $birch; }
+.text-birch { color:            $birch; }
 
-.bg-juniper { background-color: var(--q-color-juniper, #618B7E) !important; }
-.text-juniper{ color:           var(--q-color-juniper, #618B7E) !important; }
+.bg-juniper { background-color: $juniper; }
+.text-juniper{ color:           $juniper; }
 
-.bg-aqua    { background-color: var(--q-color-aqua, #0093B2) !important; }
-.text-aqua  { color:            var(--q-color-aqua, #0093B2) !important; }
+.bg-aqua    { background-color: $aqua; }
+.text-aqua  { color:            $aqua; }
 
-.bg-violet  { background-color: var(--q-color-violet, #772583) !important; }
-.text-violet{ color:            var(--q-color-violet, #772583) !important; }
+.bg-violet  { background-color: $violet; }
+.text-violet{ color:            $violet; }
 
-.bg-poppy   { background-color: var(--q-color-poppy, #DC4405) !important; }
-.text-poppy { color:            var(--q-color-poppy, #DC4405) !important; }
+.bg-poppy   { background-color: $poppy; }
+.text-poppy { color:            $poppy; }
 
-.bg-shadow  { background-color: var(--q-color-shadow, #373A36) !important; }
-.text-shadow{ color:            var(--q-color-shadow, #373A36) !important; }
+.bg-shadow  { background-color: $shadow; }
+.text-shadow{ color:            $shadow; }
 
-.bg-fern    { background-color: var(--q-color-fern, #9AB9AD) !important; }
-.text-fern  { color:            var(--q-color-fern, #9AB9AD) !important; }
+.bg-fern    { background-color: $fern; }
+.text-fern  { color:            $fern; }
 
-.bg-sky     { background-color: var(--q-color-sky, #8BD3E6) !important; }
-.text-sky   { color:            var(--q-color-sky, #8BD3E6) !important; }
+.bg-sky     { background-color: $sky; }
+.text-sky   { color:            $sky; }
 
-.bg-aster   { background-color: var(--q-color-aster, #A77BCA) !important; }
-.text-aster { color:            var(--q-color-aster, #A77BCA) !important; }
+.bg-aster   { background-color: $aster; }
+.text-aster { color:            $aster; }
 
-.bg-saffron { background-color: var(--q-color-saffron, #E87222) !important; }
-.text-saffron{ color:           var(--q-color-saffron, #E87222) !important; }
+.bg-saffron { background-color: $saffron; }
+.text-saffron{ color:           $saffron; }
 
-.bg-shell   { background-color: var(--q-color-shell, #FCF6EF) !important; }
-.text-shell { color:            var(--q-color-shell, #FCF6EF) !important; }
+.bg-shell   { background-color: $shell; }
+.text-shell { color:            $shell; }
 

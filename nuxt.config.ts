@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
 
   css: [
-    '~/assets/css/quasar.variables.scss',
     '~/assets/css/app.scss'
   ],
 
@@ -17,7 +16,7 @@ export default defineNuxtConfig({
 
   quasar: {
     iconSet: 'material-icons-outlined',
-    sassVariables: true,
+    sassVariables: '@/assets/css/quasar.variables.scss',
     components: {
       defaults: {
         QBtn: {

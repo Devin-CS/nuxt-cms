@@ -34,7 +34,7 @@
   <q-expansion-item
     v-for="(label, i) in tabs"
     :key="i"
-    class="border-juniper"
+    class="border-pine"
     :label="label"
     :group="expansionGroup"
     :default-opened="selectedTab === label"
@@ -115,7 +115,7 @@ const showPanels = computed(() => !(isMobile.value && mobile === 'expansion'))
 </script>
 
 <style lang="scss" scoped>
-.border-juniper {
-  border: 1px solid var(--q-color-pine);
+.border-pine {
+  border: 1px solid $pine;
 }
 </style>
