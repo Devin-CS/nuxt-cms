@@ -71,48 +71,48 @@ $shell: #FCF6EF;
 
 /* Custom brand utilities (work even if Quasar doesn't emit bg-/text- classes).
    Use Sass variables for all colors (consistent with $pine); no CSS var dependency. */
-.bg-pine    { background-color: $pine; }
-.text-pine  { color:            $pine; }
+.bg-pine    { background-color: $pine !important; }
+.text-pine  { color:            $pine !important; }
 
-.bg-elm     { background-color: $elm; }
-.text-elm   { color:            $elm; }
+.bg-elm     { background-color: $elm !important; }
+.text-elm   { color:            $elm !important; }
 
-.bg-eucalyptus   { background-color: $eucalyptus; }
-.text-eucalyptus { color:            $eucalyptus; }
+.bg-eucalyptus   { background-color: $eucalyptus !important; }
+.text-eucalyptus { color:            $eucalyptus !important; }
 
-.bg-willow  { background-color: $willow; }
-.text-willow{ color:            $willow; }
+.bg-willow  { background-color: $willow !important; }
+.text-willow{ color:            $willow !important; }
 
-.bg-birch   { background-color: $birch; }
-.text-birch { color:            $birch; }
+.bg-birch   { background-color: $birch !important; }
+.text-birch { color:            $birch !important; }
 
-.bg-juniper { background-color: $juniper; }
-.text-juniper{ color:           $juniper; }
+.bg-juniper { background-color: $juniper !important; }
+.text-juniper{ color:           $juniper !important; }
 
-.bg-aqua    { background-color: $aqua; }
-.text-aqua  { color:            $aqua; }
+.bg-aqua    { background-color: $aqua !important; }
+.text-aqua  { color:            $aqua !important; }
 
-.bg-violet  { background-color: $violet; }
-.text-violet{ color:            $violet; }
+.bg-violet  { background-color: $violet !important; }
+.text-violet{ color:            $violet !important; }
 
-.bg-poppy   { background-color: $poppy; }
-.text-poppy { color:            $poppy; }
+.bg-poppy   { background-color: $poppy !important; }
+.text-poppy { color:            $poppy !important; }
 
-.bg-shadow  { background-color: $shadow; }
-.text-shadow{ color:            $shadow; }
+.bg-shadow  { background-color: $shadow !important; }
+.text-shadow{ color:            $shadow !important; }
 
-.bg-fern    { background-color: $fern; }
-.text-fern  { color:            $fern; }
+.bg-fern    { background-color: $fern !important; }
+.text-fern  { color:            $fern !important; }
 
-.bg-sky     { background-color: $sky; }
-.text-sky   { color:            $sky; }
+.bg-sky     { background-color: $sky !important; }
+.text-sky   { color:            $sky !important; }
 
-.bg-aster   { background-color: $aster; }
-.text-aster { color:            $aster; }
+.bg-aster   { background-color: $aster !important; }
+.text-aster { color:            $aster !important; }
 
-.bg-saffron { background-color: $saffron; }
-.text-saffron{ color:           $saffron; }
+.bg-saffron { background-color: $saffron !important; }
+.text-saffron{ color:           $saffron !important; }
 
-.bg-shell   { background-color: $shell; }
-.text-shell { color:            $shell; }
+.bg-shell   { background-color: $shell !important; }
+.text-shell { color:            $shell !important; }
 
