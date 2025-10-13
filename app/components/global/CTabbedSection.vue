@@ -30,22 +30,23 @@
 </q-select>
 
 <!-- MOBILE: Expansion (accordion) variant -->
-<q-list
-  v-else-if="showExpansion"
-  bordered>
+<template v-else-if="showExpansion">
   <q-expansion-item
     v-for="(label, i) in tabs"
     :key="i"
+    class="border-juniper"
     :label="label"
     :group="expansionGroup"
     :default-opened="selectedTab === label"
     @show="selectedTab = label">
-    <slot
-      v-if="$slots[`tab-${i + 1}`]"
-      :name="`tab-${i + 1}`"
-      mdc-unwrap="p"/>
+    <div class="q-px-lg">
+      <slot
+        v-if="$slots[`tab-${i + 1}`]"
+        :name="`tab-${i + 1}`"
+        mdc-unwrap="p"/>
+    </div>
   </q-expansion-item>
-</q-list>
+</template>
 
 <!-- DESKTOP/TABLET and forced mobile tabs -->
 <q-tabs
@@ -97,7 +98,6 @@ const { tabs, mobile = 'select' } = defineProps<{
 }>()
 
 const initialTab = computed(() => (tabs.length > 0 ? (tabs[0] ?? null) : null))
-console.log('tabs: ', tabs)
 const selectedTab = ref(initialTab.value)
 
 const $q = useQuasar()
@@ -113,3 +113,9 @@ const showExpansion = computed(() => isMobile.value && mobile === 'expansion')
 const showSeparator = computed(() => isDesktopOrTablet.value || (isMobile.value && mobile === 'tabs'))
 const showPanels = computed(() => !(isMobile.value && mobile === 'expansion'))
 </script>
+
+<style lang="scss" scoped>
+.border-juniper {
+  border: 1px solid var(--q-color-pine);
+}
+</style>
