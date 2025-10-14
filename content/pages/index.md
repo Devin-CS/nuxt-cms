@@ -216,7 +216,7 @@ We know you have just what it takes to be a parent. We’re here to guide you ev
     - Create account
     - Donor search
     - Planning for the future
-  mobile: expansion
+  mobile: select
   ---
   #tab-1
     ::::c-media-content-split
@@ -357,7 +357,6 @@ We understand that creating a family is more than a moment — it’s a journey.
       
       Once you’ve used your donor sperm for your insemination, we ask that you share your results with us in your account dashboard when you’re ready. This allows us to contact you in case of any significant medical updates on your donor.
       :::::
-    
     ::::
   :::
 ::
