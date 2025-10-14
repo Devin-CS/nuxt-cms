@@ -40,7 +40,9 @@ const cssVars = computed(() => ({
 .c-media-content-split {
   display: grid;
   /* Auto-fit columns that wrap when items don't fit at min width */
-  grid-template-columns: repeat(auto-fit, minmax(var(--c-media-content-split-min, 444px), 1fr));
+  //grid-template-columns: repeat(auto-fit, minmax(var(--c-media-content-split-min, 444px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--c-media-content-split-min, 444px)), 1fr)
+  );
   gap: 16px;
 }
 </style>
