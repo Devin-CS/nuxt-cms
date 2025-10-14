@@ -308,16 +308,18 @@ We understand that creating a family is more than a moment — it’s a journey.
   mobile: expansion
   ---
   #tab-1
-    ::::c-media-card
-    ---
-    center: true
-    background: pine
-    text: shell
-    ---
-    #content
-    ### **Enhanced genetic insights**
+    ::::c-section-grid{direction="row"}
+      :::::c-media-card
+      ---
+      center: true
+      background: pine
+      text: shell
+      ---
+      #content
+      ### **Enhanced genetic insights**
     
-    California Cryobank already offers some of the most comprehensively screened sperm donors available. In efforts to ensure the best possible outcome for all families, we also perform carrier screening which tests for hundreds of recessive conditions on all our donors.
+      California Cryobank already offers some of the most comprehensively screened sperm donors available. In efforts to ensure the best possible outcome for all families, we also perform carrier screening which tests for hundreds of recessive conditions on all our donors.
+      :::::
     ::::
   
   #tab-2

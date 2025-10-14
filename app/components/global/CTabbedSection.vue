@@ -30,26 +30,29 @@
 </q-select>
 
 <!-- MOBILE: Expansion (accordion) variant -->
-<template v-else-if="showExpansion">
+<div
+  v-else-if="showExpansion"
+  class="column"
+  style="gap: 16px;">
   <q-expansion-item
     v-for="(label, i) in tabs"
     :key="i"
     :default-opened="selectedTab === label"
     :group="expansionGroup"
     :label="label"
-    class="border-pine q-mb-md"
+    class="border-pine"
     expand-icon="o_add_circle"
     expanded-icon="o_do_not_disturb_on"
     header-class="text-h4"
     @show="selectedTab = label">
-    <div class="q-px-lg q-pb-lg">
+    <div class="q-px-lg">
       <slot
         v-if="$slots[`tab-${i + 1}`]"
         :name="`tab-${i + 1}`"
         mdc-unwrap="p"/>
     </div>
   </q-expansion-item>
-</template>
+</div>
 
 <!-- DESKTOP/TABLET and forced mobile tabs -->
 <q-tabs
