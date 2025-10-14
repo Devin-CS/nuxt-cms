@@ -12,7 +12,7 @@
   <!-- Content slot -->
   <q-card-section
     v-if="$slots.content"
-    class="no-padding text-weight-medium">
+    class=" text-weight-medium">
     <slot name="content"/>
   </q-card-section>
 

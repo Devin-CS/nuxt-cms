@@ -3,23 +3,23 @@
 <q-select
   v-if="showSelect"
   v-model="selectedTab"
+  :options="tabs"
   bg-color="aqua"
   filled
   hide-dropdown-icon
-  popup-content-class="bg-aqua"
-  :options="tabs">
+  popup-content-class="bg-aqua">
   <template #selected-item="{ opt }">
     <span class="ellipses text-shell text-h4">{{ opt }}</span>
   </template>
   <template #append>
     <q-icon
-      name="o_keyboard_arrow_down"
-      class="text-shell"/>
+      class="text-shell"
+      name="o_keyboard_arrow_down"/>
   </template>
   <template #option="{ itemProps, selected, label }">
     <q-item
-      v-bind="itemProps"
-      :class="{ 'bg-shadow': selected }">
+      :class="{ 'bg-shadow': selected }"
+      v-bind="itemProps">
       <q-item-section>
         <q-item-label class="text-shell text-h4">
           {{ label }}
@@ -34,12 +34,15 @@
   <q-expansion-item
     v-for="(label, i) in tabs"
     :key="i"
-    class="border-pine"
-    :label="label"
-    :group="expansionGroup"
     :default-opened="selectedTab === label"
+    :group="expansionGroup"
+    :label="label"
+    class="border-pine q-mb-md"
+    expand-icon="o_add_circle"
+    expanded-icon="o_do_not_disturb_on"
+    header-class="text-h4"
     @show="selectedTab = label">
-    <div class="q-px-lg">
+    <div class="q-px-lg q-pb-lg">
       <slot
         v-if="$slots[`tab-${i + 1}`]"
         :name="`tab-${i + 1}`"
