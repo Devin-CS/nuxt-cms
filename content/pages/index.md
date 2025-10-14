@@ -321,7 +321,7 @@ We understand that creating a family is more than a moment — it’s a journey.
     ::::
   
   #tab-2
-    ::::c-section-grid
+  ::::c-section-grid{direction="row"}
       :::::c-media-card
       ---
       center: true
