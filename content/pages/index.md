@@ -33,7 +33,7 @@ background: birch
     ![discover-power-possibilities-2.webp](/images/discover-power-possibilities-2.webp)
     
     #decorator
-      :::::c-icon
+      :::::c-icon{color="juniper" size="108px"}
       ![apostrophe.svg](/svg/apostrophe.svg)
       :::::
     ::::

@@ -19,7 +19,9 @@
   <div
     v-if="$slots.decorator"
     class="c-media-duo__decorator">
-    <slot name="decorator"/>
+    <slot
+      name="decorator"
+      mdc-unwrap="p"/>
   </div>
 </article>
 </template>
@@ -56,6 +58,7 @@ const cssVars = computed(() => {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr; /* always two equal columns */
+  grid-template-rows: 1fr; /* make the row fill the container height so overlay centers correctly */
   align-items: stretch; /* provides vertical space for start/end alignment */
   gap: var(--c-media-duo-gap, 0);
   height: 100%;
@@ -71,13 +74,13 @@ const cssVars = computed(() => {
 .c-media-duo__first { align-self: start; }
 .c-media-duo__second { align-self: end; }
 
-/* Centered decorative element spanning both columns */
+/* Centered decorative element that sits above both images */
 .c-media-duo__decorator {
-  grid-column: 1 / -1;
-  grid-row: 1; /* overlays the grid implicitly */
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
   pointer-events: none; /* decorative only */
-  z-index: 2;
+  z-index: 3;
 }
 </style>

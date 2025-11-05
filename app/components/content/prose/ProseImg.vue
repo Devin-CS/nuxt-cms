@@ -1,6 +1,10 @@
 <template>
 <svg v-if="isSvg">
-  <use :xlink:href="src"/>
+  <use
+    :xlink:href="src"
+    width="1em"
+    height="1em"
+    aria-hidden="true"/>
 </svg>
 <q-img
   v-else
