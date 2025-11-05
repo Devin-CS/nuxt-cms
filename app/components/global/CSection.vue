@@ -1,6 +1,6 @@
 <template>
 <section
-  :class="[bgClass, textClass]"
+  :class="[bgClass, textClass, paddingClass]"
   class="c-section">
   <div class="c-section__wrapper q-px-md">
     <q-card
@@ -39,7 +39,7 @@
  *
  * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
-const { background = 'transparent', text } = defineProps<{
+const { background = 'transparent', text, padding = 'none' } = defineProps<{
   /** Background color using custom brand palette or transparent */
   background?:
     | 'transparent'
@@ -51,10 +51,13 @@ const { background = 'transparent', text } = defineProps<{
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
     | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
+  /** Vertical padding applied to the section using Quasar spacing utilities */
+  padding?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }>()
 
 const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
 const textClass = computed(() => text ? `text-${text}` : undefined)
+const paddingClass = computed(() => (!padding || padding === 'none') ? undefined : `q-py-${padding}`)
 </script>
 
 <style lang="scss" scoped>
