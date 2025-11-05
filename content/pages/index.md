@@ -21,7 +21,17 @@ background: birch
     ::::
   
   #media
-  ![discover-power-possibilities-1.webp](/images/discover-power-possibilities-1.webp)
+    ::::c-media-duo
+    ---
+    gap: none
+    height: "225"
+    ---
+    #first
+    ![discover-power-possibilities-1.webp](/images/discover-power-possibilities-1.webp)
+    
+    #second
+    ![discover-power-possibilities-2.webp](/images/discover-power-possibilities-2.webp)
+    ::::
   :::
 ::
 
