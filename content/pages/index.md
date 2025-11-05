@@ -13,7 +13,7 @@ padding: xl
   first: content
   ---
   #content
-  ## **Discover the power of possibilities**
+  # Discover the power of possibilities
   
   Building a family doesn’t have to be just a dream. Over the past 45 years, California Cryobank® has helped more than 75,000 parents achieve the family they’ve always wanted.
   
