@@ -2,17 +2,32 @@
 <article
   :style="cssVars"
   class="c-media-content-split">
-  <figure
-    v-if="$slots.media"
-    class="no-margin">
-    <slot
-      mdc-unwrap="p"
-      name="media"/>
-  </figure>
-  <section v-if="$slots.content">
-    <slot name="content"/>
-    <slot name="actions"/>
-  </section>
+  <template v-if="contentFirst">
+    <section v-if="$slots.content">
+      <slot name="content"/>
+      <slot name="actions"/>
+    </section>
+    <figure
+      v-if="$slots.media"
+      class="no-margin">
+      <slot
+        mdc-unwrap="p"
+        name="media"/>
+    </figure>
+  </template>
+  <template v-else>
+    <figure
+      v-if="$slots.media"
+      class="no-margin">
+      <slot
+        mdc-unwrap="p"
+        name="media"/>
+    </figure>
+    <section v-if="$slots.content">
+      <slot name="content"/>
+      <slot name="actions"/>
+    </section>
+  </template>
 </article>
 </template>
 
@@ -24,12 +39,14 @@
  * Children have equal width (1fr) and fill available space, with a configurable
  * minimum width.
  */
-const {
-  min = 444
-} = defineProps<{
+const { first = 'media', min = 444 } = defineProps<{
+  /** Which block comes first (top on mobile, left on desktop). */
+  first?: 'media' | 'content'
   /** Minimum width for each child (px number or any CSS size). Default 444px */
   min?: number | string
 }>()
+
+const contentFirst = computed(() => first === 'content')
 
 const cssVars = computed(() => ({
   '--c-media-content-split-min': toCssSize(min) ?? '444px'
