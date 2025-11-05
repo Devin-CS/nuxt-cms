@@ -1,10 +1,13 @@
 <template>
-<svg v-if="isSvg">
+<svg
+  v-if="isSvg"
+  preserveAspectRatio="xMidYMid meet"
+  aria-hidden="true">
   <use
-    :xlink:href="src"
     width="1em"
     height="1em"
-    aria-hidden="true"/>
+    :href="src"
+    :xlink:href="src"/>
 </svg>
 <q-img
   v-else
@@ -21,5 +24,9 @@ const props = withDefaults(defineProps<{
   alt: ''
 })
 
-const isSvg = computed(() => props.src?.toLowerCase().endsWith('.svg'))
+const isSvg = computed(() => {
+  const url = props.src?.toLowerCase() || ''
+  const base = url.split('#')[0].split('?')[0]
+  return base.endsWith('.svg')
+})
 </script>
