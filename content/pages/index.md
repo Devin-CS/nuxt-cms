@@ -31,6 +31,11 @@ background: birch
     
     #second
     ![discover-power-possibilities-2.webp](/images/discover-power-possibilities-2.webp)
+    
+    #decorator
+      :::::c-icon
+      ![apostrophe.svg](/svg/apostrophe.svg)
+      :::::
     ::::
   :::
 ::
