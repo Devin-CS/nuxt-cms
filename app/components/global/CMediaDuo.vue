@@ -33,17 +33,18 @@
  * CMediaContentSplit. Optimized for Nuxt Studio: editors drop Markdown images
  * into the named slots and QImg handles sizing.
  */
-const { height, gap = 'lg' } = defineProps<{
+const { height, gap = 'none' } = defineProps<{
   /** Optional minimum height for the collage area. If omitted, the duo simply fills its parent height. */
   height?: number | string
-  /** Spacing between the two images (design token only) */
-  gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  /** Spacing between the two images (design token only). Use 'none' for no gap. */
+  gap?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }>()
 
+type GapToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+
 const cssVars = computed(() => {
-  const vars: Record<string, string> = {
-    '--c-media-duo-gap': toGapSize(gap)
-  }
+  const vars: Record<string, string> = {}
+  vars['--c-media-duo-gap'] = gap === 'none' ? '0' : toGapSize(gap as GapToken)
   const min = toCssSize(height)
   if (min) vars['--c-media-duo-min'] = min
   return vars
@@ -56,7 +57,7 @@ const cssVars = computed(() => {
   display: grid;
   grid-template-columns: 1fr 1fr; /* always two equal columns */
   align-items: stretch; /* provides vertical space for start/end alignment */
-  gap: var(--c-media-duo-gap, 16px);
+  gap: var(--c-media-duo-gap, 0);
   height: 100%;
   min-height: var(--c-media-duo-min, 0);
   width: 100%;
