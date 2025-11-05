@@ -200,15 +200,14 @@ padding: xl
 #content
   :::c-media-testimonial
   ---
+  author: – Sydney *
   overlap: sm
-  author: "– Sydney *"
   ---
-
   #quote
-    # <span class="text-saffron">“We have three beautiful, healthy, happy babies</span> and we credit our dreams coming true to California Cryobank.”
-
+  # [“We have three beautiful, healthy, happy babies]{.text-saffron} and we credit our dreams coming true to California Cryobank.”
+  
   #media
-    ![testimonial.webp](/images/testimonial.webp)
+  ![testimonial.webp](/images/testimonial.webp)
   :::
 ::
 
