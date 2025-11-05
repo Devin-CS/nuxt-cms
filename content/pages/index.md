@@ -5,6 +5,7 @@ navigation: false
 ::c-section
 ---
 background: birch
+padding: xl
 ---
 #content
   :::c-media-content-split
@@ -24,7 +25,7 @@ background: birch
     ::::c-media-duo
     ---
     gap: none
-    height: "225"
+    height: "200"
     ---
     #first
     ![discover-power-possibilities-1.webp](/images/discover-power-possibilities-1.webp)
@@ -33,7 +34,7 @@ background: birch
     ![discover-power-possibilities-2.webp](/images/discover-power-possibilities-2.webp)
     
     #decorator
-      :::::c-icon{color="juniper" size="108px"}
+      :::::c-icon{color="juniper" size="75"}
       ![apostrophe.svg](/svg/apostrophe.svg)
       :::::
     ::::
