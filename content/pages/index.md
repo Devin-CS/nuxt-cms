@@ -4,6 +4,27 @@ navigation: false
 
 ::c-section
 ---
+background: shell
+padding: xl
+---
+#content
+  :::c-media-testimonial
+  ---
+  overlap: sm
+  author: "– Sydney *"
+  quoteParts:
+    - text: "“We have three beautiful, healthy, happy babies and we credit our dreams coming true "
+    - text: "to California Cryobank.”"
+      color: saffron
+  ---
+
+  #media
+    ![testimonial.webp](/images/testimonial.webp)
+  :::
+::
+
+::c-section
+---
 background: birch
 padding: xl
 ---
