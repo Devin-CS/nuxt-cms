@@ -33,17 +33,21 @@
  * CMediaContentSplit. Optimized for Nuxt Studio: editors drop Markdown images
  * into the named slots and QImg handles sizing.
  */
-const { height = 520, gap = 'lg' } = defineProps<{
-  /** Overall min-height for the collage area */
+const { height, gap = 'lg' } = defineProps<{
+  /** Optional minimum height for the collage area. If omitted, the duo simply fills its parent height. */
   height?: number | string
   /** Spacing between the two images (design token only) */
   gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }>()
 
-const cssVars = computed(() => ({
-  '--c-media-duo-height': toCssSize(height) ?? '520px',
-  '--c-media-duo-gap': toGapSize(gap)
-}))
+const cssVars = computed(() => {
+  const vars: Record<string, string> = {
+    '--c-media-duo-gap': toGapSize(gap)
+  }
+  const min = toCssSize(height)
+  if (min) vars['--c-media-duo-min'] = min
+  return vars
+})
 </script>
 
 <style scoped lang="scss">
@@ -53,7 +57,8 @@ const cssVars = computed(() => ({
   grid-template-columns: 1fr 1fr; /* always two equal columns */
   align-items: stretch; /* provides vertical space for start/end alignment */
   gap: var(--c-media-duo-gap, 16px);
-  min-height: var(--c-media-duo-height, 520px);
+  height: 100%;
+  min-height: var(--c-media-duo-min, 0);
   width: 100%;
 }
 
