@@ -4,27 +4,6 @@ navigation: false
 
 ::c-section
 ---
-background: shell
-padding: xl
----
-#content
-  :::c-media-testimonial
-  ---
-  overlap: sm
-  author: "– Sydney *"
-  quoteParts:
-    - text: "“We have three beautiful, healthy, happy babies and we credit our dreams coming true "
-    - text: "to California Cryobank.”"
-      color: saffron
-  ---
-
-  #media
-    ![testimonial.webp](/images/testimonial.webp)
-  :::
-::
-
-::c-section
----
 background: birch
 padding: xl
 ---
@@ -210,6 +189,26 @@ From the big decisions to the detailed logistics, California Cryobank offers rep
     
     We’re here for your family through every chapter of life. After you have your baby, you'll continue to have access to our support team, genetics teams, and family resources, plus the option to participate in California Cryobank's Sibling Registry.
     ::::
+  :::
+::
+
+::c-section
+---
+background: shell
+padding: xl
+---
+#content
+  :::c-media-testimonial
+  ---
+  overlap: sm
+  author: "– Sydney *"
+  ---
+
+  #quote
+    # <span class="text-saffron">“We have three beautiful, healthy, happy babies</span> and we credit our dreams coming true to California Cryobank.”
+
+  #media
+    ![testimonial.webp](/images/testimonial.webp)
   :::
 ::
 

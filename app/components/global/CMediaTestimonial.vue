@@ -3,16 +3,9 @@
   class="c-media-testimonial"
   :style="cssVars">
   <section class="content">
-    <slot name="content">
-      <h2 class="display-quote">
-        <template v-if="quoteParts && quoteParts.length">
-          <span
-            v-for="(part, i) in quoteParts"
-            :key="i"
-            :class="part.color ? `text-${part.color}` : undefined">{{ part.text }}</span>
-        </template>
-      </h2>
-    </slot>
+    <slot
+      name="quote"
+      mdc-unwrap="p"/>
 
     <footer
       v-if="$slots.attribution || author"
@@ -21,16 +14,14 @@
         {{ author }}
       </slot>
     </footer>
-
-    <div v-if="$slots.actions" class="actions">
-      <slot name="actions"/>
-    </div>
   </section>
 
   <figure
     v-if="$slots.media"
     class="media no-margin">
-    <slot name="media" mdc-unwrap="p"/>
+    <slot
+      name="media"
+      mdc-unwrap="p"/>
   </figure>
 </article>
 </template>
@@ -47,13 +38,10 @@ const {
   /** Preset token for overlap amount, expressed as percent of the media column */
   overlap = 'lg',
   /** Optional author/attribution if not using the attribution slot. */
-  author,
-  /** Optional multi-color quote parts; each part { text, color? } maps to a <span class="text-{color}"> */
-  quoteParts
+  author
 } = defineProps<{
   overlap?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
   author?: string
-  quoteParts?: { text: string, color?: string }[]
 }>()
 
 // Map editor-friendly presets to percentage of the media column width
