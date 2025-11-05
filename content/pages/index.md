@@ -2,7 +2,7 @@
 navigation: false
 ---
 
-::c-section 
+::c-section
 ---
 background: birch
 padding: xl
