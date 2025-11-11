@@ -448,9 +448,9 @@ Each moment in this process matters. We’re here to walk you through it all —
     #content
     #### **Email us at**
     
-    **ccbgeneral\@cryobank.com**
+    [**ccbgeneral@cryobank.com**](mailto\:ccbgeneral@cryobank.com)
     
-    For media inquiries :br**media\@generate.com**
+    For media inquiries :br [**media@generate.com**](mailto\:media@generate.com)
     ::::
   
     ::::c-media-card
