@@ -7,7 +7,7 @@ navigation: false
 background: pine
 text: shell
 ---
-#title
+#header
 # California Cryobank: Partner with the #1 sperm bank in the world
 
 #content
@@ -86,7 +86,7 @@ text: shell
 background: pine
 text: birch
 ---
-#title
+#header
 # Helping you make dreams come true
 
 From the big decisions to the detailed logistics, California Cryobank offers reproductive services to help build the family you’ve been dreaming of.
@@ -176,7 +176,7 @@ padding: xl
 ---
 background: shell
 ---
-#title
+#header
 # Celebrating each journey
 
 We’re honored to have helped tens of thousands of people build the families they deserve. Discover their stories of successes and happiness — we hope you find them as inspiring as we do.
@@ -223,7 +223,7 @@ We’re honored to have helped tens of thousands of people build the families th
 ---
 background: birch
 ---
-#title
+#header
 # Let’s get started
 
 We know you have just what it takes to be a parent. We’re here to guide you every step of the way.
@@ -313,7 +313,7 @@ title: More options mean greater possibilities
   :::c-button{arrow color="juniper" label="View all services"}
   :::
 
-#title
+#header
 ## **More options mean greater possibilities**
 
 We understand that creating a family is more than a moment — it’s a journey. From the moment you become a part of the California Cryobank family and beyond, we offer services that include donor sperm for future use, and support for after your child is born.
@@ -421,7 +421,7 @@ With hundreds of donors to choose from — all highly qualified and thoroughly s
 background: sky
 align: left
 ---
-#title
+#header
 ## Still have questions?
 
 Each moment in this process matters. We’re here to walk you through it all — from the biggest “what ifs'' to the smallest “but hows.”

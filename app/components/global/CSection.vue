@@ -1,29 +1,23 @@
 <template>
 <section
+  v-bind="passthroughAttrs"
   :class="[bgClass, textClass, paddingClass]"
   class="c-section">
-  <div class="c-section__wrapper q-px-md">
-    <q-card
-      :class="['transparent', containerAlignClass]"
-      flat
-      style="max-width: 900px">
-      <q-card-section
-        v-if="$slots.title"
-        :class="alignClass">
-        <slot name="title"/>
-      </q-card-section>
-
-      <q-card-actions
-        v-if="$slots.actions"
-        :align="align"
-        class="q-mb-xl">
-        <slot name="actions"/>
-      </q-card-actions>
-    </q-card>
+  <div class="c-section__wrapper q-px-md q-mx-auto">
+    <div
+      v-if="$slots.header"
+      :class="['c-section__header', containerAlignClass, alignClass, 'q-pt-md']">
+      <slot name="header"/>
+    </div>
 
     <div
-      v-if="$slots.content"
-      :class="[containerAlignClass, alignClass]">
+      v-if="$slots.actions"
+      :class="['c-section__actions', containerAlignClass, 'row', 'items-center', actionsJustifyClass, 'q-mb-xl']">
+      <slot name="actions"/>
+    </div>
+
+    <div
+      v-if="$slots.content">
       <slot name="content"/>
     </div>
   </div>
@@ -31,6 +25,7 @@
 </template>
 
 <script lang="ts" setup>
+defineOptions({ inheritAttrs: false })
 /**
  * CSection
  *
@@ -66,13 +61,27 @@ const containerAlignClass = computed(() => {
   if (align === 'right') return 'q-ml-auto'
   return undefined
 })
+const actionsJustifyClass = computed(() => {
+  if (align === 'left') return 'justify-start'
+  if (align === 'right') return 'justify-end'
+  return 'justify-center'
+})
+const attrs = useAttrs()
+
+// Prevent unintended HTML tooltips from front-matter `title` attributes
+// Nuxt Content may forward unknown front-matter keys as HTML attributes.
+// We explicitly drop `title` so hovering the section doesn’t show a browser tooltip.
+const passthroughAttrs = computed(() => {
+  const rest = { ...(attrs as Record<string, unknown>) }
+  // Remove any accidental HTML title passed via front-matter
+  Reflect.deleteProperty(rest, 'title')
+  return rest
+})
 </script>
 
 <style lang="scss" scoped>
-/* Centered wrapper with responsive max-width based on breakpoints */
+/* Wrapper: responsive max-width only. Horizontal centering handled via Quasar `q-mx-auto` */
 .c-section__wrapper {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 540px; /* xsmall */
 }
 
@@ -92,5 +101,11 @@ const containerAlignClass = computed(() => {
   .c-section__wrapper {
     max-width: 1116px;
   }
+}
+
+/* Header and actions follow the previous QCard's max width */
+.c-section__header,
+.c-section__actions {
+  max-width: 900px;
 }
 </style>

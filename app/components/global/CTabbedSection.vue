@@ -76,7 +76,7 @@
     v-for="(label, i) in tabs"
     :key="i"
     :name="label"
-    class="q-px-none">
+    class="q-padding-none">
     <slot
       v-if="$slots[`tab-${i + 1}`]"
       :name="`tab-${i + 1}`"

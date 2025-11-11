@@ -2,7 +2,7 @@
 <section
   :class="[bgClass, textClass, directionClass]"
   :style="cssVars"
-  class="c-section-grid q-py-lg">
+  class="c-section-grid q-pb-lg">
   <slot v-if="$slots.default"/>
 </section>
 </template>
@@ -20,7 +20,7 @@ const {
   background = 'transparent',
   text,
   gap = 'md',
-  min = 200,
+  min,
   max,
   direction = 'column'
 } = defineProps<{
@@ -36,7 +36,7 @@ const {
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
   /** Gap between items (token only: xs | sm | md | lg | xl). Default md (16px) */
   gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  /** Minimum width for each item (px number or any CSS size). Default 200px */
+  /** Minimum size per item. Column layout uses this as min-width (default 200px). Row layout uses it as min-height (no minimum by default). Accepts px number or any CSS size. */
   min?: number | string
   /** Maximum width for each item (px number or any CSS size). Omit for no max (items take as much space as possible) */
   max?: number | string
@@ -47,9 +47,17 @@ const {
 const cssVars = computed(() => {
   const vars: Record<string, string> = {
     '--c-section-grid-gap': toGapSize(gap),
-    '--c-section-grid-min': toCssSize(min) ?? '200px',
     '--c-section-grid-direction': direction
   }
+
+  const minSize = toCssSize(min)
+  // Column layout: keep default min width of 200px if not provided
+  vars['--c-section-grid-min'] = minSize ?? '200px'
+  // Row layout: default to content height (auto); only enforce min if provided
+  if (minSize) {
+    vars['--c-section-grid-row-min'] = minSize
+  }
+
   const maxSize = toCssSize(max)
   // Always use 1fr for track maximum to allow flexible space distribution
   vars['--c-section-grid-track-max'] = '1fr'
@@ -80,10 +88,13 @@ const directionClass = computed(() => direction === 'row' ? 'c-section-grid--row
 
 /* Row layout: arrange items in rows instead of columns */
 .c-section-grid--row {
-  grid-template-columns: unset;
-  grid-template-rows: repeat(auto-fit, minmax(var(--c-section-grid-min, 200px), var(--c-section-grid-track-max, 1fr)));
-  align-content: center;
-  align-items: center;
+  /* Single column, rows size to content (no leftover vertical space) */
+  grid-template-columns: 1fr;
+  grid-template-rows: none;
+  grid-auto-rows: minmax(var(--c-section-grid-row-min, auto), auto);
+  /* No vertical centering to avoid perceived extra gaps between rows */
+  align-content: start;
+  align-items: stretch;
 }
 
 /* Apply max width to all direct children (slotted) without extra wrappers */
