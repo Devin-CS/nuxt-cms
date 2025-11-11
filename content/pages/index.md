@@ -388,27 +388,30 @@ background: pine
 text: shell
 ---
 #title
-  ## Your future family starts at California Cryobank
+## Your future family starts at California Cryobank
 
 #description
-  With hundreds of donors to choose from — all highly qualified and thoroughly screened — we’re here to provide the donor that’s the right fit for your family.
+With hundreds of donors to choose from — all highly qualified and thoroughly screened — we’re here to provide the donor that’s the right fit for your family.
 
 #actions
   :::c-button{arrow color="juniper" label="Browse donors"}
   :::
 
 #media
-  :::c-collage{height="700"}
+  :::c-collage
+  ---
+  height: "700"
+  ---
   #first
-    ![Collage first](/images/collage-one.webp)
-
+  ![Collage first](/images/collage-one.webp)
+  
   #second
-    ![Collage second](/images/collage-two.webp)
-
+  ![Collage second](/images/collage-two.webp)
+  
   #third
-    ![Collage third](/images/collage-three.webp)
-
+  ![Collage third](/images/collage-three.webp)
+  
   #fourth
-    ![Collage fourth](/images/collage-four.webp)
+  ![Collage fourth](/images/collage-four.webp)
   :::
 ::
