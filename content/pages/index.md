@@ -381,3 +381,17 @@ We understand that creating a family is more than a moment — it’s a journey.
     ::::
   :::
 ::
+
+:::c-collage{height="700"}
+#first
+![Collage first](/images/testimonial.webp)
+
+#second
+![Collage second](/images/looking-ahead.webp)
+
+#third
+![Collage third](/images/donor-sperm.png)
+
+#fourth
+![Collage fourth](/images/shipping.png)
+:::
