@@ -7,7 +7,7 @@
     :style="cssVars">
     <section
       v-if="$slots.title || $slots.description || $slots.actions"
-      class="content self-center">
+      class="content self-center q-mb-xl">
       <div
         v-if="$slots.title"
         class="text-h4 q-mb-sm">

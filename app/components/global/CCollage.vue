@@ -78,7 +78,7 @@ const isThirdVisible = ref(false)
 const isFourthVisible = ref(false)
 
 // Quasar v-intersection directive configs (trigger once)
-const commonIntersectionCfg = { threshold: 0.1, rootMargin: '0px 0px -15% 0px' }
+const commonIntersectionCfg = { threshold: 0.1, rootMargin: '0px 0px 0px 0px' }
 
 const intersectionFirst = {
   handler: (entry: IntersectionObserverEntry) => {
