@@ -55,10 +55,6 @@ const {
   background = 'transparent',
   /** Optional text color token to cascade */
   text,
-  /** Percent of width the content column takes on desktop (0–100). Default 40 */
-  contentPct = 40,
-  /** Upward bleed amount for media (px or any CSS size). Default ~38 (half of previous) */
-  bleedTop = 38,
   /** Approximate container height (applied as min-height on desktop). Default 648 */
   height = 648
 } = defineProps<{
@@ -71,10 +67,12 @@ const {
     | 'aqua' | 'aster' | 'birch' | 'elm' | 'eucalyptus'
     | 'fern' | 'juniper' | 'pine' | 'poppy' | 'saffron'
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
-  contentPct?: number | string
-  bleedTop?: number | string
   height?: number | string
 }>()
+
+// Fixed layout constants (not exposed to content editors)
+const CONTENT_PCT = 40
+const BLEED_TOP = 38
 
 const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
 const textClass = computed(() => (text ? `text-${text}` : undefined))
@@ -87,21 +85,13 @@ function toCssSize(v: number | string | undefined, fallback: string): string {
 }
 
 const cssVars = computed(() => {
-  // normalize content percentage as a number 0..100
-  let pctNum: number
-  if (typeof contentPct === 'number') {
-    pctNum = contentPct
-  }
-  else {
-    const n = parseFloat(String(contentPct))
-    pctNum = isNaN(n) ? 40 : n
-  }
-  pctNum = Math.max(0, Math.min(100, pctNum))
+  // Use fixed layout constants so content editors don't need to configure these
+  const pctNum = Math.max(0, Math.min(100, CONTENT_PCT))
 
   return {
     '--ccs-content-pct': `${pctNum}%`,
     '--ccs-media-pct': `${100 - pctNum}%`,
-    '--ccs-bleed-top': toCssSize(bleedTop, '38px'),
+    '--ccs-bleed-top': `${BLEED_TOP}px`,
     '--ccs-height': toCssSize(height, '648px')
   } as Record<string, string>
 })
