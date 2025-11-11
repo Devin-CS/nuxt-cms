@@ -3,22 +3,34 @@
   class="c-collage"
   :style="rootStyle">
   <!-- 1st image -->
-  <div class="c-collage__cell c-collage__first">
+  <div
+    v-intersection="intersectionFirst"
+    class="c-collage__cell c-collage__first"
+    :class="{ 'is-visible': !animate || isFirstVisible, 'will-animate': animate }">
     <slot name="first"/>
   </div>
 
   <!-- 2nd image -->
-  <div class="c-collage__cell c-collage__second">
+  <div
+    v-intersection="intersectionSecond"
+    class="c-collage__cell c-collage__second"
+    :class="{ 'is-visible': !animate || isSecondVisible, 'will-animate': animate }">
     <slot name="second"/>
   </div>
 
   <!-- 3rd image -->
-  <div class="c-collage__cell c-collage__third">
+  <div
+    v-intersection="intersectionThird"
+    class="c-collage__cell c-collage__third"
+    :class="{ 'is-visible': !animate || isThirdVisible, 'will-animate': animate }">
     <slot name="third"/>
   </div>
 
   <!-- 4th image -->
-  <div class="c-collage__cell c-collage__fourth">
+  <div
+    v-intersection="intersectionFourth"
+    class="c-collage__cell c-collage__fourth"
+    :class="{ 'is-visible': !animate || isFourthVisible, 'will-animate': animate }">
     <slot name="fourth"/>
   </div>
 </div>
@@ -32,9 +44,12 @@
  * The layout scales horizontally with container width while keeping a fixed
  * component height. Provide images via markdown in named slots: "first",
  * "second", "third", "fourth".
+ *
+ * Animations:
+ * - Uses Quasar's v-intersection directive to slide/fade cells up as they enter the viewport.
+ * - Controlled by the `animate` prop (default: true).
  */
-
-const { height = 700 } = defineProps<{ height?: number | string }>()
+const { height = 700, animate = true } = defineProps<{ height?: number | string, animate?: boolean }>()
 
 const rootStyle = computed(() => {
   let h: string
@@ -47,6 +62,44 @@ const rootStyle = computed(() => {
   }
   return { height: h }
 })
+
+// visibility flags for intersection-triggered reveal
+const isFirstVisible = ref(false)
+const isSecondVisible = ref(false)
+const isThirdVisible = ref(false)
+const isFourthVisible = ref(false)
+
+// Quasar v-intersection directive configs (trigger once)
+const commonIntersectionCfg = { threshold: 0.1, rootMargin: '0px 0px -15% 0px' }
+
+const intersectionFirst = {
+  handler: (entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) isFirstVisible.value = true
+  },
+  cfg: commonIntersectionCfg,
+  once: true
+}
+const intersectionSecond = {
+  handler: (entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) isSecondVisible.value = true
+  },
+  cfg: commonIntersectionCfg,
+  once: true
+}
+const intersectionThird = {
+  handler: (entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) isThirdVisible.value = true
+  },
+  cfg: commonIntersectionCfg,
+  once: true
+}
+const intersectionFourth = {
+  handler: (entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) isFourthVisible.value = true
+  },
+  cfg: commonIntersectionCfg,
+  once: true
+}
 </script>
 
 <style scoped lang="scss">
@@ -69,16 +122,16 @@ Converted to percentages of the reference and then expressed as segment sizes.
    [250-680] 22.10%
    [680-880] 10.31%
    [880-1190]15.83%
-   [1190-1870]35.04%
-   [1870-100%]3.86%
+   [1190-→c5] 33.10%   (tuned to move c5 left)
+   [right gutter] 5.80%   (≈ vertical gap r2→r3)
   */
   grid-template-columns:
     [left] 12.86% [c1]
     22.10% [c2]
     10.31% [c3]
     15.83% [c4]
-    35.04% [c5]
-    3.86% [right];
+    32.60% [c5]
+    6.30% [right];
 
   /*
   Rows: 7 segments => 8 grid lines (including container edges)
@@ -120,14 +173,53 @@ Converted to percentages of the reference and then expressed as segment sizes.
 }
 
 /* Ensure any media content fills and crops to its assigned area */
+/* Quasar QImg wrappers should fill the grid cell */
+.c-collage__cell :deep(.q-img),
+.c-collage__cell :deep(.q-img__content) {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* Media elements and QImg's inner image cover the area */
 .c-collage__cell :deep(img),
 .c-collage__cell :deep(picture),
 .c-collage__cell :deep(video),
-.c-collage__cell :deep(canvas) {
+.c-collage__cell :deep(canvas),
+.c-collage__cell :deep(.q-img__image) {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Reveal-on-scroll animation using Quasar v-intersection
+   - Initial state: shifted down and transparent when `.will-animate` is present
+   - Visible state: `.is-visible` removes shift and fades in
+*/
+.c-collage__cell.will-animate {
+  opacity: 0;
+  transform: translate3d(0, 64px, 0);
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 700ms ease-out;
+  will-change: transform, opacity;
+}
+.c-collage__cell.will-animate.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* Staggered delays for a nicer cascade */
+.c-collage__first.will-animate { transition-delay: 0ms; }
+.c-collage__second.will-animate { transition-delay: 200ms; }
+.c-collage__third.will-animate { transition-delay: 400ms; }
+.c-collage__fourth.will-animate { transition-delay: 600ms; }
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .c-collage__cell.will-animate {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
 
 /* Slot placements using CSS Grid line indices
@@ -137,14 +229,14 @@ Converted to percentages of the reference and then expressed as segment sizes.
    - Rows have 6 interior lines    → CSS Grid lines 2..7; top/bottom edges are 1 and 8.
 */
 .c-collage__first {
-  /* first image: left edge → 2nd column gridline; top → 1st row gridline; bottom → 4th */
+  /* first image: left edge → 2nd column gridline; top → 1st row gridline; bottom → DevTools gridline 5 (named r4) */
   grid-column: left / c2;
   grid-row: r1 / r4;
   z-index: 3; /* should appear above second */
 }
 
 .c-collage__second {
-  /* second image: left → 1st column gridline; right → edge; top → edge; bottom → 2nd row gridline */
+  /* second image: left → 1st column gridline; right → edge; top → edge; bottom → DevTools gridline 3 (named r2) */
   grid-column: c1 / right;
   grid-row: top / r2;
   z-index: 2;

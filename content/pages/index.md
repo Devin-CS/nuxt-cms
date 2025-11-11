@@ -382,16 +382,53 @@ We understand that creating a family is more than a moment — it’s a journey.
   :::
 ::
 
-:::c-collage{height="700"}
-#first
-![Collage first](/images/testimonial.webp)
+::c-collage-section
+---
+background: pine
+text: shell
+---
+#content
+  ## Your future family starts at California Cryobank
 
-#second
-![Collage second](/images/looking-ahead.webp)
+  With hundreds of donors to choose from — all highly qualified and thoroughly screened — we’re here to provide the donor that’s the right fit for your family.
 
-#third
-![Collage third](/images/donor-sperm.png)
+#media
+  :::c-collage{height="700"}
+  #first
+    ![Collage first](/images/collage-one.webp)
 
-#fourth
-![Collage fourth](/images/shipping.png)
-:::
+  #second
+    ![Collage second](/images/collage-two.webp)
+
+  #third
+    ![Collage third](/images/collage-three.webp)
+
+  #fourth
+    ![Collage fourth](/images/collage-four.webp)
+  :::
+::
+
+
+Some extra space
+
+Even more extra space
+
+And a little more extra space
+
+a
+
+b
+
+c
+
+d
+
+e
+
+f
+
+g
+
+h
+
+i
