@@ -419,6 +419,7 @@ With hundreds of donors to choose from — all highly qualified and thoroughly s
 ::c-section
 ---
 background: sky
+align: left
 ---
 #title
 ## Still have questions?

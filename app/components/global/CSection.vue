@@ -4,18 +4,18 @@
   class="c-section">
   <div class="c-section__wrapper q-px-md">
     <q-card
-      class="transparent q-mx-auto"
+      :class="['transparent', containerAlignClass]"
       flat
       style="max-width: 900px">
       <q-card-section
         v-if="$slots.title"
-        class="text-center">
+        :class="alignClass">
         <slot name="title"/>
       </q-card-section>
 
       <q-card-actions
         v-if="$slots.actions"
-        align="center"
+        :align="align"
         class="q-mb-xl">
         <slot name="actions"/>
       </q-card-actions>
@@ -23,7 +23,7 @@
 
     <div
       v-if="$slots.content"
-      class="q-mx-auto">
+      :class="[containerAlignClass, alignClass]">
       <slot name="content"/>
     </div>
   </div>
@@ -39,7 +39,7 @@
  *
  * Optimized for Nuxt Studio editors: use props for title and description to avoid confusion.
  */
-const { background = 'transparent', text, padding = 'none' } = defineProps<{
+const { background = 'transparent', text, padding = 'none', align = 'center' } = defineProps<{
   /** Background color using custom brand palette or transparent */
   background?:
     | 'transparent'
@@ -53,11 +53,19 @@ const { background = 'transparent', text, padding = 'none' } = defineProps<{
     | 'shadow' | 'shell' | 'sky' | 'violet' | 'willow'
   /** Vertical padding applied to the section using Quasar spacing utilities */
   padding?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  /** Horizontal alignment for title, actions, and content */
+  align?: 'left' | 'center' | 'right'
 }>()
 
 const bgClass = computed(() => (!background || background === 'transparent' ? 'transparent' : `bg-${background}`))
 const textClass = computed(() => text ? `text-${text}` : undefined)
 const paddingClass = computed(() => (!padding || padding === 'none') ? undefined : `q-py-${padding}`)
+const alignClass = computed(() => `text-${align}`)
+const containerAlignClass = computed(() => {
+  if (align === 'center') return 'q-mx-auto'
+  if (align === 'right') return 'q-ml-auto'
+  return undefined
+})
 </script>
 
 <style lang="scss" scoped>
