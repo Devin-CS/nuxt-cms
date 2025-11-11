@@ -1,19 +1,35 @@
 <template>
 <section
   :class="[bgClass, textClass]"
-  class="c-collage-section">
+  class="c-collage-section q-ma-none">
   <div
-    class="c-collage-section__grid"
+    class="c-collage-section__grid q-pa-md"
     :style="cssVars">
     <section
-      v-if="$slots.content"
-      class="content">
-      <slot name="content"/>
+      v-if="$slots.title || $slots.description || $slots.actions"
+      class="content self-center">
+      <div
+        v-if="$slots.title"
+        class="text-h4 q-mb-sm">
+        <slot name="title"/>
+      </div>
+      <div
+        v-if="$slots.description"
+        class="text-body1 q-mb-md">
+        <slot name="description"/>
+      </div>
+      <div
+        v-if="$slots.actions"
+        class="row items-center q-gutter-sm q-gutter-y-sm q-mt-sm">
+        <slot
+          name="actions"
+          mdc-unwrap="p"/>
+      </div>
     </section>
 
     <figure
       v-if="$slots.media"
-      class="media">
+      class="media q-ma-none self-end">
       <!-- Allow markdown to unwrap <p> around the media slot -->
       <slot
         name="media"
@@ -103,7 +119,6 @@ const cssVars = computed(() => {
   overflow-x: clip;
   /* Avoid 100vw scrollbar issues; keep element in normal flow */
   width: 100%;
-  margin: 0;
   transform: none;
 }
 
@@ -112,20 +127,16 @@ const cssVars = computed(() => {
   gap: 24px;
   /* Mobile/default: stack with comfortable side padding */
   grid-template-columns: 1fr;
-  padding: 16px; /* symmetric on small screens */
 }
 
-/* Desktop layout: 40/60 with half left gutter and zero right gutter */
+/* Desktop layout: 40/60 with larger left gutter (≈3× previous) and zero right gutter */
   @media (min-width: 1024px) {
   .c-collage-section { min-height: var(--ccs-height, 648px); }
   .c-collage-section__grid {
     grid-template-columns: var(--ccs-content-pct, 40%) var(--ccs-media-pct, 60%);
-    /* Use a scalable base padding; left is half, right is zero. */
+    /* Use a scalable base padding; left is triple the previous (1.5× base), right is zero. */
     --_base-pad: clamp(24px, 6vw, 96px);
-    padding-left: calc(var(--_base-pad) * 0.5);
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 0 0 calc(var(--_base-pad) * 1.5);
     /* Top-align items so the collage can bleed upward cleanly */
     align-items: start;
   }
@@ -135,14 +146,7 @@ const cssVars = computed(() => {
 .media {
   position: relative;
   z-index: 1; /* ensure collage paints above neighbors when bleeding */
-  align-self: end; /* bottom-align the collage within the section */
-  /* Reset UA margins and apply upward bleed */
-  margin: 0;
-  margin-top: calc(var(--ccs-bleed-top, 38px) * -1);
-}
-/* Ensure default figure margins never interfere; preserve bleed */
-.media.no-margin {
-  margin: 0;
+  /* Upward bleed */
   margin-top: calc(var(--ccs-bleed-top, 38px) * -1);
 }
 

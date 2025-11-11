@@ -94,7 +94,6 @@ const directionClass = computed(() => direction === 'row' ? 'c-section-grid--row
 
 /* For row layout, apply max height instead of max width */
 .c-section-grid--row :deep(> *) {
-  height: 100%;
   max-height: var(--c-section-grid-item-max, none);
   max-width: none;
 }

@@ -5,33 +5,41 @@
   <!-- 1st image -->
   <div
     v-intersection="intersectionFirst"
-    class="c-collage__cell c-collage__first"
+    class="c-collage__cell c-collage__first relative-position overflow-hidden"
     :class="{ 'is-visible': !animate || isFirstVisible, 'will-animate': animate }">
-    <slot name="first"/>
+    <slot
+      name="first"
+      mdc-unwrap="p"/>
   </div>
 
   <!-- 2nd image -->
   <div
     v-intersection="intersectionSecond"
-    class="c-collage__cell c-collage__second"
+    class="c-collage__cell c-collage__second relative-position overflow-hidden"
     :class="{ 'is-visible': !animate || isSecondVisible, 'will-animate': animate }">
-    <slot name="second"/>
+    <slot
+      name="second"
+      mdc-unwrap="p"/>
   </div>
 
   <!-- 3rd image -->
   <div
     v-intersection="intersectionThird"
-    class="c-collage__cell c-collage__third"
+    class="c-collage__cell c-collage__third relative-position overflow-hidden"
     :class="{ 'is-visible': !animate || isThirdVisible, 'will-animate': animate }">
-    <slot name="third"/>
+    <slot
+      name="third"
+      mdc-unwrap="p"/>
   </div>
 
   <!-- 4th image -->
   <div
     v-intersection="intersectionFourth"
-    class="c-collage__cell c-collage__fourth"
+    class="c-collage__cell c-collage__fourth relative-position overflow-hidden"
     :class="{ 'is-visible': !animate || isFourthVisible, 'will-animate': animate }">
-    <slot name="fourth"/>
+    <slot
+      name="fourth"
+      mdc-unwrap="p"/>
   </div>
 </div>
 </template>
@@ -158,9 +166,7 @@ Converted to percentages of the reference and then expressed as segment sizes.
 .c-collage__cell {
   min-width: 0;
   min-height: 0; /* critical: allow rows to keep their defined sizes */
-  overflow: hidden; /* crop media to the cell */
   display: block;
-  position: relative; /* enable z-index layering per cell */
 }
 
 /* Reset MDC wrappers so they don't add margins or collapse height */

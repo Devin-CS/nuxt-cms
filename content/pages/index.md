@@ -387,10 +387,15 @@ We understand that creating a family is more than a moment — it’s a journey.
 background: pine
 text: shell
 ---
-#content
+#title
   ## Your future family starts at California Cryobank
 
+#description
   With hundreds of donors to choose from — all highly qualified and thoroughly screened — we’re here to provide the donor that’s the right fit for your family.
+
+#actions
+  :::c-button{arrow color="juniper" label="Browse donors"}
+  :::
 
 #media
   :::c-collage{height="700"}
@@ -407,28 +412,3 @@ text: shell
     ![Collage fourth](/images/collage-four.webp)
   :::
 ::
-
-
-Some extra space
-
-Even more extra space
-
-And a little more extra space
-
-a
-
-b
-
-c
-
-d
-
-e
-
-f
-
-g
-
-h
-
-i
