@@ -351,7 +351,7 @@ We understand that creating a family is more than a moment — it’s a journey.
       text: shell
       ---
       #content
-      ## Sibling registry
+      ### **Sibling registry**
       
       For some families, a curiosity to know who shares the same donor may remain just that — a passing thought. For others, it's important to reach out and connect to your child’s donor-conceived siblings. For those who may be interested in making such a connection, we’ve created our Sibling Registry. This private program is available to all our California Cryobank families, at no additional cost.
       :::::
@@ -363,7 +363,7 @@ We understand that creating a family is more than a moment — it’s a journey.
       text: shell
       ---
       #content
-      ## Newborn stem cell preservation
+      ### **Newborn stem cell preservation**
       
       The journey continues, even after your baby is born. And we're dedicated to helping you protect the health of your family. Our Cord Blood Advantage® Program offers all California Cryobank families the chance to receive free newborn stem cell preservation and one free year of storage through our sister company, CBR®.
       :::::
@@ -375,7 +375,7 @@ We understand that creating a family is more than a moment — it’s a journey.
       text: shell
       ---
       #content
-      ## Providing insemination updates
+      ### **Providing insemination updates**
       
       Once you’ve used your donor sperm for your insemination, we ask that you share your results with us in your account dashboard when you’re ready. This allows us to contact you in case of any significant medical updates on your donor.
       :::::
@@ -475,6 +475,7 @@ Each moment in this process matters. We’re here to walk you through it all —
 ::
 
 ::c-newsletter
-  <h2 class="text-h2 q-mb-sm">Be a part of our family</h2>
-  <p class="text-subtitle1">Subscribe to our mailing list to get updates on new donors, events, community happenings, and more.</p>
+  ## Be a part of our family
+  
+  Subscribe to our mailing list to get updates on new donors, events, community happenings, and more.
 ::

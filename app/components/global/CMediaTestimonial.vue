@@ -80,8 +80,8 @@ const cssVars = computed(() => ({
     margin-right: calc(100% * var(--cmt-overlap) * -1);
   }
 
-  /* Stack automatically at Quasar < md (<= 1023.98px); reset margins */
-  @media (max-width: 1023.98px) {
+  /* Stack automatically at Quasar < md (<= $breakpoint-sm-max); reset margins */
+  @media (max-width: $breakpoint-sm-max) {
     grid-template-columns: 1fr;
     .content { margin: 0; }
   }

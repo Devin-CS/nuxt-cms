@@ -120,7 +120,7 @@ const cssVars = computed(() => {
 }
 
 /* Desktop layout: 40/60 with larger left gutter (≈3× previous) and zero right gutter */
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpoint-md-min) {
   .c-collage-section { min-height: var(--ccs-height, 648px); }
   .c-collage-section__grid {
     grid-template-columns: var(--ccs-content-pct, 40%) var(--ccs-media-pct, 60%);

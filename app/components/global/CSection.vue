@@ -85,19 +85,19 @@ const passthroughAttrs = computed(() => {
   max-width: 540px; /* xsmall */
 }
 
-@media (min-width: 600px) { /* small */
+@media (min-width: $breakpoint-sm-min) { /* small */
   .c-section__wrapper {
     max-width: 720px;
   }
 }
 
-@media (min-width: 1024px) { /* medium */
+@media (min-width: $breakpoint-md-min) { /* medium */
   .c-section__wrapper {
     max-width: 936px;
   }
 }
 
-@media (min-width: 1440px) { /* large */
+@media (min-width: $breakpoint-lg-min) { /* large */
   .c-section__wrapper {
     max-width: 1116px;
   }

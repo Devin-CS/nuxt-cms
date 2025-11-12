@@ -110,7 +110,7 @@ const directionClass = computed(() => direction === 'row' ? 'c-section-grid--row
 }
 
 /* XS phones: make items full width regardless of max */
-@media (max-width: 599.98px) {
+@media (max-width: $breakpoint-xs-max) {
   .c-section-grid {
     grid-template-columns: 1fr;
   }

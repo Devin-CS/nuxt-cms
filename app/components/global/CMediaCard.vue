@@ -27,7 +27,7 @@
   <!-- Content slot -->
   <div
     v-if="$slots.content"
-    class=" text-weight-medium">
+    class="q-pa-md">
     <slot
       name="content"
       mdc-unwrap="p"/>
