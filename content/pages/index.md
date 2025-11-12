@@ -473,3 +473,8 @@ Each moment in this process matters. We’re here to walk you through it all —
     ::::
   :::
 ::
+
+::c-newsletter
+  <h2 class="text-h2 q-mb-sm">Be a part of our family</h2>
+  <p class="text-subtitle1">Subscribe to our mailing list to get updates on new donors, events, community happenings, and more.</p>
+::
