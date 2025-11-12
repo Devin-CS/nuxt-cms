@@ -431,36 +431,39 @@ Each moment in this process matters. We’re here to walk you through it all —
   :::c-section-grid
     ::::c-media-card
     ---
-    icon: "/svg/call-us.svg"
     iconSize: 48
+    icon: /svg/call-us.svg
     iconAlt: ""
     ---
     #title
     #### Call us at
+    
     #content
     888-498-0422 :br Mon-Fri: 5:00 a.m. - 5:00 p.m. (PST) :br Sat: 8:30 a.m. - 12:30 p.m. (PST)
     ::::
   
     ::::c-media-card
     ---
-    icon: "/svg/email-us.svg"
     iconSize: 48
+    icon: /svg/email-us.svg
     iconAlt: ""
     ---
     #title
     #### Email us at
+    
     #content
-    <ccbgeneral@cryobank.com> :br For media inquiries :br <media@generate.com>
+    <ccbgeneral@cryobank.com>\:br For media inquiries :br <media@generate.com>
     ::::
   
     ::::c-media-card
     ---
-    icon: "/svg/discover-more.svg"
     iconSize: 48
+    icon: /svg/discover-more.svg
     iconAlt: ""
     ---
     #title
     #### Discover more resources
+    
     #content
     Check out our valuable resources to help you learn more about using donor sperm for your family building.
     
