@@ -475,7 +475,7 @@ Each moment in this process matters. We’re here to walk you through it all —
 ::
 
 ::c-newsletter
-  ## Be a part of our family
-  
-  Subscribe to our mailing list to get updates on new donors, events, community happenings, and more.
+## Be a part of our family
+
+Subscribe to our mailing list to get updates on new donors, events, community happenings, and more.
 ::
