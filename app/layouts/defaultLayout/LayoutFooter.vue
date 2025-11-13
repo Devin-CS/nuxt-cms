@@ -34,7 +34,6 @@
 </template>
 
 <script setup lang="ts">
-interface FooterLink { name: string, href: string }
 const { data: footerLinks } = await useAsyncData('footer-links',
   () => queryCollection('footerLinks').first()
 )

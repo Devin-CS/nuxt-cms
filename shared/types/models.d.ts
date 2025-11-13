@@ -7,3 +7,8 @@ export interface Menu {
   header?: boolean
   children?: Menu[]
 }
+
+export interface FooterLink {
+  name: string
+  href: string
+}
