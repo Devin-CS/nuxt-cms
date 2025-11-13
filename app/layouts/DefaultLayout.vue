@@ -1,5 +1,5 @@
 <template>
-<q-layout view="hHh lpR fFf">
+<q-layout view="hHh lpR lff">
   <layout-header
     :menu
     @toggle-drawer="toggleDrawer"/>
@@ -13,14 +13,14 @@
     <router-view/>
   </q-page-container>
 
-<!--  <layout-footer/> -->
+  <layout-footer/>
 </q-layout>
 </template>
 
 <script setup lang="ts">
 import LayoutDrawer from '~/layouts/defaultLayout/LayoutDrawer.vue'
 import LayoutHeader from '~/layouts/defaultLayout/LayoutHeader.vue'
-// import LayoutFooter from '~/layouts/defaultLayout/LayoutFooter.vue'
+import LayoutFooter from '~/layouts/defaultLayout/LayoutFooter.vue'
 
 const drawerOpen = ref(false)
 

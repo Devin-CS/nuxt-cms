@@ -1,0 +1,37 @@
+About:
+  - label: FAQS
+    link: /learn/frequently-asked-questions
+  - label: Contact us
+    link: /about/contact-us
+  - label: Licenses and accreditations
+    link: /about/licenses-accreditations
+  - label: Healthcare professionals
+    link: /healthcare-professionals
+  - label: Careers
+    link: https://www.coopersurgical.com/careers/
+
+Community/Resources:
+  - label: Events
+    link: /account/settings
+  - label: Bulletin boards
+    link: https://community.cryobank.com/
+  - label: Sibling registry
+    link: https://www.sibling-registry.com/Registry/Home/Index
+  - label: Vial handling instructions
+    link: /learn/instructions
+  - label: Sitemap
+    link: /sitemap
+
+Corporate policies:
+  - label: Privacy policy
+    link: /privacy-policy
+  - label: Do not sell/share
+    link: /privacy-policy#state-rights
+  - label: Cookie policy
+    link: /cookie-policy
+  - label: Manage cookie preferences
+    link: /
+  - label: Terms of use
+    link: /terms-of-use
+  - label: Accessibility
+    link: /accessibility-policy

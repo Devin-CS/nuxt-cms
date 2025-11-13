@@ -13,6 +13,17 @@ export default defineContentConfig({
       })
     }),
 
+    footer: defineCollection({
+      type: 'data',
+      source: {
+        include: 'pages/footer/**/*.md',
+        prefix: '/'
+      },
+      schema: z.object({
+        footer: z.string()
+      })
+    }),
+
     disclaimers: defineCollection({
       schema: z.object({
         meta: z.object({

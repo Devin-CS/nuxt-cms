@@ -1,7 +1,5 @@
 <template>
-<q-footer
-  elevated
-  class="bg-grey-8 text-shell">
+<q-footer class="bg-grey-8 text-shell">
   <q-toolbar>
     <q-toolbar-title>
       <q-avatar>
