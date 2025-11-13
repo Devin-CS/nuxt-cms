@@ -13,17 +13,6 @@ export default defineContentConfig({
       })
     }),
 
-    footer: defineCollection({
-      type: 'data',
-      source: {
-        include: 'pages/footer/**/*.md',
-        prefix: '/'
-      },
-      schema: z.object({
-        footer: z.string()
-      })
-    }),
-
     disclaimers: defineCollection({
       schema: z.object({
         meta: z.object({
@@ -34,6 +23,31 @@ export default defineContentConfig({
       }),
       type: 'data',
       source: 'disclaimers/*.md'
+    }),
+
+    footerLinks: defineCollection({
+      type: 'data',
+      source: 'footer-links.yaml',
+      schema: z.record(
+        z.array(
+          z.object({
+            name: z.string(),
+            href: z.string()
+          })
+        )
+      )
+    }),
+
+    socialLinks: defineCollection({
+      type: 'data',
+      source: 'social-links.yaml',
+      schema: z.array(
+        z.object({
+          name: z.string(),
+          href: z.string(),
+          icon: z.string().optional()
+        })
+      )
     })
   }
 })

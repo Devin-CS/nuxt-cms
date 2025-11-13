@@ -1,37 +1,37 @@
 About:
-  - label: FAQS
-    link: /learn/frequently-asked-questions
-  - label: Contact us
-    link: /about/contact-us
-  - label: Licenses and accreditations
-    link: /about/licenses-accreditations
-  - label: Healthcare professionals
-    link: /healthcare-professionals
-  - label: Careers
-    link: https://www.coopersurgical.com/careers/
+  - name: FAQS
+    href: /learn/frequently-asked-questions
+  - name: Contact us
+    href: /about/contact-us
+  - name: Licenses and accreditations
+    href: /about/licenses-accreditations
+  - name: Healthcare professionals
+    href: /healthcare-professionals
+  - name: Careers
+    href: https://www.coopersurgical.com/careers/
 
 Community/Resources:
-  - label: Events
-    link: /account/settings
-  - label: Bulletin boards
-    link: https://community.cryobank.com/
-  - label: Sibling registry
-    link: https://www.sibling-registry.com/Registry/Home/Index
-  - label: Vial handling instructions
-    link: /learn/instructions
-  - label: Sitemap
-    link: /sitemap
+  - name: Events
+    href: /account/settings
+  - name: Bulletin boards
+    href: https://community.cryobank.com/
+  - name: Sibling registry
+    href: https://www.sibling-registry.com/Registry/Home/Index
+  - name: Vial handling instructions
+    href: /learn/instructions
+  - name: Sitemap
+    href: /sitemap
 
 Corporate policies:
-  - label: Privacy policy
-    link: /privacy-policy
-  - label: Do not sell/share
-    link: /privacy-policy#state-rights
-  - label: Cookie policy
-    link: /cookie-policy
-  - label: Manage cookie preferences
-    link: /
-  - label: Terms of use
-    link: /terms-of-use
-  - label: Accessibility
-    link: /accessibility-policy
+  - name: Privacy policy
+    href: /privacy-policy
+  - name: Do not sell/share
+    href: /privacy-policy#state-rights
+  - name: Cookie policy
+    href: /cookie-policy
+  - name: Manage cookie preferences
+    href: /
+  - name: Terms of use
+    href: /terms-of-use
+  - name: Accessibility
+    href: /accessibility-policy
