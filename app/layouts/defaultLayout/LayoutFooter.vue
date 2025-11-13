@@ -37,6 +37,7 @@
 const { data: footerLinks } = await useAsyncData('footer-links',
   () => queryCollection('footerLinks').first()
 )
+console.log('footerLinks: ', footerLinks.value)
 const footerItems = computed(() => footerLinks.value?.meta.body as FooterLink[][])
 console.log('footerItems: ', footerItems.value)
 </script>
