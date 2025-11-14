@@ -1,38 +1,41 @@
 sections:
-  - About:
-    - name: FAQS
-      href: /learn/frequently-asked-questions
-    - name: Contact us
-      href: /about/contact-us
-    - name: Licenses and accreditations
-      href: /about/licenses-accreditations
-    - name: Healthcare professionals
-      href: /healthcare-professionals
-    - name: Careers
-      href: https://www.coopersurgical.com/careers/
+  - title: About
+    links:
+      - name: FAQS
+        href: /learn/frequently-asked-questions
+      - name: Contact us
+        href: /about/contact-us
+      - name: Licenses and accreditations
+        href: /about/licenses-accreditations
+      - name: Healthcare professionals
+        href: /healthcare-professionals
+      - name: Careers
+        href: https://www.coopersurgical.com/careers/
 
-  - Community/Resources:
-    - name: Events
-      href: /account/settings
-    - name: Bulletin boards
-      href: https://community.cryobank.com/
-    - name: Sibling registry
-      href: https://www.sibling-registry.com/Registry/Home/Index
-    - name: Vial handling instructions
-      href: /learn/instructions
-    - name: Sitemap
-      href: /sitemap
+  - title: Community/Resources
+    links:
+      - name: Events
+        href: /account/settings
+      - name: Bulletin boards
+        href: https://community.cryobank.com/
+      - name: Sibling registry
+        href: https://www.sibling-registry.com/Registry/Home/Index
+      - name: Vial handling instructions
+        href: /learn/instructions
+      - name: Sitemap
+        href: /sitemap
 
-  - Corporate policies:
-    - name: Privacy policy
-      href: /privacy-policy
-    - name: Do not sell/share
-      href: /privacy-policy#state-rights
-    - name: Cookie policy
-      href: /cookie-policy
-    - name: Manage cookie preferences
-      href: /
-    - name: Terms of use
-      href: /terms-of-use
-    - name: Accessibility
-      href: /accessibility-policy
+  - title: Corporate policies
+    links:
+      - name: Privacy policy
+        href: /privacy-policy
+      - name: Do not sell/share
+        href: /privacy-policy#state-rights
+      - name: Cookie policy
+        href: /cookie-policy
+      - name: Manage cookie preferences
+        href: /
+      - name: Terms of use
+        href: /terms-of-use
+      - name: Accessibility
+        href: /accessibility-policy

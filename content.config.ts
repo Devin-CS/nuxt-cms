@@ -28,19 +28,25 @@ export default defineContentConfig({
     footerLinks: defineCollection({
       type: 'data',
       source: 'footer-links.yaml',
-      // Nuxt Studio form generation requires a root object (not a root array).
-      // We wrap the sections array under a `sections` key.
-      // sections: Array<Record<sectionName, Array<{ name, href }>>>.
+      // Nuxt Studio form generation requires explicit object fields (not dynamic record keys).
+      // Use an explicit shape so Studio can render nested forms:
+      // {
+      //   sections: Array<{
+      //     title: string
+      //     links: Array<{ name: string; href: string }>
+      //   }>
+      // }
       schema: z.object({
         sections: z.array(
-          z.record(
-            z.array(
+          z.object({
+            title: z.string(),
+            links: z.array(
               z.object({
                 name: z.string(),
                 href: z.string()
               })
             )
-          )
+          })
         )
       })
     }),

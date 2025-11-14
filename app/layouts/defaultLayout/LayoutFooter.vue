@@ -10,15 +10,15 @@
 
     <div class="footer-links q-pa-xl">
       <nav
-        v-for="(links, sectionName) in footerItems"
-        :key="sectionName"
+        v-for="section in footerItems"
+        :key="section.title"
         class="nav">
         <p class="text-subtitle1">
-          {{ sectionName }}
+          {{ section.title }}
         </p>
         <q-list dense>
           <q-item
-            v-for="(link, index) in links"
+            v-for="(link, index) in section.links"
             :key="index"
             v-ripple
             :to="link.href"
@@ -38,16 +38,11 @@ const { data: footerLinks } = await useAsyncData('footer-links',
   () => queryCollection('footerLinks').first()
 )
 
-// Transform meta.body.sections (Array<Record<sectionName, FooterLink[]>>) into
-// a single object: Record<sectionName, FooterLink[]>
-const footerItems = computed(() => {
-  const sections = (footerLinks.value?.meta?.body as { sections?: Array<Record<string, FooterLink[]>> } | undefined)?.sections
-  if (!sections) return {}
-  return sections.reduce((acc, section) => {
-    const [name, links] = Object.entries(section)[0] ?? []
-    if (name && Array.isArray(links)) acc[name] = links
-    return acc
-  }, {} as Record<string, FooterLink[]>)
+// With explicit schema, sections are: Array<{ title: string; links: FooterLink[] }>
+interface FooterSection { title: string, links: FooterLink[] }
+const footerItems = computed<FooterSection[]>(() => {
+  const body = footerLinks.value?.meta?.body as { sections?: FooterSection[] } | undefined
+  return body?.sections ?? []
 })
 </script>
 
