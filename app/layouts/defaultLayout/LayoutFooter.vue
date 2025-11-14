@@ -37,9 +37,18 @@
 const { data: footerLinks } = await useAsyncData('footer-links',
   () => queryCollection('footerLinks').first()
 )
-console.log('footerLinks: ', footerLinks.value)
-const footerItems = computed(() => footerLinks.value?.meta.body as FooterLink[][])
-console.log('footerItems: ', footerItems.value)
+
+// Transform meta.body.sections (Array<Record<sectionName, FooterLink[]>>) into
+// a single object: Record<sectionName, FooterLink[]>
+const footerItems = computed(() => {
+  const sections = (footerLinks.value?.meta?.body as { sections?: Array<Record<string, FooterLink[]>> } | undefined)?.sections
+  if (!sections) return {}
+  return sections.reduce((acc, section) => {
+    const [name, links] = Object.entries(section)[0] ?? []
+    if (name && Array.isArray(links)) acc[name] = links
+    return acc
+  }, {} as Record<string, FooterLink[]>)
+})
 </script>
 
 <style scoped lang="scss">

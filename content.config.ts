@@ -28,34 +28,36 @@ export default defineContentConfig({
     footerLinks: defineCollection({
       type: 'data',
       source: 'footer-links.yaml',
-      // YAML shape is an array of single-key objects, each key mapping to an array of link objects
-      // Example:
-      // - About:
-      //   - { name: 'FAQS', href: '/learn/frequently-asked-questions' }
-      // - Community/Resources:
-      //   - { name: 'Events', href: '/account/settings' }
-      schema: z.array(
-        z.record(
-          z.array(
-            z.object({
-              name: z.string(),
-              href: z.string()
-            })
+      // Nuxt Studio form generation requires a root object (not a root array).
+      // We wrap the sections array under a `sections` key.
+      // sections: Array<Record<sectionName, Array<{ name, href }>>>.
+      schema: z.object({
+        sections: z.array(
+          z.record(
+            z.array(
+              z.object({
+                name: z.string(),
+                href: z.string()
+              })
+            )
           )
         )
-      )
+      })
     }),
 
     socialLinks: defineCollection({
       type: 'data',
       source: 'social-links.yaml',
-      schema: z.array(
-        z.object({
-          name: z.string(),
-          href: z.string(),
-          icon: z.string()
-        })
-      )
+      // Wrap the array in a root `items` key for Studio compatibility
+      schema: z.object({
+        items: z.array(
+          z.object({
+            name: z.string(),
+            href: z.string(),
+            icon: z.string()
+          })
+        )
+      })
     })
 
   }
