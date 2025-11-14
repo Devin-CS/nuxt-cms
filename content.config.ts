@@ -28,12 +28,20 @@ export default defineContentConfig({
     footerLinks: defineCollection({
       type: 'data',
       source: 'footer-links.yaml',
-      schema: z.record(
-        z.array(
-          z.object({
-            name: z.string(),
-            href: z.string()
-          })
+      // YAML shape is an array of single-key objects, each key mapping to an array of link objects
+      // Example:
+      // - About:
+      //   - { name: 'FAQS', href: '/learn/frequently-asked-questions' }
+      // - Community/Resources:
+      //   - { name: 'Events', href: '/account/settings' }
+      schema: z.array(
+        z.record(
+          z.array(
+            z.object({
+              name: z.string(),
+              href: z.string()
+            })
+          )
         )
       )
     }),
@@ -45,72 +53,10 @@ export default defineContentConfig({
         z.object({
           name: z.string(),
           href: z.string(),
-          icon: z.string().optional()
+          icon: z.string()
         })
       )
     })
-    ,
 
-    // New: Studio-demo collections using fixed object schemas for visual editing in Nuxt Studio
-    // These do NOT replace the existing collections; they are additional alongside them.
-    footerLinksStudio: defineCollection({
-      type: 'data',
-      source: 'footer-links-studio.yaml',
-      schema: z.object({
-        // Hint Nuxt Studio to show nicer labels for array items
-        // Categories → use `title` as the item label
-        categories: z
-          .array(
-            z
-              .object({
-                id: z.string(),
-                title: z.string(),
-                order: z.number().optional()
-              })
-              // Studio hint: item label for each object
-              .meta({ studio: { itemLabel: 'title' } })
-          )
-          // Studio hint: default label field within this array
-          .meta({ studio: { itemLabel: 'title' } }),
-
-        // Links → prefer `title`; editors may leave it blank and rely on page/href
-        links: z
-          .array(
-            z
-              .object({
-                // Either reference a page route or provide a direct href
-                page: z.string().optional(),
-                href: z.string().optional(),
-                title: z.string().optional(),
-                categoryId: z.string(),
-                order: z.number().optional(),
-                enabled: z.boolean().optional(),
-                target: z.string().optional(),
-                rel: z.string().optional()
-              })
-              .meta({ studio: { itemLabel: 'title' } })
-          )
-          .meta({ studio: { itemLabel: 'title' } })
-      })
-    }),
-
-    socialLinksStudio: defineCollection({
-      type: 'data',
-      source: 'social-links-studio.yaml',
-      schema: z.object({
-        links: z
-          .array(
-            z
-              .object({
-                name: z.string(),
-                href: z.string(),
-                icon: z.string().optional(),
-                order: z.number().optional()
-              })
-              .meta({ studio: { itemLabel: 'name' } })
-          )
-          .meta({ studio: { itemLabel: 'name' } })
-      })
-    })
   }
 })

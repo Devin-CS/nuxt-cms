@@ -1,4 +1,4 @@
-About:
+- About:
   - name: FAQS
     href: /learn/frequently-asked-questions
   - name: Contact us
@@ -10,7 +10,7 @@ About:
   - name: Careers
     href: https://www.coopersurgical.com/careers/
 
-Community/Resources:
+- Community/Resources:
   - name: Events
     href: /account/settings
   - name: Bulletin boards
@@ -22,7 +22,7 @@ Community/Resources:
   - name: Sitemap
     href: /sitemap
 
-Corporate policies:
+- Corporate policies:
   - name: Privacy policy
     href: /privacy-policy
   - name: Do not sell/share
