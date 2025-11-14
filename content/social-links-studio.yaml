@@ -1,0 +1,20 @@
+links:
+  - name: Facebook
+    href: https://www.facebook.com/CaliforniaCryobank/
+    icon: facebook
+    order: 1
+
+  - name: Instagram
+    href: https://www.instagram.com/cryobank/
+    icon: instagram
+    order: 2
+
+  - name: X
+    href: https://x.com/cryobank
+    icon: x
+    order: 3
+
+  - name: YouTube
+    href: https://www.youtube.com/user/CryobankCalifornia
+    icon: youtube
+    order: 4
