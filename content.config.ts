@@ -57,26 +57,40 @@ export default defineContentConfig({
       type: 'data',
       source: 'footer-links-studio.yaml',
       schema: z.object({
-        categories: z.array(
-          z.object({
-            id: z.string(),
-            title: z.string(),
-            order: z.number().optional()
-          })
-        ),
-        links: z.array(
-          z.object({
-            // Either reference a page route or provide a direct href
-            page: z.string().optional(),
-            href: z.string().optional(),
-            title: z.string().optional(),
-            categoryId: z.string(),
-            order: z.number().optional(),
-            enabled: z.boolean().optional(),
-            target: z.string().optional(),
-            rel: z.string().optional()
-          })
-        )
+        // Hint Nuxt Studio to show nicer labels for array items
+        // Categories → use `title` as the item label
+        categories: z
+          .array(
+            z
+              .object({
+                id: z.string(),
+                title: z.string(),
+                order: z.number().optional()
+              })
+              // Studio hint: item label for each object
+              .meta({ studio: { itemLabel: 'title' } })
+          )
+          // Studio hint: default label field within this array
+          .meta({ studio: { itemLabel: 'title' } }),
+
+        // Links → prefer `title`; editors may leave it blank and rely on page/href
+        links: z
+          .array(
+            z
+              .object({
+                // Either reference a page route or provide a direct href
+                page: z.string().optional(),
+                href: z.string().optional(),
+                title: z.string().optional(),
+                categoryId: z.string(),
+                order: z.number().optional(),
+                enabled: z.boolean().optional(),
+                target: z.string().optional(),
+                rel: z.string().optional()
+              })
+              .meta({ studio: { itemLabel: 'title' } })
+          )
+          .meta({ studio: { itemLabel: 'title' } })
       })
     }),
 
@@ -84,14 +98,18 @@ export default defineContentConfig({
       type: 'data',
       source: 'social-links-studio.yaml',
       schema: z.object({
-        links: z.array(
-          z.object({
-            name: z.string(),
-            href: z.string(),
-            icon: z.string().optional(),
-            order: z.number().optional()
-          })
-        )
+        links: z
+          .array(
+            z
+              .object({
+                name: z.string(),
+                href: z.string(),
+                icon: z.string().optional(),
+                order: z.number().optional()
+              })
+              .meta({ studio: { itemLabel: 'name' } })
+          )
+          .meta({ studio: { itemLabel: 'name' } })
       })
     })
   }
