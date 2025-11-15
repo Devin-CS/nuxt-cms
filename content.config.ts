@@ -60,7 +60,7 @@ export default defineContentConfig({
           z.object({
             name: z.string(),
             href: z.string(),
-            icon: z.string()
+            icon: z.string().editor({ input: 'media' })
           })
         )
       })
