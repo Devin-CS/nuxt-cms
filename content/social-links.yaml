@@ -7,7 +7,7 @@ items:
     icon: /svg/social/instagram.svg
   - name: X
     href: https://x.com/cryobank
-    icon: x
+    icon: /svg/social/x.svg
   - name: YouTube
     href: https://www.youtube.com/user/CryobankCalifornia
-    icon: youtube
+    icon: /svg/social/youtube.svg
