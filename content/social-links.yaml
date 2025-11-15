@@ -1,10 +1,10 @@
 items:
   - name: Facebook
     href: https://www.facebook.com/CaliforniaCryobank/
-    icon: facebook
+    icon: /svg/social/facebook.svg
   - name: Instagram
     href: https://www.instagram.com/cryobank/
-    icon: instagram
+    icon: /svg/social/instagram.svg
   - name: X
     href: https://x.com/cryobank
     icon: x
