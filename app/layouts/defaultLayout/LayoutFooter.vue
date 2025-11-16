@@ -1,18 +1,17 @@
 <template>
 <q-footer class="bg-pine q-pa-xl text-shell">
-  <q-toolbar>
-    <q-toolbar-title>
-      <img
-        alt="Logo"
-        src="@/assets/logo.svg"
-        :width="$q.screen.xs ? 246 : 300">
-    </q-toolbar-title>
+  <div class="footer-inner">
+    <img
+      class="footer-logo"
+      alt="Logo"
+      src="@/assets/logo.svg"
+      :width="$q.screen.xs ? 246 : 300">
 
-    <nav class="footer-links q-pa-xl">
+    <nav class="footer-links">
       <div
         v-for="section in footerItems"
         :key="section.title"
-        class="nav">
+        class="footer-section">
         <p class="text-subtitle1">
           {{ section.title }}
         </p>
@@ -32,26 +31,30 @@
         </q-list>
       </div>
     </nav>
-  </q-toolbar>
+  </div>
 
-  <q-btn
-    v-for="item in socialItems"
-    :key="item.href"
-    flat
-    round
-    size="md"
-    padding="sm"
-    :href="item.href"
-    :icon="`svguse:${item.icon}`"
-    target="_blank"
-    rel="noopener noreferrer"
-    :aria-label="item.name"/>
+  <div class="footer-social q-mt-lg">
+    <q-btn
+      v-for="item in socialItems"
+      :key="item.href"
+      flat
+      round
+      size="md"
+      padding="sm"
+      :href="item.href"
+      :icon="`svguse:${item.icon}`"
+      target="_blank"
+      rel="noopener noreferrer"
+      :aria-label="item.name"/>
+  </div>
 
   <q-separator
     color="elm"
     spaced="xl"/>
 
-  © 2025 California Cryobank. All rights reserved.
+  <div class="q-mt-md">
+    © 2025 California Cryobank. All rights reserved.
+  </div>
 </q-footer>
 </template>
 
@@ -75,13 +78,36 @@ const socialItems = computed<SocialLink[]>(() => {
 })
 </script>
 
-<style scoped lang="scss">
-.footer-links {
-  display: flex;
-  gap: 24px;
+<style scoped>
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  row-gap: 16px;
+  column-gap: 32px;
 }
 
-.social-links {
+@media (min-width: 600px) {
+  .footer-inner {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.footer-logo {
+  /* ensure logo area keeps its natural size and never squeezes */
+  min-width: 0;
+}
+
+.footer-links {
+  width: 100%;
+  /* responsive columns for link groups */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px 24px;
+}
+
+.footer-social {
   display: flex;
+  gap: 8px;
 }
 </style>
