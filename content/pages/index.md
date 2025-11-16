@@ -8,7 +8,7 @@ background: pine
 text: shell
 ---
 #header
-# California Cryobank: Partner with the #1 sperm bank in the world
+# California Cryobank: Partner with the #1 sperm bank in the world :c-tooltip[\*]{text="Internal data on file."}
 
 #content
   :::c-section-grid{max="345"}
@@ -21,7 +21,7 @@ text: shell
     #content
     #### Extensive experience
     
-    Since 1977, California Cryobank has been providing our comprehensive and caring services to help thousands of families. It’s what has helped to make us the #1 donor sperm bank in the world today.
+    Since 1977, California Cryobank has been providing our comprehensive and caring services to help thousands of families. It’s what has helped to make us the #1 donor sperm bank in the world today. :c-tooltip[\*]{text="Internal data on file."}
     
     #media
       :::::c-icon{color="eucalyptus" size="75px"}
@@ -46,7 +46,7 @@ text: shell
     #content
     #### Diverse donor selection
     
-    Because of our high standards and donation requirements, less than 1% of applicants will make it into our donor portfolio due to our high standards and program requirements, based on screening requirements and those who don't move forward in the program. That means you’ll have access to one of the largest, most rigorously screened, diverse selection of donors in the world.
+    Because of our high standards and donation requirements, less than 1% of applicants will make it into our donor portfolio due to our high standards and program requirements, based on screening requirements and those who don't move forward in the program. That means you’ll have access to one of the largest, most rigorously screened, diverse selection of donors in the world. :c-tooltip[\*]{text="Less than 1% of applicants will make it into our donor catalog due to our high standards and minimum donation requirements."}
     
     #media
       :::::c-icon{color="eucalyptus" size="75px"}
