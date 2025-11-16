@@ -6,7 +6,7 @@
   </div>
 
   <q-form
-    class="flex items-center wrap q-gutter-xs q-py-xs-sm q-pa-xl"
+    class="c-newsletter__form flex items-center wrap q-gutter-xs q-py-xs-sm q-pa-xl"
     @submit.prevent="onSubmit">
     <q-input
       v-model="email"
@@ -61,6 +61,8 @@ const onSubmit = () => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
+  /* Prevent any child from creating horizontal scroll on small screens */
+  overflow-x: clip;
 }
 
 .c-newsletter__left {
