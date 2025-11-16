@@ -167,8 +167,8 @@ padding: xl
   # [“We have three beautiful, healthy, happy babies]{.text-saffron} and we credit our dreams coming true to California Cryobank.”
   
   #attribution
- – Sydney*
-
+  – Sydney :c-tooltip[\*]{text="Sydney is an employee of CooperSurgical, Inc., the parent company of California Cryobank."}
+  
   #media
   ![testimonial.webp](/images/testimonial.webp)
   :::
