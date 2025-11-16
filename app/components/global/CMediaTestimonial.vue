@@ -8,11 +8,9 @@
       mdc-unwrap="p"/>
 
     <footer
-      v-if="$slots.attribution || author"
+      v-if="$slots.attribution"
       class="attribution text-subtitle1 q-mt-md">
-      <slot name="attribution">
-        {{ author }}
-      </slot>
+      <slot name="attribution"/>
     </footer>
   </section>
 
@@ -34,14 +32,9 @@
  * stacks cleanly on mobile. Content is always first (left on desktop / top on mobile)
  * to simplify authoring and code.
  */
-const {
+const { overlap = 'lg' } = defineProps<{
   /** Preset token for overlap amount, expressed as percent of the media column */
-  overlap = 'lg',
-  /** Optional author/attribution if not using the attribution slot. */
-  author
-} = defineProps<{
   overlap?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-  author?: string
 }>()
 
 // Map editor-friendly presets to percentage of the media column width

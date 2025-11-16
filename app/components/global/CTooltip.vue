@@ -1,7 +1,8 @@
 <template>
-<span>
+<span class="cursor-pointer" tabindex="0">
   <slot/>
   <q-tooltip
+    class="bg-shell text-pine text-body1"
     max-width="300px"
     transition-show="scale"
     transition-hide="scale">
