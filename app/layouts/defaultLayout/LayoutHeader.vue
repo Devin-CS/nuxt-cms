@@ -44,22 +44,48 @@
           round
           size="md"
           padding="sm"
-          icon="o_person"
+          :icon="loggedIn ? 'o_person' : 'o_login'"
           :href="!loggedIn ? loginUrl : undefined">
-          <q-menu>
-            <q-list style="min-width: 220px">
-              <q-item>
-                <q-item-section>{{ userName || 'Account' }}</q-item-section>
-              </q-item>
-              <q-separator/>
-              <q-item
+          <q-menu
+            v-if="loggedIn"
+            anchor="bottom middle"
+            self="top middle"
+            class="bg-shell">
+            <div class="column items-center row no-wrap q-pa-md">
+              <q-avatar
+                size="72px"
+                color="juniper"
+                text-color="shell">
+                D
+              </q-avatar>
+
+              <div class="text-subtitle1 q-mt-md q-mb-xs">
+                {{ userName || 'Account' }}
+              </div>
+
+              <q-btn
                 v-close-popup
-                clickable
-                href="/api/auth/logout">
-                <q-item-section>Sign out</q-item-section>
-              </q-item>
-            </q-list>
+                color="pine"
+                label="Logout"
+                push
+                size="md"
+                to="/api/auth/logout"/>
+            </div>
           </q-menu>
+          <!--          <q-menu v-if="loggedIn"> -->
+          <!--            <q-list style="min-width: 220px"> -->
+          <!--              <q-item> -->
+          <!--                <q-item-section>{{ userName || 'Account' }}</q-item-section> -->
+          <!--              </q-item> -->
+          <!--              <q-separator/> -->
+          <!--              <q-item -->
+          <!--                v-close-popup -->
+          <!--                clickable -->
+          <!--                href="/api/auth/logout"> -->
+          <!--                <q-item-section>Sign out</q-item-section> -->
+          <!--              </q-item> -->
+          <!--            </q-list> -->
+          <!--          </q-menu> -->
         </q-btn>
       </div>
 
