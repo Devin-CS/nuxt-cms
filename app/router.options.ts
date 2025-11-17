@@ -17,6 +17,13 @@ export default {
           component: () => import('~/pages/SlugPage.vue')
         },
         {
+          name: 'account',
+          path: 'account',
+          props: routeProps,
+          meta: { requiresAuth: true },
+          component: () => import('~/pages/account/AccountPage.vue')
+        },
+        {
           name: 'slug',
           path: ':slug(.*)*',
           props: routeProps,

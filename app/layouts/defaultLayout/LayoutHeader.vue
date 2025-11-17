@@ -38,12 +38,31 @@
       <q-space/>
 
       <!-- Right controls -->
-      <q-btn
-        flat
-        round
-        size="md"
-        padding="sm"
-        icon="o_person"/>
+      <div>
+        <q-btn
+          flat
+          round
+          size="md"
+          padding="sm"
+          icon="o_person"
+          :href="!loggedIn ? loginUrl : undefined">
+          <q-menu>
+            <q-list style="min-width: 220px">
+              <q-item>
+                <q-item-section>{{ userName || 'Account' }}</q-item-section>
+              </q-item>
+              <q-separator/>
+              <q-item
+                v-close-popup
+                clickable
+                href="/api/auth/logout">
+                <q-item-section>Sign out</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
+      </div>
+
       <q-btn
         class="gt-xs"
         flat
@@ -81,4 +100,20 @@ import { useQuasar } from 'quasar'
 const { menu = [] } = defineProps<{ menu?: Menu[] }>()
 defineEmits<{ toggleDrawer: [] }>()
 const $q = useQuasar()
+
+// Auth menu logic
+const { ready, loggedIn, user, fetch } = useUserSession()
+const route = useRoute()
+
+onMounted(() => {
+  if (!ready.value) {
+    fetch()
+  }
+})
+
+const loginUrl = computed(() => `/api/auth/auth0?returnTo=${encodeURIComponent(route.fullPath)}`)
+const userName = computed(() => {
+  const u = user.value as unknown as { name?: string, email?: string } | null
+  return u?.name || u?.email || ''
+})
 </script>
