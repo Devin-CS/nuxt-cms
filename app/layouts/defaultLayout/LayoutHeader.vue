@@ -1,9 +1,9 @@
 <template>
 <q-header
   elevated
-  height-hint="62"
+  height-hint="106"
   class="bg-pine text-shell">
-  <q-toolbar>
+  <q-toolbar style="height: 106px">
     <q-toolbar-title>
       <img
         alt="Logo"

@@ -2,6 +2,7 @@
 <ClientOnly>
   <q-banner
     v-if="visible && config.enabled && config.message"
+    style="height: 84px"
     :class="bannerClass"
     inline-actions
     class="center-banner-avatar bg-shell">
