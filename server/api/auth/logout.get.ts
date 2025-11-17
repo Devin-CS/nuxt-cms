@@ -22,6 +22,21 @@ export default eventHandler(async (event) => {
     returnTo = origin
   }
 
+  // Hardening: Always return to the site root. This avoids needing to enumerate
+  // every path in Auth0 Allowed Logout URLs (both locally and in production).
+  // If you ever want to allow deep-link returns, add those full URLs in Auth0
+  // and remove this override.
+  returnTo = origin
+
+  // Local development convenience: skip Auth0 federated logout on localhost to
+  // avoid Auth0 Allowed Logout URL mismatches during dev. We'll just clear the
+  // local session and return to the app root. Production will still go through
+  // Auth0 to fully terminate the IdP session.
+  const host = getRequestHost(event)
+  if (host.startsWith('localhost') || host.startsWith('127.0.0.1')) {
+    return sendRedirect(event, origin)
+  }
+
   if (domain) {
     const url = new URL(`https://${domain}/v2/logout`)
     url.searchParams.set('returnTo', returnTo)

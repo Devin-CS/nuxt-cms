@@ -49,32 +49,78 @@
           <q-menu
             v-if="loggedIn"
             anchor="bottom middle"
-            self="top middle"
-            class="bg-shell">
-            <div
-              class="column items-center row no-wrap q-pa-md"
-              style="min-width: 220px">
-              <q-avatar
-                size="72px"
-                color="juniper"
-                text-color="shell">
-                {{ avatarLetter }}
-              </q-avatar>
-
-              <div class="text-subtitle1 q-mt-md q-mb-xs">
-                {{ userName || 'Account' }}
+            self="top middle">
+            <div class="row no-wrap q-pa-md">
+              <div class="column">
+                <div class="text-h6 q-mb-md">
+                  Settings
+                </div>
+                <q-btn
+                  label="Account"
+                  to="/account"
+                  flat
+                  size="md"
+                  color="pine"/>
               </div>
 
-              <q-btn
-                v-close-popup
-                unelevated
-                color="juniper"
-                label="Logout"
-                push
-                size="md"
-                :href="logoutUrl"/>
+              <q-separator
+                vertical
+                inset
+                class="q-mx-lg"/>
+
+              <div class="column items-center">
+                <q-avatar
+                  size="72px"
+                  color="juniper"
+                  text-color="shell">
+                  {{ avatarLetter }}
+                </q-avatar>
+
+                <div class="text-subtitle1 q-mt-md q-mb-xs">
+                  {{ userName || 'Account' }}
+                </div>
+
+                <q-btn
+                  v-close-popup
+                  unelevated
+                  color="juniper"
+                  label="Logout"
+                  push
+                  :href="logoutUrl"
+                  size="md"/>
+              </div>
             </div>
           </q-menu>
+
+          <!--          <q-menu -->
+          <!--            v-if="loggedIn" -->
+          <!--            anchor="bottom middle" -->
+          <!--            self="top middle" -->
+          <!--            class="bg-shell"> -->
+          <!--            <div -->
+          <!--              class="column items-center row no-wrap q-pa-md" -->
+          <!--              style="min-width: 220px"> -->
+          <!--              <q-avatar -->
+          <!--                size="72px" -->
+          <!--                color="juniper" -->
+          <!--                text-color="shell"> -->
+          <!--                {{ avatarLetter }} -->
+          <!--              </q-avatar> -->
+
+          <!--              <div class="text-subtitle1 q-mt-md q-mb-xs"> -->
+          <!--                {{ userName || 'Account' }} -->
+          <!--              </div> -->
+
+          <!--              <q-btn -->
+          <!--                v-close-popup -->
+          <!--                unelevated -->
+          <!--                color="juniper" -->
+          <!--                label="Logout" -->
+          <!--                push -->
+          <!--                size="md" -->
+          <!--                :href="logoutUrl"/> -->
+          <!--            </div> -->
+          <!--          </q-menu> -->
         </q-btn>
       </div>
 
