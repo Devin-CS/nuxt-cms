@@ -1,17 +1,19 @@
 <template>
 <q-card flat>
+  <!-- Header link (no button) with arrow; text can wrap naturally -->
   <q-card-section class="q-pb-none">
-    <c-button
-      color="shell"
-      arrow
-      size="lg"
-      dense
-      square
-      padding="none sm"
-      :label="title"
+    <NuxtLink
       :to="path"
-      flat/>
+      class="menu-card__header q-px-sm q-py-sm"
+      aria-label="Go to section">
+      <span class="menu-card__title text-weight-bold text-h4">{{ title }}</span>
+      <q-icon
+        name="o_arrow_right_alt"
+        size="sm"
+        class="menu-card__arrow"/>
+    </NuxtLink>
   </q-card-section>
+
   <q-card-section class="q-px-md q-pt-sm">
     <slot/>
   </q-card-section>
@@ -23,23 +25,40 @@ defineProps<{ title: string, path: string }>()
 </script>
 
 <style lang="scss" scoped>
-/* Allow long button labels to wrap on small screens only (xs/sm)
-   Quasar's q-btn labels are nowrap by default; we relax that here
-   inside MenuCard so tall labels can flow onto multiple lines. */
-@media (max-width: 1023.98px) {
-  /* Target the internal content of the button rendered by <c-button> */
-  :deep(.q-btn__content) {
-    white-space: normal; /* allow wrapping */
-  }
-  /* Quasar may use .q-btn__label or plain spans with .block/.ellipsis */
-  :deep(.q-btn__label),
-  :deep(.q-btn .block),
-  :deep(.q-btn .ellipsis) {
-    white-space: normal;     /* remove nowrap */
-    overflow-wrap: anywhere; /* wrap long words */
-    word-break: normal;
-    text-overflow: clip;
-    line-height: 1.25;       /* comfortable multi-line */
-  }
+/* MenuCard header as a plain link (not a button) that can wrap */
+.menu-card__header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit; /* rely on parent text color (shell) */
+}
+
+.menu-card__title {
+  white-space: normal;         /* allow wrapping when space is tight */
+  overflow-wrap: anywhere;     /* break long words if needed */
+  line-height: 1.25;
+}
+
+.menu-card__arrow {
+  flex: 0 0 auto;              /* keep arrow compact */
+}
+
+/* Hover/focus affordance without button chrome */
+.menu-card__header:focus-visible,
+.menu-card__header:hover {
+  text-decoration: none; /* no underline on hover/focus */
+}
+
+/* Arrow animation: on hover, shoot further to the right, then fade */
+.menu-card__arrow {
+  transition:
+    transform 260ms cubic-bezier(.22,.61,.36,1), /* snappy ease-out */
+    opacity 200ms ease 120ms;                    /* fade after motion starts */
+}
+.menu-card__header:hover .menu-card__arrow,
+.menu-card__header:focus-visible .menu-card__arrow {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>
