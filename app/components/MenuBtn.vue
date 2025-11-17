@@ -14,7 +14,7 @@
 
   <q-menu
     v-model="menu"
-    :offset="[0, -44]"
+    :offset="[0, -40]"
     square
     class="bg-pine text-shell shadow-24"
     no-parent-event
@@ -22,9 +22,12 @@
     fit
     @mouseenter="overMenu = true"
     @mouseleave="overMenu = false">
-    <div
-      class="bg-poppy"
-      style="height: 12px; margin-top: 32px"/>
+    <q-separator
+      spaced
+      inset
+      style="margin-top: 28px"
+      color="juniper"/>
+
     <div class="row">
       <template v-for="{ title, path, description, header } in cardData">
         <menu-card

@@ -1,4 +1,7 @@
-@use 'quasar/src/css/variables' as *;
+/* Quasar sassVariables file: declare variables only (no @use ... with ... here) */
+/* Set Quasar baseline body font size to 16px so text-body1 (1rem) renders at 16px */
+$body-font-size: 16px;
+$typography-font-family: 'Foundry Sterling', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
 .text-h1 {
   font-size: 2.25rem;
@@ -40,6 +43,16 @@
   line-height: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+/* Headings should use Ofelia Display */
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6 {
+  font-family: 'Ofelia Display', 'Foundry Sterling', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans';
 }
 
 .text-body1 {

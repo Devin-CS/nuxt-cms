@@ -1,3 +1,91 @@
+/* ----------------------------------------------
+   Global fonts and base typography
+   ---------------------------------------------- */
+
+/* Foundry Sterling — body text (multiple weights) */
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-bookitalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-demi.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('../fonts/foundry-sterling/foundrysterling-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ofelia Display — headings (regular + bold) */
+@font-face {
+  font-family: 'Ofelia Display';
+  src: url('../fonts/ofelia-display/ofeliadisplay-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ofelia Display';
+  src: url('../fonts/ofelia-display/ofeliadisplay-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom properties for easy reuse */
+:root {
+  --font-body: 'Foundry Sterling', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-heading: 'Ofelia Display', 'Foundry Sterling', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans';
+}
+
+/* Ensure app chrome uses the intended fonts */
+body, .q-body--light, .q-body--dark {
+  font-family: var(--font-body);
+}
+
+/* Raw heading elements too (in case utilities aren’t applied) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Keep existing color tweak for the light body */
 body.body--light {
-  color: var(--q-pine)
+  color: var(--q-pine);
 }

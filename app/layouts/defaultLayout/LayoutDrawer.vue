@@ -8,12 +8,12 @@
   @hide="panel = 'home'"
   @update:model-value="$emit('update', $event)">
   <q-scroll-area class="fit">
-    <q-toolbar>
+    <q-toolbar style="height: 106px">
       <q-toolbar-title>
         <img
           alt="Logo"
           src="@/assets/logo.svg"
-          :width="246">
+          :width="235">
       </q-toolbar-title>
     </q-toolbar>
 
