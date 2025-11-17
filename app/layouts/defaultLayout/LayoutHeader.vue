@@ -51,12 +51,14 @@
             anchor="bottom middle"
             self="top middle"
             class="bg-shell">
-            <div class="column items-center row no-wrap q-pa-md">
+            <div
+              class="column items-center row no-wrap q-pa-md"
+              style="min-width: 220px">
               <q-avatar
                 size="72px"
                 color="juniper"
                 text-color="shell">
-                D
+                {{ avatarLetter }}
               </q-avatar>
 
               <div class="text-subtitle1 q-mt-md q-mb-xs">
@@ -65,27 +67,14 @@
 
               <q-btn
                 v-close-popup
-                color="pine"
+                unelevated
+                color="juniper"
                 label="Logout"
                 push
                 size="md"
-                to="/api/auth/logout"/>
+                :href="logoutUrl"/>
             </div>
           </q-menu>
-          <!--          <q-menu v-if="loggedIn"> -->
-          <!--            <q-list style="min-width: 220px"> -->
-          <!--              <q-item> -->
-          <!--                <q-item-section>{{ userName || 'Account' }}</q-item-section> -->
-          <!--              </q-item> -->
-          <!--              <q-separator/> -->
-          <!--              <q-item -->
-          <!--                v-close-popup -->
-          <!--                clickable -->
-          <!--                href="/api/auth/logout"> -->
-          <!--                <q-item-section>Sign out</q-item-section> -->
-          <!--              </q-item> -->
-          <!--            </q-list> -->
-          <!--          </q-menu> -->
         </q-btn>
       </div>
 
@@ -138,8 +127,24 @@ onMounted(() => {
 })
 
 const loginUrl = computed(() => `/api/auth/auth0?returnTo=${encodeURIComponent(route.fullPath)}`)
+const logoutUrl = computed(() => `/api/auth/logout?returnTo=${encodeURIComponent(route.fullPath)}`)
 const userName = computed(() => {
-  const u = user.value as unknown as { name?: string, email?: string } | null
-  return u?.name || u?.email || ''
+  const u = user.value as unknown as {
+    name?: string
+    given_name?: string
+    family_name?: string
+    nickname?: string
+    email?: string
+  } | null
+  if (!u) return ''
+  // Strictly prefer a real name; avoid showing email unless nothing else exists
+  const full = [u.given_name, u.family_name].filter(Boolean).join(' ')
+  return u.name || (full || undefined) || u.nickname || ''
+})
+
+// First letter of the user's name, capitalized, for the avatar
+const avatarLetter = computed(() => {
+  const name = userName.value?.trim()
+  return name?.charAt(0)?.toUpperCase() || ' '
 })
 </script>
