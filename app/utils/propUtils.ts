@@ -43,3 +43,12 @@ export const toGapSize = (g?: GapToken | null): string => {
   const key = (g ?? 'md') as string
   return (GAP_TOKEN_MAP as Record<string, string>)[key] ?? GAP_TOKEN_MAP.md
 }
+
+/**
+ * Returns true when the provided value is a CSS percentage (e.g., '10%').
+ * Empty/undefined returns false.
+ */
+export const isPercent = (v?: string | null): boolean => {
+  if (!v) return false
+  return /%\s*$/.test(v.trim())
+}

@@ -16,17 +16,13 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+const { src, alt } = defineProps<{
   src?: string
   alt?: string
-}>(), {
-  src: '',
-  alt: ''
-})
+}>()
 
 const isSvg = computed(() => {
-  const url = props.src?.toLowerCase() || ''
-  const base = url.split('#')[0].split('?')[0]
-  return base.endsWith('.svg')
+  const s = src ?? ''
+  return /\.svg(?:$|[?#])/i.test(s)
 })
 </script>

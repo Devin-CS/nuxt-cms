@@ -12,7 +12,9 @@
         size="sm"/>
     </template>
 
-    {{ config.message }}
+    <div class="text-body1">
+      {{ config.message }}
+    </div>
 
     <template #action>
       <q-btn

@@ -23,9 +23,6 @@ padding: xl
   
   #media
     ::::c-media-duo
-    ---
-    height: "414"
-    ---
     #first
     ![discover-power-possibilities-1.webp](/images/discover-power-possibilities-1.webp)
     
@@ -515,7 +512,7 @@ Each moment in this process matters. We’re here to walk you through it all —
 ::
 
 ::c-newsletter
-## Be a part of our family
+# Be a part of our family
 
 Subscribe to our mailing list to get updates on new donors, events, community happenings, and more.
 ::
