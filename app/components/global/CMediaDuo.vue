@@ -74,6 +74,33 @@ const cssVars = computed(() => {
 .c-media-duo__first { align-self: start; }
 .c-media-duo__second { align-self: end; }
 
+/* Make slotted Markdown raster images square without hard-coding size.
+   Preserve natural width; compute height from width via aspect-ratio. */
+.c-media-duo__first :deep(img),
+.c-media-duo__second :deep(img) {
+  aspect-ratio: 1 / 1;
+  height: auto;          /* keep natural width, derive height */
+  object-fit: cover;     /* crop to fill the square */
+  display: block;        /* remove inline-gap */
+}
+
+/* Ensure q-img has a definite height via aspect-ratio so it renders even before
+   the image loads. Use block flow width (100%) to avoid zero-width collapse. */
+.c-media-duo__first :deep(.q-img),
+.c-media-duo__second :deep(.q-img) {
+  aspect-ratio: 1 / 1; /* square wrapper */
+  width: 100%;         /* fill column so width is never 0 */
+  display: block;
+}
+
+/* Ensure inner rendered image covers the square wrapper */
+.c-media-duo__first :deep(.q-img__image),
+.c-media-duo__second :deep(.q-img__image) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Centered decorative element that sits above both images */
 .c-media-duo__decorator {
   position: absolute;

@@ -103,6 +103,12 @@ const passthroughAttrs = computed(() => {
   }
 }
 
+@media (min-width: $breakpoint-xl-min) { /* x-large */
+  .c-section__wrapper {
+    max-width: 1320px;
+  }
+}
+
 /* Header and actions follow the previous QCard's max width */
 .c-section__header,
 .c-section__actions {
