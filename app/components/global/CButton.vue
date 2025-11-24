@@ -1,9 +1,9 @@
 <template>
 <q-btn
-  :label="label"
-  :flat="flat"
-  :color="color"
-  :icon-right="iconRight"/>
+	:label="label"
+	:flat="flat"
+	:color="color"
+	:icon-right="iconRight"/>
 </template>
 
 <script setup lang="ts">

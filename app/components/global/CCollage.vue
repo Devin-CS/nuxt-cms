@@ -1,46 +1,46 @@
 <template>
 <div
-  class="c-collage"
-  :style="rootStyle">
-  <!-- 1st image -->
-  <div
-    v-intersection="intersectionFirst"
-    class="c-collage__cell c-collage__first relative-position overflow-hidden"
-    :class="{ 'is-visible': !animate || isFirstVisible, 'will-animate': animate }">
-    <slot
-      name="first"
-      mdc-unwrap="p"/>
-  </div>
+	class="c-collage"
+	:style="rootStyle">
+	<!-- 1st image -->
+	<div
+		v-intersection="intersectionFirst"
+		class="c-collage__cell c-collage__first relative-position overflow-hidden"
+		:class="{ 'is-visible': !animate || isFirstVisible, 'will-animate': animate }">
+		<slot
+			name="first"
+			mdc-unwrap="p"/>
+	</div>
 
-  <!-- 2nd image -->
-  <div
-    v-intersection="intersectionSecond"
-    class="c-collage__cell c-collage__second relative-position overflow-hidden"
-    :class="{ 'is-visible': !animate || isSecondVisible, 'will-animate': animate }">
-    <slot
-      name="second"
-      mdc-unwrap="p"/>
-  </div>
+	<!-- 2nd image -->
+	<div
+		v-intersection="intersectionSecond"
+		class="c-collage__cell c-collage__second relative-position overflow-hidden"
+		:class="{ 'is-visible': !animate || isSecondVisible, 'will-animate': animate }">
+		<slot
+			name="second"
+			mdc-unwrap="p"/>
+	</div>
 
-  <!-- 3rd image -->
-  <div
-    v-intersection="intersectionThird"
-    class="c-collage__cell c-collage__third relative-position overflow-hidden"
-    :class="{ 'is-visible': !animate || isThirdVisible, 'will-animate': animate }">
-    <slot
-      name="third"
-      mdc-unwrap="p"/>
-  </div>
+	<!-- 3rd image -->
+	<div
+		v-intersection="intersectionThird"
+		class="c-collage__cell c-collage__third relative-position overflow-hidden"
+		:class="{ 'is-visible': !animate || isThirdVisible, 'will-animate': animate }">
+		<slot
+			name="third"
+			mdc-unwrap="p"/>
+	</div>
 
-  <!-- 4th image -->
-  <div
-    v-intersection="intersectionFourth"
-    class="c-collage__cell c-collage__fourth relative-position overflow-hidden"
-    :class="{ 'is-visible': !animate || isFourthVisible, 'will-animate': animate }">
-    <slot
-      name="fourth"
-      mdc-unwrap="p"/>
-  </div>
+	<!-- 4th image -->
+	<div
+		v-intersection="intersectionFourth"
+		class="c-collage__cell c-collage__fourth relative-position overflow-hidden"
+		:class="{ 'is-visible': !animate || isFourthVisible, 'will-animate': animate }">
+		<slot
+			name="fourth"
+			mdc-unwrap="p"/>
+	</div>
 </div>
 </template>
 

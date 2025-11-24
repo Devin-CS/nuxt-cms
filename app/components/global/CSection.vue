@@ -1,26 +1,26 @@
 <template>
 <section
-  v-bind="passthroughAttrs"
-  :class="[bgClass, textClass, paddingClass]"
-  class="c-section">
-  <div class="c-section__wrapper q-px-md q-mx-auto">
-    <div
-      v-if="$slots.header"
-      :class="['c-section__header', containerAlignClass, alignClass, 'q-pt-md']">
-      <slot name="header"/>
-    </div>
+	v-bind="passthroughAttrs"
+	:class="[bgClass, textClass, paddingClass]"
+	class="c-section">
+	<div class="c-section__wrapper q-px-md q-mx-auto">
+		<div
+			v-if="$slots.header"
+			:class="['c-section__header', containerAlignClass, alignClass, 'q-pt-md']">
+			<slot name="header"/>
+		</div>
 
-    <div
-      v-if="$slots.actions"
-      :class="['c-section__actions', containerAlignClass, 'row', 'items-center', actionsJustifyClass, 'q-mb-xl']">
-      <slot name="actions"/>
-    </div>
+		<div
+			v-if="$slots.actions"
+			:class="['c-section__actions', containerAlignClass, 'row', 'items-center', actionsJustifyClass, 'q-mb-xl']">
+			<slot name="actions"/>
+		</div>
 
-    <div
-      v-if="$slots.content">
-      <slot name="content"/>
-    </div>
-  </div>
+		<div
+			v-if="$slots.content">
+			<slot name="content"/>
+		</div>
+	</div>
 </section>
 </template>
 

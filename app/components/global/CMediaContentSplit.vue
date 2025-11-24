@@ -1,33 +1,33 @@
 <template>
 <article
-  :style="cssVars"
-  class="c-media-content-split">
-  <template v-if="contentFirst">
-    <section v-if="$slots.content">
-      <slot name="content"/>
-      <slot name="actions"/>
-    </section>
-    <figure
-      v-if="$slots.media"
-      class="no-margin">
-      <slot
-        mdc-unwrap="p"
-        name="media"/>
-    </figure>
-  </template>
-  <template v-else>
-    <figure
-      v-if="$slots.media"
-      class="no-margin">
-      <slot
-        mdc-unwrap="p"
-        name="media"/>
-    </figure>
-    <section v-if="$slots.content">
-      <slot name="content"/>
-      <slot name="actions"/>
-    </section>
-  </template>
+	:style="cssVars"
+	class="c-media-content-split">
+	<template v-if="contentFirst">
+		<section v-if="$slots.content">
+			<slot name="content"/>
+			<slot name="actions"/>
+		</section>
+		<figure
+			v-if="$slots.media"
+			class="no-margin">
+			<slot
+				mdc-unwrap="p"
+				name="media"/>
+		</figure>
+	</template>
+	<template v-else>
+		<figure
+			v-if="$slots.media"
+			class="no-margin">
+			<slot
+				mdc-unwrap="p"
+				name="media"/>
+		</figure>
+		<section v-if="$slots.content">
+			<slot name="content"/>
+			<slot name="actions"/>
+		</section>
+	</template>
 </article>
 </template>
 

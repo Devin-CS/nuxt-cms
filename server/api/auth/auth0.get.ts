@@ -8,7 +8,7 @@ export default defineOAuthAuth0EventHandler({
     scope: ['openid', 'profile', 'email']
     // audience: process.env.NUXT_OAUTH_AUTH0_AUDIENCE, // optional, only if you call a protected API
   },
-  async onSuccess(event, { user /*, tokens */ }) {
+  async onSuccess(event, { user /* , tokens */ }) {
     // Persist minimal user info to the session (HTTP-only cookie managed by nuxt-auth-utils)
     await setUserSession(event, { user })
 

@@ -1,13 +1,13 @@
 <template>
 <q-page>
-  <site-alert/>
+	<site-alert/>
 
-  <content-renderer
-    v-if="page"
-    :value="page"/>
-  <div v-else>
-    Page not found
-  </div>
+	<content-renderer
+		v-if="page"
+		:value="page"/>
+	<div v-else>
+		Page not found
+	</div>
 </q-page>
 </template>
 

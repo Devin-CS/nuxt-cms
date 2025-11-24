@@ -1,8 +1,8 @@
 <template>
 <q-icon
-  :size="sizeValue"
-  :color="color">
-  <slot mdc-unwrap="p"/>
+	:size="sizeValue"
+	:color="color">
+	<slot mdc-unwrap="p"/>
 </q-icon>
 </template>
 

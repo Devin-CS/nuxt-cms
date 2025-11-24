@@ -1,9 +1,9 @@
 <template>
 <div
-  :class="['c-flow', direction, justifyClass, itemsClass]"
-  :style="cssVars">
-  <slot/>
-  <!-- Note: prefer Quasar utility classes for layout; styles are minimal (width/height/gap) -->
+	:class="['c-flow', direction, justifyClass, itemsClass]"
+	:style="cssVars">
+	<slot/>
+	<!-- Note: prefer Quasar utility classes for layout; styles are minimal (width/height/gap) -->
 </div>
 </template>
 

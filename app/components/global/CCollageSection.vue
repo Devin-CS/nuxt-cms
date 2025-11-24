@@ -1,41 +1,41 @@
 <template>
 <section
-  :class="[bgClass, textClass]"
-  class="c-collage-section q-ma-none">
-  <div
-    class="c-collage-section__grid q-pa-md"
-    :style="cssVars">
-    <section
-      v-if="$slots.title || $slots.description || $slots.actions"
-      class="content self-center q-mb-xl">
-      <div
-        v-if="$slots.title"
-        class="text-h4 q-mb-sm">
-        <slot name="title"/>
-      </div>
-      <div
-        v-if="$slots.description"
-        class="text-body1 q-mb-md">
-        <slot name="description"/>
-      </div>
-      <div
-        v-if="$slots.actions"
-        class="row items-center q-gutter-sm q-gutter-y-sm q-mt-sm">
-        <slot
-          name="actions"
-          mdc-unwrap="p"/>
-      </div>
-    </section>
+	:class="[bgClass, textClass]"
+	class="c-collage-section q-ma-none">
+	<div
+		class="c-collage-section__grid q-pa-md"
+		:style="cssVars">
+		<section
+			v-if="$slots.title || $slots.description || $slots.actions"
+			class="content self-center q-mb-xl">
+			<div
+				v-if="$slots.title"
+				class="text-h4 q-mb-sm">
+				<slot name="title"/>
+			</div>
+			<div
+				v-if="$slots.description"
+				class="text-body1 q-mb-md">
+				<slot name="description"/>
+			</div>
+			<div
+				v-if="$slots.actions"
+				class="row items-center q-gutter-sm q-gutter-y-sm q-mt-sm">
+				<slot
+					name="actions"
+					mdc-unwrap="p"/>
+			</div>
+		</section>
 
-    <figure
-      v-if="$slots.media"
-      class="media q-ma-none self-end">
-      <!-- Allow markdown to unwrap <p> around the media slot -->
-      <slot
-        name="media"
-        mdc-unwrap="p"/>
-    </figure>
-  </div>
+		<figure
+			v-if="$slots.media"
+			class="media q-ma-none self-end">
+			<!-- Allow markdown to unwrap <p> around the media slot -->
+			<slot
+				name="media"
+				mdc-unwrap="p"/>
+		</figure>
+	</div>
 </section>
 </template>
 

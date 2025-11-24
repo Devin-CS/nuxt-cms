@@ -6,7 +6,12 @@ export default withNuxt({
     /* Stylistic */
     '@stylistic/comma-dangle': [
       'error',
-      'never'
+      'only-multiline'
+    ],
+
+    '@stylistic/no-tabs': [
+      'error',
+      { allowIndentationTabs: true }
     ],
 
     /* TS */
@@ -25,8 +30,26 @@ export default withNuxt({
       { selfClosingTag: 'never' }
     ],
     'vue/html-indent': [
-      'error', 2,
+      'error', 'tab',
       { baseIndent: 0 }
     ]
   }
 })
+
+/* Available Configs
+
+gitignore,
+nuxt/javascript,
+nuxt/typescript/setup,
+nuxt/typescript/rules,
+nuxt/vue/setup,
+nuxt/vue/rules,
+nuxt/import/rules,
+nuxt/setup,
+nuxt/vue/single-root,
+nuxt/rules,
+nuxt/sort-config,
+nuxt/stylistic,
+nuxt/disables/routes,
+nuxt/import-globals
+ */

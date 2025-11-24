@@ -1,9 +1,9 @@
 <template>
 <section
-  :class="[bgClass, textClass, directionClass]"
-  :style="cssVars"
-  class="c-section-grid q-pb-lg">
-  <slot v-if="$slots.default"/>
+	:class="[bgClass, textClass, directionClass]"
+	:style="cssVars"
+	class="c-section-grid q-pb-lg">
+	<slot v-if="$slots.default"/>
 </section>
 </template>
 

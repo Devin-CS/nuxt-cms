@@ -1,46 +1,46 @@
 <template>
 <q-btn
-  :label
-  :rounded="false"
-  flat
-  size="lg"
-  padding="sm"
-  class="text-weight-bold"
-  :class="{ 'q-tab--active': menu }"
-  @mouseenter="overBtn = true"
-  @mouseleave="overBtn = false">
-  <div
-    class="q-tab__indicator absolute-bottom"/>
+	:label
+	:rounded="false"
+	flat
+	size="lg"
+	padding="sm"
+	class="text-weight-bold"
+	:class="{ 'q-tab--active': menu }"
+	@mouseenter="overBtn = true"
+	@mouseleave="overBtn = false">
+	<div
+		class="q-tab__indicator absolute-bottom"/>
 
-  <q-menu
-    v-model="menu"
-    :offset="[0, -40]"
-    square
-    class="bg-pine text-shell shadow-24"
-    no-parent-event
-    target=".q-header"
-    fit
-    @mouseenter="overMenu = true"
-    @mouseleave="overMenu = false">
-    <q-separator
-      spaced
-      inset
-      style="margin-top: 28px"
-      color="juniper"/>
+	<q-menu
+		v-model="menu"
+		:offset="[0, -40]"
+		square
+		class="bg-pine text-shell shadow-24"
+		no-parent-event
+		target=".q-header"
+		fit
+		@mouseenter="overMenu = true"
+		@mouseleave="overMenu = false">
+		<q-separator
+			spaced
+			inset
+			style="margin-top: 28px"
+			color="juniper"/>
 
-    <div class="row">
-      <template v-for="{ title, path, description, header } in cardData">
-        <menu-card
-          v-if="header"
-          :key="title"
-          class="bg-pine col-4"
-          :title
-          :path>
-          {{ description }}
-        </menu-card>
-      </template>
-    </div>
-  </q-menu>
+		<div class="row">
+			<template v-for="{ title, path, description, header } in cardData">
+				<menu-card
+					v-if="header"
+					:key="title"
+					class="bg-pine col-4"
+					:title
+					:path>
+					{{ description }}
+				</menu-card>
+			</template>
+		</div>
+	</q-menu>
 </q-btn>
 </template>
 

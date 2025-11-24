@@ -1,28 +1,28 @@
 <template>
 <article
-  class="c-media-duo"
-  :style="cssVars">
-  <figure
-    v-if="$slots.first"
-    class="c-media-duo__first q-ma-none">
-    <slot
-      name="first"
-      mdc-unwrap="p"/>
-  </figure>
-  <figure
-    v-if="$slots.second"
-    class="c-media-duo__second q-ma-none">
-    <slot
-      name="second"
-      mdc-unwrap="p"/>
-  </figure>
-  <div
-    v-if="$slots.decorator"
-    class="c-media-duo__decorator">
-    <slot
-      name="decorator"
-      mdc-unwrap="p"/>
-  </div>
+	class="c-media-duo"
+	:style="cssVars">
+	<figure
+		v-if="$slots.first"
+		class="c-media-duo__first q-ma-none">
+		<slot
+			name="first"
+			mdc-unwrap="p"/>
+	</figure>
+	<figure
+		v-if="$slots.second"
+		class="c-media-duo__second q-ma-none">
+		<slot
+			name="second"
+			mdc-unwrap="p"/>
+	</figure>
+	<div
+		v-if="$slots.decorator"
+		class="c-media-duo__decorator">
+		<slot
+			name="decorator"
+			mdc-unwrap="p"/>
+	</div>
 </article>
 </template>
 

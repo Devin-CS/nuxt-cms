@@ -1,132 +1,132 @@
 <template>
 <q-drawer
-  class="bg-pine"
-  :model-value="opened"
-  side="left"
-  overlay
-  behavior="mobile"
-  @hide="panel = 'home'"
-  @update:model-value="$emit('update', $event)">
-  <q-scroll-area class="fit">
-    <q-toolbar style="height: 106px">
-      <q-toolbar-title>
-        <img
-          alt="Logo"
-          src="@/assets/logo.svg"
-          :width="235">
-      </q-toolbar-title>
-    </q-toolbar>
+	class="bg-pine"
+	:model-value="opened"
+	side="left"
+	overlay
+	behavior="mobile"
+	@hide="panel = 'home'"
+	@update:model-value="$emit('update', $event)">
+	<q-scroll-area class="fit">
+		<q-toolbar style="height: 106px">
+			<q-toolbar-title>
+				<img
+					alt="Logo"
+					src="@/assets/logo.svg"
+					:width="235">
+			</q-toolbar-title>
+		</q-toolbar>
 
-    <q-tab-panels
-      v-model="panel"
-      class="bg-pine text-shell">
-      <q-tab-panel name="home">
-        <q-list>
-          <q-item
-            v-for="{ title, children = [] } in menu"
-            :key="title"
-            v-ripple
-            active-class="text-shell"
-            clickable
-            @click.stop.prevent="panel = title">
-            <q-item-section>
-              {{ title }}
-            </q-item-section>
-            <q-item-section
-              v-if="children.length"
-              avatar>
-              <q-btn
-                flat
-                round
-                size="md"
-                padding="sm"
-                icon="o_chevron_right"/>
-            </q-item-section>
-          </q-item>
-        </q-list>
-      </q-tab-panel>
+		<q-tab-panels
+			v-model="panel"
+			class="bg-pine text-shell">
+			<q-tab-panel name="home">
+				<q-list>
+					<q-item
+						v-for="{ title, children = [] } in menu"
+						:key="title"
+						v-ripple
+						active-class="text-shell"
+						clickable
+						@click.stop.prevent="panel = title">
+						<q-item-section>
+							{{ title }}
+						</q-item-section>
+						<q-item-section
+							v-if="children.length"
+							avatar>
+							<q-btn
+								flat
+								round
+								size="md"
+								padding="sm"
+								icon="o_chevron_right"/>
+						</q-item-section>
+					</q-item>
+				</q-list>
+			</q-tab-panel>
 
-      <q-tab-panel
-        v-for="{ title, children } in childPanels"
-        :key="title"
-        :name="title">
-        <q-list>
-          <!-- back button -->
-          <q-item
-            v-ripple
-            clickable
-            @click.stop.prevent="panel = 'home'">
-            <q-item-section avatar>
-              <q-btn
-                flat
-                round
-                padding="sm"
-                size="md"
-                icon="o_chevron_left"/>
-            </q-item-section>
-            <q-item-section>
-              {{ title }}
-            </q-item-section>
-          </q-item>
+			<q-tab-panel
+				v-for="{ title, children } in childPanels"
+				:key="title"
+				:name="title">
+				<q-list>
+					<!-- back button -->
+					<q-item
+						v-ripple
+						clickable
+						@click.stop.prevent="panel = 'home'">
+						<q-item-section avatar>
+							<q-btn
+								flat
+								round
+								padding="sm"
+								size="md"
+								icon="o_chevron_left"/>
+						</q-item-section>
+						<q-item-section>
+							{{ title }}
+						</q-item-section>
+					</q-item>
 
-          <q-separator
-            color="shell"
-            inset
-            spaced="lg"/>
+					<q-separator
+						color="shell"
+						inset
+						spaced="lg"/>
 
-          <!-- child pages -->
-          <q-item
-            v-for="child in children"
-            :key="child.title"
-            v-ripple
-            active-class="text-shell"
-            :to="child.path"
-            clickable>
-            <q-item-section>
-              <q-item-label>
-                {{ child.title }}
-              </q-item-label>
-              <q-item-label
-                caption
-                class="text-grey">
-                {{ child.description }}
-              </q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-list>
-      </q-tab-panel>
-    </q-tab-panels>
+					<!-- child pages -->
+					<q-item
+						v-for="child in children"
+						:key="child.title"
+						v-ripple
+						active-class="text-shell"
+						:to="child.path"
+						clickable>
+						<q-item-section>
+							<q-item-label>
+								{{ child.title }}
+							</q-item-label>
+							<q-item-label
+								caption
+								class="text-grey">
+								{{ child.description }}
+							</q-item-label>
+						</q-item-section>
+					</q-item>
+				</q-list>
+			</q-tab-panel>
+		</q-tab-panels>
 
-    <q-separator
-      color="shell"
-      inset
-      spaced="lg"/>
+		<q-separator
+			color="shell"
+			inset
+			spaced="lg"/>
 
-    <div class="q-px-md">
-      <q-btn
-        class="full-width"
-        label="Find a Donor"
-        color="juniper"/>
-      <q-input
-        v-model="searchText"
-        placeholder="Search for donor by number"
-        class="q-mt-md"
-        square
-        dense
-        bg-color="shell"
-        filled>
-        <template #append>
-          <q-btn
-            round
-            dense
-            flat
-            padding="sm"
-            size="md"
-            icon="o_search"/>
-        </template>
-      </q-input>
-    </div>
-  </q-scroll-area>
+		<div class="q-px-md">
+			<q-btn
+				class="full-width"
+				label="Find a Donor"
+				color="juniper"/>
+			<q-input
+				v-model="searchText"
+				placeholder="Search for donor by number"
+				class="q-mt-md"
+				square
+				dense
+				bg-color="shell"
+				filled>
+				<template #append>
+					<q-btn
+						round
+						dense
+						flat
+						padding="sm"
+						size="md"
+						icon="o_search"/>
+				</template>
+			</q-input>
+		</div>
+	</q-scroll-area>
 </q-drawer>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
 <h1
-  :class="['text-h1', alignClass]"
-  v-bind="$attrs">
-  <slot/>
+	:class="['text-h1', alignClass]"
+	v-bind="$attrs">
+	<slot/>
 </h1>
 </template>
 

@@ -1,19 +1,19 @@
 <template>
 <q-layout view="hHh lpR lff">
-  <layout-header
-    :menu
-    @toggle-drawer="toggleDrawer"/>
+	<layout-header
+		:menu
+		@toggle-drawer="toggleDrawer"/>
 
-  <layout-drawer
-    :opened="drawerOpen"
-    :menu
-    @update="opened => drawerOpen = opened"/>
+	<layout-drawer
+		:opened="drawerOpen"
+		:menu
+		@update="opened => drawerOpen = opened"/>
 
-  <q-page-container>
-    <router-view/>
-  </q-page-container>
+	<q-page-container>
+		<router-view/>
+	</q-page-container>
 
-  <layout-footer/>
+	<layout-footer/>
 </q-layout>
 </template>
 

@@ -1,43 +1,43 @@
 <template>
 <q-card :class="[bgClass, textClass, centerClass]">
-  <!-- Image slot -->
-  <q-card-section
-    v-if="$slots.media"
-    class="no-padding">
-    <slot
-      mdc-unwrap="p"
-      name="media"/>
-  </q-card-section>
+	<!-- Image slot -->
+	<q-card-section
+		v-if="$slots.media"
+		class="no-padding">
+		<slot
+			mdc-unwrap="p"
+			name="media"/>
+	</q-card-section>
 
-  <!-- Title slot with optional leading icon -->
-  <div
-    v-if="$slots.title"
-    :class="['cmc-title', titleCenterClass]"
-    :style="titleCssVars">
-    <img
-      v-if="icon"
-      class="cmc-title__icon"
-      :src="icon"
-      :alt="iconAltFinal"
-      :aria-hidden="iconAriaHiddenFinal"
-      decoding="async">
-    <slot name="title"/>
-  </div>
+	<!-- Title slot with optional leading icon -->
+	<div
+		v-if="$slots.title"
+		:class="['cmc-title', titleCenterClass]"
+		:style="titleCssVars">
+		<img
+			v-if="icon"
+			class="cmc-title__icon"
+			:src="icon"
+			:alt="iconAltFinal"
+			:aria-hidden="iconAriaHiddenFinal"
+			decoding="async">
+		<slot name="title"/>
+	</div>
 
-  <!-- Content slot -->
-  <div
-    v-if="$slots.content"
-    class="q-pa-md">
-    <slot
-      name="content"
-      mdc-unwrap="p"/>
-  </div>
+	<!-- Content slot -->
+	<div
+		v-if="$slots.content"
+		class="q-pa-md">
+		<slot
+			name="content"
+			mdc-unwrap="p"/>
+	</div>
 
-  <q-card-actions
-    v-if="$slots.actions"
-    :align="actionsCenterValue">
-    <slot name="actions"/>
-  </q-card-actions>
+	<q-card-actions
+		v-if="$slots.actions"
+		:align="actionsCenterValue">
+		<slot name="actions"/>
+	</q-card-actions>
 </q-card>
 </template>
 

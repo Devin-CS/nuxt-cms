@@ -1,27 +1,27 @@
 <template>
 <section class="c-newsletter">
-  <!-- Left: Content (markdown slot) over watercolor bg -->
-  <div class="c-newsletter__left">
-    <slot/>
-  </div>
+	<!-- Left: Content (markdown slot) over watercolor bg -->
+	<div class="c-newsletter__left">
+		<slot/>
+	</div>
 
-  <q-form
-    class="c-newsletter__form flex items-center wrap q-gutter-xs q-py-xs-sm q-pa-xl"
-    @submit.prevent="onSubmit">
-    <q-input
-      v-model="email"
-      style="min-width: 275px"
-      class="email-input"
-      label="Enter your email"
-      type="email"
-      :error="showError"
-      :error-message="errorMessage"/>
-    <q-btn
-      label="Subscribe"
-      color="aqua"
-      text-color="shell"
-      type="submit"/>
-  </q-form>
+	<q-form
+		class="c-newsletter__form flex items-center wrap q-gutter-xs q-py-xs-sm q-pa-xl"
+		@submit.prevent="onSubmit">
+		<q-input
+			v-model="email"
+			style="min-width: 275px"
+			class="email-input"
+			label="Enter your email"
+			type="email"
+			:error="showError"
+			:error-message="errorMessage"/>
+		<q-btn
+			label="Subscribe"
+			color="aqua"
+			text-color="shell"
+			type="submit"/>
+	</q-form>
 </section>
 </template>
 

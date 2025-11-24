@@ -1,26 +1,26 @@
 <template>
 <article
-  class="c-media-testimonial"
-  :style="cssVars">
-  <section class="content">
-    <slot
-      name="quote"
-      mdc-unwrap="p"/>
+	class="c-media-testimonial"
+	:style="cssVars">
+	<section class="content">
+		<slot
+			name="quote"
+			mdc-unwrap="p"/>
 
-    <footer
-      v-if="$slots.attribution"
-      class="attribution text-subtitle1 q-mt-md">
-      <slot name="attribution"/>
-    </footer>
-  </section>
+		<footer
+			v-if="$slots.attribution"
+			class="attribution text-subtitle1 q-mt-md">
+			<slot name="attribution"/>
+		</footer>
+	</section>
 
-  <figure
-    v-if="$slots.media"
-    class="media no-margin">
-    <slot
-      name="media"
-      mdc-unwrap="p"/>
-  </figure>
+	<figure
+		v-if="$slots.media"
+		class="media no-margin">
+		<slot
+			name="media"
+			mdc-unwrap="p"/>
+	</figure>
 </article>
 </template>
 

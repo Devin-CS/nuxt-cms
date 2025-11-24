@@ -1,22 +1,22 @@
 <template>
 <q-card flat>
-  <!-- Header link (no button) with arrow; text can wrap naturally -->
-  <q-card-section class="q-pb-none">
-    <NuxtLink
-      :to="path"
-      class="menu-card__header q-px-sm q-py-sm"
-      aria-label="Go to section">
-      <span class="menu-card__title text-weight-bold text-h4">{{ title }}</span>
-      <q-icon
-        name="o_arrow_right_alt"
-        size="sm"
-        class="menu-card__arrow"/>
-    </NuxtLink>
-  </q-card-section>
+	<!-- Header link (no button) with arrow; text can wrap naturally -->
+	<q-card-section class="q-pb-none">
+		<NuxtLink
+			:to="path"
+			class="menu-card__header q-px-sm q-py-sm"
+			aria-label="Go to section">
+			<span class="menu-card__title text-weight-bold text-h4">{{ title }}</span>
+			<q-icon
+				name="o_arrow_right_alt"
+				size="sm"
+				class="menu-card__arrow"/>
+		</NuxtLink>
+	</q-card-section>
 
-  <q-card-section class="q-px-md q-pt-sm">
-    <slot/>
-  </q-card-section>
+	<q-card-section class="q-px-md q-pt-sm">
+		<slot/>
+	</q-card-section>
 </q-card>
 </template>
 

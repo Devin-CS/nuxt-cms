@@ -12,12 +12,14 @@ export default eventHandler(async (event) => {
   // If a relative path like "/" is provided, normalize it to the current origin.
   if (returnTo.startsWith('/')) {
     returnTo = origin + returnTo
-  } else if (/^https?:\/\//i.test(returnTo)) {
+  }
+  else if (/^https?:\/\//i.test(returnTo)) {
     // Prevent open-redirects to other domains: force same-origin
     if (!returnTo.startsWith(origin)) {
       returnTo = origin
     }
-  } else {
+  }
+  else {
     // Any other non-url value -> fallback to origin
     returnTo = origin
   }

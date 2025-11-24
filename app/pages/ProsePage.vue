@@ -1,8 +1,8 @@
 <template>
 <q-page padding>
-  <ContentRenderer
-    v-if="data"
-    :value="data"/>
+	<ContentRenderer
+		v-if="data"
+		:value="data"/>
 </q-page>
 </template>
 

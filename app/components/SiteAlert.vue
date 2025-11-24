@@ -1,32 +1,32 @@
 <template>
 <ClientOnly>
-  <q-banner
-    v-if="visible && config.enabled && config.message"
-    style="height: 84px"
-    :class="bannerClass"
-    inline-actions
-    class="center-banner-avatar bg-shell">
-    <template #avatar>
-      <q-icon
-        :name="iconName"
-        size="sm"/>
-    </template>
+	<q-banner
+		v-if="visible && config.enabled && config.message"
+		style="height: 84px"
+		:class="bannerClass"
+		inline-actions
+		class="center-banner-avatar bg-shell">
+		<template #avatar>
+			<q-icon
+				:name="iconName"
+				size="sm"/>
+		</template>
 
-    <div class="text-body1">
-      {{ config.message }}
-    </div>
+		<div class="text-body1">
+			{{ config.message }}
+		</div>
 
-    <template #action>
-      <q-btn
-        v-if="config.dismissible"
-        flat
-        round
-        size="md"
-        padding="sm"
-        icon="o_close"
-        @click="dismiss"/>
-    </template>
-  </q-banner>
+		<template #action>
+			<q-btn
+				v-if="config.dismissible"
+				flat
+				round
+				size="md"
+				padding="sm"
+				icon="o_close"
+				@click="dismiss"/>
+		</template>
+	</q-banner>
 </ClientOnly>
 </template>
 
